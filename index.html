@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Madina & Aziz — To‘y taklifnomasi</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f8f5ee;
+  color: #5c4a32;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+.container {
+  max-width: 650px;
+  margin: 30px auto;
+  padding: 45px 25px;
+  background: #fffdf8;
+  border: 1px solid #d6bd83;
+  box-shadow: 0 10px 40px #8b754022;
+  position: relative;
+  overflow: hidden;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px solid #dfcda4;
+  pointer-events: none;
+}
+
+.top {
+  color: #a8894e;
+  letter-spacing: 5px;
+  font-size: 11px;
+  margin-bottom: 25px;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(48px, 10vw, 72px);
+  font-weight: 500;
+  color: #a8894e;
+  line-height: 1.1;
+}
+
+.amp {
+  font-size: 38px;
+  color: #c5a96b;
+}
+
+.subtitle {
+  margin-top: 25px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 25px;
+  line-height: 1.5;
+}
+
+.date {
+  margin: 30px 0;
+  padding: 20px 10px;
+  border-top: 1px solid #d6bd83;
+  border-bottom: 1px solid #d6bd83;
+}
+
+.date h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  color: #a8894e;
+  font-weight: 500;
+}
+
+.date p {
+  margin-top: 8px;
+  letter-spacing: 3px;
+  font-size: 13px;
+}
+
+.section {
+  margin: 35px 0;
+}
+
+.section h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 27px;
+  color: #a8894e;
+  margin-bottom: 10px;
+}
+
+.section p {
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 25px 0;
+}
+
+.countdown div {
+  background: #f4eddf;
+  border: 1px solid #dfcda4;
+  padding: 13px 10px;
+  min-width: 65px;
+}
+
+.countdown strong {
+  display: block;
+  font-size: 23px;
+  color: #a8894e;
+}
+
+.countdown span {
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.map-button {
+  display: block;
+  max-width: 320px;
+  margin: 10px auto;
+  padding: 13px 15px;
+  border: 1px solid #b89b60;
+  color: #8b713e;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 1px;
+  transition: .3s;
+}
+
+.map-button:hover {
+  background: #b89b60;
+  color: white;
+}
+
+.gold-line {
+  width: 80px;
+  height: 1px;
+  background: #c5a96b;
+  margin: 25px auto;
+}
+
+.footer {
+  margin-top: 40px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 23px;
+  color: #a8894e;
+}
+
+.music-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border: none;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  background: #b89b60;
+  color: white;
+  font-size: 21px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px #0002;
+}
+
+@media(max-width: 480px) {
+  .container {
+    margin: 10px;
+    padding: 40px 18px;
+  }
+
+  .countdown {
+    gap: 6px;
+  }
+
+  .countdown div {
+    min-width: 58px;
+    padding: 10px 5px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="top">WEDDING INVITATION</div>
+
+  <h1>Madina</h1>
+  <div class="amp">&</div>
+  <h1>Aziz</h1>
+
+  <div class="gold-line"></div>
+
+  <div class="subtitle">
+    Hayotimizning eng go‘zal kunida<br>
+    sizni yonimizda ko‘rishdan mamnun bo‘lamiz!
+  </div>
+
+  <div class="date">
+    <h2>17 Dekabr 2026</h2>
+    <p>PAYSHANBA · SOAT 18:00</p>
+  </div>
+
+  <div class="section">
+    <h3>To‘yimizga qancha vaqt qoldi?</h3>
+    <div class="countdown">
+      <div><strong id="days">00</strong><span>KUN</span></div>
+      <div><strong id="hours">00</strong><span>SOAT</span></div>
+      <div><strong id="minutes">00</strong><span>DAQIQA</span></div>
+      <div><strong id="seconds">00</strong><span>SONIYA</span></div>
+    </div>
+  </div>
+
+  <div class="gold-line"></div>
+
+  <div class="section">
+    <h3>Kuyov xonadoni</h3>
+    <p>Azizning xonadoniga tashrif vaqti</p>
+    <p><strong>Soat 12:00</strong></p>
+
+    <a class="map-button"
+       href="https://yandex.uz/maps/-/CXWGvI2W"
+       target="_blank">Yandex Maps orqali ko‘rish</a>
+
+    <a class="map-button"
+       href="https://maps.app.goo.gl/RoAdJfmXVFVkLLAn9"
+       target="_blank">Google Maps orqali ko‘rish</a>
+  </div>
+
+  <div class="gold-line"></div>
+
+  <div class="section">
+    <h3>Kelin xonadoni</h3>
+    <p>Madinaning xonadoniga tashrif vaqti</p>
+    <p><strong>Soat 13:00</strong></p>
+
+    <a class="map-button"
+       href="https://yandex.uz/maps/-/CXWGzFia"
+       target="_blank">Yandex Maps orqali ko‘rish</a>
+
+    <a class="map-button"
+       href="https://maps.app.goo.gl/5Pgzz1mfiVYKzGEv9"
+       target="_blank">Google Maps orqali ko‘rish</a>
+  </div>
+
+  <div class="gold-line"></div>
+
+  <div class="section">
+    <h3>To‘y marosimi</h3>
+    <p><strong>Versal</strong></p>
+    <p>17-dekabr, soat 18:00</p>
+
+    <a class="map-button"
+       href="https://yandex.uz/maps/-/CXWG7B7K"
+       target="_blank">Yandex Maps orqali ko‘rish</a>
+
+    <a class="map-button"
+       href="https://maps.app.goo.gl/qbNbSPHZSezpeuAg7"
+       target="_blank">Google Maps orqali ko‘rish</a>
+  </div>
+
+  <div class="gold-line"></div>
+
+  <div class="footer">
+    Sizni intiqlik bilan kutamiz! ♡
+  </div>
+
+</div>
+
+<audio id="music" loop>
+  <source src="assets/music.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-button" onclick="toggleMusic()" id="musicBtn">
+  ♫
+</button>
+
+<script>
+const weddingDate = new Date("2026-12-17T18:00:00+05:00").getTime();
+
+function updateCountdown() {
+  const now = new Date().getTime();
+  const distance = weddingDate - now;
+
+  if (distance <= 0) {
+    document.querySelector(".countdown").innerHTML =
+      "<h3>Bugun bizning baxtli kunimiz! ♡</h3>";
+    return;
+  }
+
+  document.getElementById("days").textContent =
+    Math.floor(distance / (1000 * 60 * 60 * 24));
+
+  document.getElementById("hours").textContent =
+    Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+  document.getElementById("minutes").textContent =
+    Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+  document.getElementById("seconds").textContent =
+    Math.floor((distance % (1000 * 60)) / 1000);
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+const music = document.getElementById("music");
+
+function toggleMusic() {
+  if (music.paused) {
+    music.play().then(() => {
+      document.getElementById("musicBtn").textContent = "Ⅱ";
+    }).catch(() => {
+      alert("Musiqa faylini tekshiring.");
+    });
+  } else {
+    music.pause();
+    document.getElementById("musicBtn").textContent = "♫";
+  }
+}
+</script>
+
+</body>
+</html>
