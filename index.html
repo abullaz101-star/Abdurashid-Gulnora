@@ -2,21 +2,24 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#f8f3e9">
-<title>Madina & Aziz | Wedding Invitation</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fbf7ef">
+  <meta name="description" content="Abdurashid va Gulnoraning nikoh to‘yiga taklifnoma">
+  <title>Abdurashid & Gulnora | Wedding Invitation</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --ivory: #f8f3e9;
-  --cream: #eee3d1;
-  --gold: #b18a50;
-  --darkgold: #8e6b3c;
-  --text: #62513d;
-  --white: #fffdf8;
+  --ivory: #fbf7ef;
+  --cream: #f1e6d4;
+  --gold: #bd965c;
+  --darkgold: #8f6b3e;
+  --text: #594832;
+  --white: #fffdf9;
 }
 
 * {
@@ -25,150 +28,199 @@
   box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; }
-
-body {
-  background: var(--ivory);
-  color: var(--text);
-  font-family: 'Montserrat', sans-serif;
-  overflow-x: hidden;
+html {
+  scroll-behavior: smooth;
 }
 
-/* LUXURY ORQA FON */
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+  color: var(--text);
+  font-family: 'Montserrat', sans-serif;
+  background:
+    radial-gradient(ellipse at 12% 12%, rgba(222,196,151,.28), transparent 32%),
+    radial-gradient(ellipse at 88% 78%, rgba(222,196,151,.24), transparent 34%),
+    linear-gradient(135deg, #fffdf8, var(--ivory) 48%, #f0e5d4);
+}
 
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: -2;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse at 10% 15%, rgba(205,174,126,.20), transparent 32%),
-    radial-gradient(ellipse at 90% 80%, rgba(205,174,126,.18), transparent 35%),
-    radial-gradient(ellipse at 50% 50%, #fffdf8 0%, #f8f3e9 65%, #eee3d1 100%);
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
   z-index: -1;
   pointer-events: none;
-  opacity: .24;
+  opacity: .22;
   background-image:
     repeating-linear-gradient(
       45deg,
-      transparent,
-      transparent 45px,
-      rgba(177,138,80,.08) 46px,
-      transparent 47px
+      transparent 0 42px,
+      rgba(174,137,82,.10) 43px,
+      transparent 44px
     );
-}
-
-/* ORQA FON ZARRALARI */
-
-.particles {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 30;
-  overflow: hidden;
-}
-
-.particle {
-  position: absolute;
-  top: -30px;
-  color: #bd995e;
-  opacity: 0;
-  text-shadow: 0 0 10px rgba(193,156,96,.6);
-  animation: falling linear infinite;
-}
-
-@keyframes falling {
-  0% {
-    transform: translate3d(0,-40px,0) rotate(0deg);
-    opacity: 0;
-  }
-  15% { opacity: .65; }
-  85% { opacity: .5; }
-  100% {
-    transform: translate3d(35px,110vh,0) rotate(360deg);
-    opacity: 0;
-  }
 }
 
 /* MAYIN YORUG'LIK */
 
 .glow {
   position: fixed;
-  width: 280px;
-  height: 280px;
+  width: 340px;
+  height: 340px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,255,255,.8), transparent 70%);
   pointer-events: none;
-  z-index: 1;
-  animation: glowMove 12s ease-in-out infinite alternate;
+  z-index: 0;
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,.85),
+    rgba(229,205,165,.08) 58%,
+    transparent 72%
+  );
+  animation: glowMove 13s ease-in-out infinite alternate;
 }
 
 .glow.one {
-  top: 5%;
-  left: -100px;
+  left: -150px;
+  top: 8%;
 }
 
 .glow.two {
-  right: -100px;
-  bottom: 5%;
+  right: -160px;
+  bottom: 4%;
   animation-delay: -6s;
 }
 
 @keyframes glowMove {
-  from { transform: translateY(-15px) scale(.9); opacity: .4; }
-  to { transform: translateY(25px) scale(1.2); opacity: .9; }
+  from {
+    transform: translateY(-16px) scale(.9);
+    opacity: .45;
+  }
+  to {
+    transform: translateY(22px) scale(1.18);
+    opacity: .9;
+  }
 }
 
-/* GULLAR VA BARG'LAR */
+/* OLTIN ZARRALAR */
 
-.floral {
-  position: absolute;
-  color: #b99a6b;
-  opacity: .55;
+.particles {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 20;
   pointer-events: none;
-  z-index: 2;
+}
+
+.particle {
+  position: absolute;
+  top: -30px;
+  color: #c5a16a;
+  opacity: 0;
+  text-shadow: 0 0 12px rgba(189,150,92,.55);
+  animation: falling linear infinite;
+}
+
+@keyframes falling {
+  0% {
+    transform: translateY(-5vh) rotate(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: .6;
+  }
+  85% {
+    opacity: .4;
+  }
+  100% {
+    transform: translate(32px,110vh) rotate(300deg);
+    opacity: 0;
+  }
+}
+
+/* GULLAR */
+
+.flower {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  color: rgba(169,129,73,.38);
+  font-family: Georgia, serif;
+  line-height: 1;
+  animation: flowerFloat 7s ease-in-out infinite;
+  text-shadow: 0 4px 18px rgba(178,139,83,.12);
+}
+
+.flower.f1 {
+  top: 26px;
+  left: 22px;
+  font-size: 68px;
+}
+
+.flower.f2 {
+  top: 45px;
+  right: 25px;
+  font-size: 52px;
+  animation-delay: -2s;
+}
+
+.flower.f3 {
+  bottom: 22px;
+  left: 8%;
   font-size: 42px;
-  animation: flowerFloat 6s ease-in-out infinite;
+  animation-delay: -4s;
 }
 
-.floral.left {
-  top: 35px;
-  left: 15px;
-}
-
-.floral.right {
-  top: 35px;
-  right: 15px;
-  animation-delay: -3s;
+.flower.f4 {
+  bottom: 24px;
+  right: 8%;
+  font-size: 64px;
+  animation-delay: -1s;
 }
 
 @keyframes flowerFloat {
-  0%,100% { transform: translateY(0) rotate(-5deg); }
-  50% { transform: translateY(10px) rotate(5deg); }
+  0%,100% {
+    transform: translateY(0) rotate(-7deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(7deg);
+  }
 }
 
-/* MUQOVA */
+/* BIRINCHI SAHIFA - KONVERT */
 
 .cover {
   position: fixed;
   inset: 0;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  background:
-    radial-gradient(ellipse at center, rgba(255,255,255,.96), rgba(245,236,220,.95)),
-    #f5ecdc;
-  transition: opacity 1.2s ease, visibility 1.2s ease;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 22px;
   overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at 50% 42%,
+      rgba(255,255,255,.97),
+      rgba(245,235,217,.96) 65%
+    ),
+    var(--ivory);
+  transition: opacity 1.25s ease, visibility 1.25s ease;
+}
+
+.cover::before,
+.cover::after {
+  content: "❀";
+  position: absolute;
+  color: rgba(177,138,80,.13);
+  font-size: clamp(150px, 26vw, 290px);
+  pointer-events: none;
+}
+
+.cover::before {
+  top: -70px;
+  left: -55px;
+}
+
+.cover::after {
+  bottom: -100px;
+  right: -60px;
 }
 
 .cover.hide {
@@ -177,414 +229,565 @@ body::after {
   pointer-events: none;
 }
 
-.cover::before,
-.cover::after {
-  content: "❀";
-  position: absolute;
-  color: rgba(177,138,80,.22);
-  font-size: 180px;
-  pointer-events: none;
-}
-
-.cover::before {
-  top: -55px;
-  left: -45px;
-}
-
-.cover::after {
-  bottom: -65px;
-  right: -45px;
-}
-
-.cover-frame {
+.cover-card {
   position: relative;
-  width: 100%;
-  max-width: 460px;
-  min-height: 590px;
-  padding: 45px 25px;
-  border: 1px solid var(--gold);
-  outline: 1px solid rgba(177,138,80,.35);
-  outline-offset: 9px;
-  background: rgba(255,255,255,.52);
-  text-align: center;
+  width: min(100%, 470px);
+  min-height: min(720px, 88vh);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 20px 70px rgba(90,65,30,.12);
-  animation: frameAppear 1.5s ease both;
+  padding: 42px 26px;
+  text-align: center;
+  border: 1px solid rgba(177,138,80,.75);
+  outline: 1px solid rgba(177,138,80,.24);
+  outline-offset: 8px;
+  background: rgba(255,253,248,.62);
+  box-shadow: 0 24px 70px rgba(91,66,34,.12);
+  animation: cardEnter 1.4s ease both;
 }
 
-@keyframes frameAppear {
-  from { opacity: 0; transform: scale(.92); }
-  to { opacity: 1; transform: scale(1); }
+@keyframes cardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
-.corner {
-  position: absolute;
-  color: var(--gold);
-  font-size: 26px;
-}
-
-.top-left { top: 13px; left: 16px; }
-.top-right { top: 13px; right: 16px; }
-.bottom-left { bottom: 13px; left: 16px; }
-.bottom-right { bottom: 13px; right: 16px; }
-
-.cover-small {
+.cover-kicker {
+  color: var(--darkgold);
   font-size: 10px;
-  letter-spacing: 5px;
-  color: var(--darkgold);
-  margin-bottom: 30px;
+  letter-spacing: 4px;
+  line-height: 1.8;
+  text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
-.cover-name {
+.cover-names {
+  color: var(--darkgold);
   font-family: 'Great Vibes', cursive;
-  font-size: clamp(58px, 12vw, 82px);
-  color: var(--darkgold);
-  line-height: 1.15;
-  animation: nameGlow 3s ease-in-out infinite alternate;
+  font-size: clamp(54px, 12vw, 76px);
+  line-height: 1.08;
+  text-shadow: 0 5px 24px rgba(177,138,80,.16);
 }
 
-@keyframes nameGlow {
-  from { text-shadow: 0 0 0 rgba(177,138,80,0); }
-  to { text-shadow: 0 0 18px rgba(177,138,80,.4); }
-}
-
-.cover-and {
+.ampersand {
+  color: #c4a16c;
   font-family: 'Cormorant Garamond', serif;
   font-size: 34px;
   font-style: italic;
-  color: #c2a271;
+  margin: 4px 0;
 }
 
 .cover-date {
-  margin-top: 25px;
-  font-family: 'Playfair Display', serif;
-  letter-spacing: 5px;
-  font-size: 17px;
+  margin-top: 18px;
   color: var(--darkgold);
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  letter-spacing: 4px;
 }
 
-.envelope {
-  font-size: 55px;
-  margin: 32px 0 25px;
-  animation: envelopeFloat 2.5s ease-in-out infinite;
+.ornament {
+  margin: 16px 0;
+  color: var(--gold);
+  font-size: 23px;
+  letter-spacing: 8px;
+}
+
+/* KONVERT ANIMATSIYASI */
+
+.envelope-stage {
+  position: relative;
+  width: 190px;
+  height: 128px;
+  margin: 18px auto 25px;
+  perspective: 900px;
+  cursor: pointer;
+  filter: drop-shadow(0 13px 16px rgba(107,78,39,.17));
+  animation: envelopeFloat 3s ease-in-out infinite;
 }
 
 @keyframes envelopeFloat {
-  0%,100% { transform: translateY(0) rotate(-3deg); }
-  50% { transform: translateY(-12px) rotate(3deg); }
+  0%,100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+.envelope {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+  border-radius: 5px;
+  background: linear-gradient(145deg,#f2e3c9,#dfc49a);
+  border: 1px solid #c5a16a;
+}
+
+.envelope-back {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,#e8d4b1,#f4e8d4);
+  border-radius: 5px;
+}
+
+.envelope::before,
+.envelope::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  z-index: 3;
+}
+
+.envelope::before {
+  left: 0;
+  border-width: 64px 95px 0 0;
+  border-color: transparent #ead7b7 transparent transparent;
+}
+
+.envelope::after {
+  right: 0;
+  border-width: 64px 0 0 95px;
+  border-color: transparent transparent transparent #e5d0ac;
+}
+
+.envelope-letter {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  bottom: 12px;
+  height: 88px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  color: var(--darkgold);
+  background: #fffaf0;
+  border: 1px solid rgba(177,138,80,.5);
+  font-family: 'Great Vibes', cursive;
+  font-size: 26px;
+  transition: transform 1s ease .25s;
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 95px solid transparent;
+  border-right: 95px solid transparent;
+  border-top: 72px solid #d4b582;
+  transform-origin: top center;
+  z-index: 5;
+  transition: transform .9s ease, z-index .1s .45s;
+}
+
+.envelope-seal {
+  position: absolute;
+  left: 50%;
+  top: 51px;
+  z-index: 6;
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  color: #fff8e9;
+  background: linear-gradient(145deg,#bd965c,#8f6b3e);
+  border: 1px solid rgba(255,255,255,.7);
+  font-size: 17px;
+  transition: opacity .3s ease;
+}
+
+.cover.opening .envelope-flap {
+  transform: rotateX(180deg);
+  z-index: 1;
+}
+
+.cover.opening .envelope-letter {
+  transform: translateY(-75px);
+}
+
+.cover.opening .envelope-seal {
+  opacity: 0;
 }
 
 .open-btn {
-  background: linear-gradient(135deg, #c4a16c, #967143);
-  color: white;
-  border: 1px solid #c5a16a;
-  padding: 16px 30px;
-  letter-spacing: 2px;
+  border: 1px solid #c4a16c;
+  padding: 15px 27px;
+  color: #fffdf8;
+  background: linear-gradient(135deg,#c7a36d,#927044);
+  box-shadow: 0 10px 26px rgba(142,107,60,.2);
   font-size: 10px;
+  letter-spacing: 2px;
   cursor: pointer;
-  box-shadow: 0 8px 25px rgba(142,107,60,.2);
-  transition: .4s;
+  transition: transform .35s ease, box-shadow .35s ease;
 }
 
 .open-btn:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(142,107,60,.3);
+  box-shadow: 0 14px 32px rgba(142,107,60,.3);
 }
 
-/* ASOSIY SAHIFA */
+.open-btn:disabled {
+  cursor: default;
+}
+
+.cover-hint {
+  margin-top: 14px;
+  color: #927c5e;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+}
+
+/* ASOSIY TAKLIFNOMA */
 
 .invitation {
   display: none;
   position: relative;
-  z-index: 3;
+  z-index: 2;
 }
 
 .invitation.show {
   display: block;
-  animation: pageAppear 1.4s ease both;
+  animation: pageReveal 1.3s ease both;
 }
 
-@keyframes pageAppear {
+@keyframes pageReveal {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
+/* BOSH SAHIFA */
+
 .hero {
-  min-height: 100vh;
-  padding: 80px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   position: relative;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 90px 20px;
   overflow: hidden;
+  text-align: center;
   background:
-    radial-gradient(ellipse at center, rgba(255,255,255,.8), rgba(248,243,233,.65));
+    radial-gradient(ellipse at center, rgba(255,255,255,.78), rgba(249,244,235,.48) 70%),
+    linear-gradient(135deg, rgba(239,225,202,.45), rgba(255,253,248,.35));
 }
 
 .hero::before,
 .hero::after {
   content: "❀";
   position: absolute;
-  color: rgba(177,138,80,.16);
-  font-size: clamp(130px, 25vw, 260px);
-  animation: flowerFloat 8s ease-in-out infinite;
+  color: rgba(177,138,80,.13);
+  font-size: clamp(160px, 28vw, 300px);
+  animation: flowerFloat 9s ease-in-out infinite;
+  pointer-events: none;
 }
 
 .hero::before {
-  top: 5%;
-  left: -50px;
+  left: -70px;
+  top: 4%;
 }
 
 .hero::after {
-  bottom: 2%;
-  right: -50px;
+  right: -70px;
+  bottom: 0;
   animation-delay: -4s;
 }
 
-.hero-inner {
-  width: 100%;
-  max-width: 720px;
-  padding: 55px 20px;
-  border-top: 1px solid var(--gold);
-  border-bottom: 1px solid var(--gold);
+.hero-frame {
   position: relative;
-  background: rgba(255,253,248,.28);
-  backdrop-filter: blur(2px);
+  width: min(100%, 780px);
+  padding: 58px 24px;
+  border-top: 1px solid rgba(177,138,80,.75);
+  border-bottom: 1px solid rgba(177,138,80,.75);
+  background: rgba(255,253,248,.3);
+  backdrop-filter: blur(3px);
 }
 
-.hero-inner:before,
-.hero-inner:after {
+.hero-frame::before,
+.hero-frame::after {
   content: "✧";
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  padding: 0 16px;
   color: var(--gold);
   background: var(--ivory);
-  padding: 0 15px;
-  font-size: 24px;
+  font-size: 25px;
 }
 
-.hero-inner:before { top: -16px; }
-.hero-inner:after { bottom: -16px; }
+.hero-frame::before { top: -15px; }
+.hero-frame::after { bottom: -15px; }
+
+/* IKKI TILDAGI IBORA */
+
+.quote {
+  max-width: 650px;
+  margin: 0 auto 35px;
+  color: #806744;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(21px, 4vw, 27px);
+  line-height: 1.5;
+  animation: quoteAppear 1.6s ease both;
+}
+
+.quote-ar {
+  display: block;
+  margin-bottom: 8px;
+  color: #a77d43;
+  font-family: 'Amiri', serif;
+  font-size: clamp(30px, 6vw, 43px);
+  line-height: 1.8;
+  direction: rtl;
+}
+
+@keyframes quoteAppear {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .eyebrow {
-  letter-spacing: 6px;
-  font-size: 10px;
   color: var(--darkgold);
-  margin-bottom: 35px;
+  font-size: 10px;
+  letter-spacing: 5px;
+  margin-bottom: 28px;
 }
 
 .hero h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: clamp(75px, 15vw, 125px);
-  line-height: 1;
   color: var(--darkgold);
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(78px, 16vw, 132px);
   font-weight: 400;
-  animation: heroName 2s ease both;
+  line-height: 1.02;
+  text-shadow: 0 8px 30px rgba(177,138,80,.14);
+  animation: nameRise 1.5s ease both;
 }
 
-@keyframes heroName {
-  from { opacity: 0; transform: translateY(35px); }
-  to { opacity: 1; transform: translateY(0); }
+.hero h1.second {
+  animation-delay: .25s;
+}
+
+@keyframes nameRise {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-and {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 43px;
+  margin: 2px 0;
   color: #c4a16c;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 44px;
   font-style: italic;
-  margin: 8px 0;
 }
 
-.hero-text {
+.hero-copy {
+  max-width: 520px;
+  margin: 27px auto 0;
+  color: #78664d;
   font-family: 'Cormorant Garamond', serif;
   font-size: 25px;
-  line-height: 1.6;
-  max-width: 480px;
-  margin: 30px auto;
-  color: #76654e;
+  line-height: 1.55;
 }
 
 .hero-date {
-  font-family: 'Playfair Display', serif;
-  font-size: 27px;
-  letter-spacing: 3px;
+  margin-top: 28px;
   color: var(--darkgold);
-  margin-top: 30px;
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  letter-spacing: 3px;
 }
 
 .hero-time {
-  font-size: 11px;
-  letter-spacing: 4px;
-  margin-top: 13px;
+  margin-top: 12px;
   color: #927c5e;
+  font-size: 10px;
+  letter-spacing: 4px;
 }
 
-/* SECTIONLAR */
+/* UMUMIY BO'LIMLAR */
 
 .section {
-  padding: 95px 20px;
-  text-align: center;
   position: relative;
+  padding: 88px 20px;
   overflow: hidden;
+  text-align: center;
 }
 
 .section-title {
-  font-family: 'Playfair Display', serif;
-  font-weight: 400;
-  font-size: clamp(32px, 7vw, 48px);
   color: var(--darkgold);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(31px, 6vw, 46px);
+  font-weight: 400;
 }
 
-.section-text {
+.section-copy {
+  max-width: 680px;
+  margin: 22px auto;
+  color: #78664d;
   font-family: 'Cormorant Garamond', serif;
   font-size: 24px;
-  line-height: 1.65;
-  max-width: 650px;
-  margin: 25px auto;
-  color: #76664f;
-}
-
-.ornament {
-  color: var(--gold);
-  font-size: 25px;
-  margin: 20px 0;
-  letter-spacing: 8px;
+  line-height: 1.6;
 }
 
 .gold-line {
-  width: 75px;
+  width: 78px;
   height: 1px;
-  background: var(--gold);
-  margin: 22px auto;
+  margin: 20px auto;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
 }
 
-/* COUNTDOWN */
+.ornament-line {
+  margin: 19px 0;
+  color: var(--gold);
+  font-size: 24px;
+  letter-spacing: 8px;
+}
+
+/* SANA SANAGICHI */
 
 .countdown-section {
-  text-align: center;
-  padding: 80px 15px;
-  background: linear-gradient(135deg, #eee3d1, #f8f3e9, #eee3d1);
   position: relative;
+  padding: 78px 15px;
   overflow: hidden;
+  text-align: center;
+  background: linear-gradient(120deg,#efe2cc,#fbf7ef 48%,#efe2cc);
 }
 
-.countdown-section::before {
-  content: "✧";
-  position: absolute;
-  left: 8%;
-  top: 15%;
-  font-size: 80px;
-  color: rgba(177,138,80,.15);
-}
-
+.countdown-section::before,
 .countdown-section::after {
   content: "✧";
   position: absolute;
+  color: rgba(177,138,80,.16);
+  font-size: 90px;
+}
+
+.countdown-section::before {
+  left: 8%;
+  top: 12%;
+}
+
+.countdown-section::after {
   right: 8%;
-  bottom: 15%;
-  font-size: 80px;
-  color: rgba(177,138,80,.15);
+  bottom: 12%;
 }
 
 .countdown {
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 35px;
-  position: relative;
-  z-index: 1;
+  gap: 14px;
+  margin-top: 34px;
 }
 
 .count-box {
-  width: 90px;
-  padding: 18px 8px;
-  border: 1px solid #c5a16a;
-  background: rgba(255,255,255,.55);
-  box-shadow: 0 5px 20px rgba(90,70,40,.06);
+  width: 94px;
+  padding: 17px 8px;
+  border: 1px solid rgba(177,138,80,.75);
+  background: rgba(255,253,248,.7);
+  box-shadow: 0 8px 24px rgba(91,66,34,.06);
 }
 
 .count-number {
-  font-family: 'Playfair Display', serif;
   display: block;
-  font-size: 34px;
   color: var(--darkgold);
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
 }
 
 .count-label {
+  margin-top: 7px;
+  color: #927c5e;
   font-size: 9px;
   letter-spacing: 2px;
-  margin-top: 8px;
-  color: #927c5e;
 }
 
 /* MANZILLAR */
 
 .address-section {
-  background: rgba(255,253,248,.72);
+  background: rgba(255,253,248,.62);
 }
 
 .address-grid {
-  max-width: 1000px;
-  margin: 45px auto 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%,255px),1fr));
+  gap: 23px;
+  width: min(100%,1040px);
+  margin: 42px auto 0;
 }
 
 .address-card {
-  background: rgba(255,253,248,.92);
-  border: 1px solid #d5bf98;
-  padding: 40px 23px;
-  box-shadow: 0 12px 35px rgba(92,69,34,.07);
-  transition: transform .5s, box-shadow .5s;
   position: relative;
   overflow: hidden;
+  padding: 38px 22px;
+  border: 1px solid #d7c19b;
+  background: rgba(255,253,248,.88);
+  box-shadow: 0 12px 34px rgba(92,69,34,.07);
+  transition: transform .45s ease, box-shadow .45s ease;
 }
 
 .address-card::before {
-  content: "✧";
+  content: "❀";
   position: absolute;
-  top: 10px;
-  right: 14px;
+  top: 8px;
+  right: 13px;
+  color: rgba(177,138,80,.3);
   font-size: 25px;
-  color: rgba(177,138,80,.35);
 }
 
 .address-card:hover {
-  transform: translateY(-9px);
-  box-shadow: 0 18px 40px rgba(92,69,34,.13);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 42px rgba(92,69,34,.13);
 }
 
 .address-icon {
-  font-size: 38px;
-  margin-bottom: 20px;
+  margin-bottom: 17px;
+  font-size: 36px;
 }
 
 .address-card h3 {
+  color: var(--darkgold);
   font-family: 'Playfair Display', serif;
   font-size: 27px;
   font-weight: 400;
-  color: var(--darkgold);
 }
 
 .address-card p {
+  min-height: 32px;
+  margin: 13px 0;
+  color: #78664d;
   font-family: 'Cormorant Garamond', serif;
   font-size: 21px;
-  margin: 15px 0;
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 .visit-time {
+  margin: 17px 0;
   color: #a27e4a;
-  font-size: 11px;
+  font-size: 10px;
   letter-spacing: 2px;
-  margin: 20px 0;
 }
 
 .map-buttons {
@@ -595,96 +798,108 @@ body::after {
 }
 
 .map-btn {
-  text-decoration: none;
-  background: linear-gradient(135deg,#c3a06c,#927044);
+  display: inline-block;
+  padding: 12px 14px;
+  border: 1px solid rgba(255,255,255,.4);
   color: white;
-  padding: 13px 15px;
+  background: linear-gradient(135deg,#c3a06c,#927044);
+  text-decoration: none;
   font-size: 9px;
   letter-spacing: 1px;
-  transition: .3s;
+  transition: transform .3s ease, box-shadow .3s ease;
 }
 
 .map-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 7px 18px rgba(142,107,60,.2);
+  box-shadow: 0 8px 18px rgba(142,107,60,.22);
 }
 
 /* YAKUNIY QISM */
 
 .closing {
-  padding: 100px 20px;
-  text-align: center;
-  background:
-    radial-gradient(ellipse at center, rgba(255,255,255,.7), transparent 75%),
-    linear-gradient(135deg,#eee3d1,#f9f4ea);
   position: relative;
   overflow: hidden;
+  padding: 95px 20px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at center, rgba(255,255,255,.75), transparent 72%),
+    linear-gradient(135deg,#efe3d1,#fbf7ef);
 }
 
 .closing::before,
 .closing::after {
   content: "❀";
   position: absolute;
-  color: rgba(177,138,80,.18);
-  font-size: 150px;
+  color: rgba(177,138,80,.16);
+  font-size: 155px;
 }
 
-.closing::before { top: -30px; left: -35px; }
-.closing::after { bottom: -35px; right: -35px; }
+.closing::before {
+  top: -30px;
+  left: -38px;
+}
+
+.closing::after {
+  bottom: -42px;
+  right: -35px;
+}
 
 .closing h2 {
-  font-family: 'Great Vibes', cursive;
-  font-size: clamp(52px, 10vw, 75px);
-  font-weight: 400;
-  color: var(--darkgold);
   position: relative;
   z-index: 1;
+  color: var(--darkgold);
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(55px, 11vw, 82px);
+  font-weight: 400;
 }
 
 .closing p {
+  position: relative;
+  z-index: 1;
+  margin-top: 20px;
+  color: #78664d;
   font-family: 'Cormorant Garamond', serif;
   font-size: 24px;
   line-height: 1.6;
-  margin-top: 25px;
-  position: relative;
-  z-index: 1;
 }
 
 footer {
-  padding: 25px;
-  text-align: center;
-  font-size: 10px;
-  letter-spacing: 3px;
+  padding: 23px 15px;
   color: #927c5e;
-  background: #e8ddca;
+  background: #e9decc;
+  text-align: center;
+  font-size: 9px;
+  letter-spacing: 3px;
 }
 
-/* MUSIQA */
+/* MUSIQA TUGMASI */
 
 .music-btn {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
-  z-index: 100;
+  right: 19px;
+  bottom: 19px;
+  z-index: 50;
+  display: none;
   width: 52px;
   height: 52px;
-  border-radius: 50%;
   border: 1px solid #d2b27f;
-  background: linear-gradient(135deg,#c5a16c,#927044);
+  border-radius: 50%;
   color: white;
-  font-size: 22px;
+  background: linear-gradient(135deg,#c5a16c,#927044);
+  box-shadow: 0 7px 22px rgba(90,70,40,.2);
+  font-size: 23px;
   cursor: pointer;
-  display: none;
-  box-shadow: 0 5px 20px rgba(90,70,40,.2);
 }
 
-.music-btn.active { display: block; }
+.music-btn.active {
+  display: block;
+}
 
 .music-btn.playing {
-  animation: musicSpin 5s linear infinite;
+  animation: musicRotate 5s linear infinite;
 }
 
-@keyframes musicSpin {
+@keyframes musicRotate {
   to { transform: rotate(360deg); }
 }
 
@@ -692,8 +907,8 @@ footer {
 
 .reveal {
   opacity: 0;
-  transform: translateY(35px);
-  transition: opacity 1s ease, transform 1s ease;
+  transform: translateY(30px);
+  transition: opacity .9s ease, transform .9s ease;
 }
 
 .reveal.visible {
@@ -703,18 +918,51 @@ footer {
 
 /* TELEFON UCHUN */
 
-@media(max-width:500px) {
-  .cover-frame { min-height: 540px; }
-  .section { padding: 70px 16px; }
-  .count-box { width: 72px; }
-  .count-number { font-size: 28px; }
-  .hero-inner { padding: 45px 12px; }
-  .floral { font-size: 30px; }
+@media (max-width: 540px) {
+  .cover-card {
+    min-height: 560px;
+    padding: 35px 18px;
+  }
+
+  .cover-names {
+    font-size: 62px;
+  }
+
+  .hero {
+    min-height: 92svh;
+    padding: 75px 15px;
+  }
+
+  .hero-frame {
+    padding: 48px 12px;
+  }
+
+  .hero h1 {
+    font-size: clamp(72px,18vw,100px);
+  }
+
+  .section {
+    padding: 68px 16px;
+  }
+
+  .count-box {
+    width: 75px;
+  }
+
+  .count-number {
+    font-size: 28px;
+  }
+
+  .flower.f1 { font-size: 43px; }
+  .flower.f2 { font-size: 36px; }
 }
 
-/* HARAKATNI KAMAYTIRISH SOZLAMASI */
-@media(prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+/* HARAKATNI KAMAYTIRISH */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
@@ -726,231 +974,419 @@ footer {
 
 <body>
 
-<!-- LUXURY EFFEKTLAR -->
+<!-- ORQA FON EFFEKTLARI -->
+
 <div class="particles" id="particles"></div>
 <div class="glow one"></div>
 <div class="glow two"></div>
+
+<!-- MUSIQA: MP3 FAYL INDEX.HTML BILAN BIR PAPKADA BO'LISHI KERAK -->
 
 <audio id="weddingMusic" loop preload="auto">
   <source src="./vafodorim.mp3" type="audio/mpeg">
 </audio>
 
-<!-- MUQOVA -->
-<div class="cover" id="cover">
-  <div class="floral left">❀</div>
-  <div class="floral right">❀</div>
+<!-- BIRINCHI SAHIFA: KONVERT -->
 
-  <div class="cover-frame">
-    <span class="corner top-left">❧</span>
-    <span class="corner top-right">❧</span>
-    <span class="corner bottom-left">❧</span>
-    <span class="corner bottom-right">❧</span>
+<section class="cover" id="cover">
 
-    <div class="cover-small">SIZNI TO'YIMIZGA TAKLIF QILAMIZ</div>
-    <div class="cover-name">Madina</div>
-    <div class="cover-and">&</div>
-    <div class="cover-name">Aziz</div>
+  <span class="flower f1">❀</span>
+  <span class="flower f2">❧</span>
+  <span class="flower f3">✿</span>
+  <span class="flower f4">❀</span>
+
+  <div class="cover-card">
+
+    <div class="cover-kicker">
+      SIZNI NIKOH TO'YIMIZGA TAKLIF QILAMIZ
+    </div>
+
+    <div class="cover-names">Abdurashid</div>
+    <div class="ampersand">&</div>
+    <div class="cover-names">Gulnora</div>
+
     <div class="ornament">✧ ❦ ✧</div>
-    <div class="cover-date">17 · 12 · 2026</div>
-    <div class="envelope">💌</div>
 
-    <button class="open-btn" id="openButton">
+    <div class="cover-date">17 · 12 · 2026</div>
+
+    <!-- KONVERT -->
+
+    <div class="envelope-stage">
+      <div class="envelope">
+        <div class="envelope-back"></div>
+        <div class="envelope-letter">With love</div>
+        <div class="envelope-flap"></div>
+        <div class="envelope-seal">♥</div>
+      </div>
+    </div>
+
+    <button class="open-btn" id="openButton" type="button">
       TAKLIFNOMANI OCHISH
     </button>
-  </div>
-</div>
 
-<button class="music-btn" id="musicButton" aria-label="Musiqani boshqarish">♫</button>
+    <div class="cover-hint">
+      Siz uchun mehr bilan tayyorlandi
+    </div>
+
+  </div>
+</section>
+
+<!-- MUSIQA BOSHQARUVI -->
+
+<button class="music-btn" id="musicButton" type="button"
+  aria-label="Musiqani yoqish yoki to'xtatish">
+  ♫
+</button>
 
 <!-- ASOSIY TAKLIFNOMA -->
+
 <main class="invitation" id="invitation">
 
+  <!-- BOSH SAHIFA -->
+
   <section class="hero">
-    <div class="floral left">❀</div>
-    <div class="floral right">❀</div>
 
-    <div class="hero-inner">
-      <div class="eyebrow">BIZNING ENG BAXTLI KUNIMIZ</div>
+    <span class="flower f1">❀</span>
+    <span class="flower f2">❧</span>
+    <span class="flower f3">✿</span>
+    <span class="flower f4">❀</span>
 
-      <h1>Madina</h1>
+    <div class="hero-frame">
+
+      <!-- ARABCHA VA O'ZBEKCHA YOZUV -->
+
+      <div class="quote">
+
+        <span class="quote-ar" lang="ar" dir="rtl">
+          وَأَلَّفَ بَيْنَ قُلُوبِهِمْ
+        </span>
+
+        Alloh ularning qalblarini sevgi ila birlashtirdi.
+
+      </div>
+
+      <div class="eyebrow">
+        BIZNING ENG BAXTLI KUNIMIZ
+      </div>
+
+      <h1>Abdurashid</h1>
+
       <div class="hero-and">&</div>
-      <h1>Aziz</h1>
+
+      <h1 class="second">Gulnora</h1>
 
       <div class="ornament">✧ ❦ ✧</div>
 
-      <p class="hero-text">
+      <p class="hero-copy">
         Ikki qalb, bir taqdir, bir umrga atalgan muhabbat...
         Hayotimizning eng go'zal kunida sizni yonimizda
         ko'rishdan baxtiyor bo'lamiz.
       </p>
 
-      <div class="hero-date">17 DEKABR 2026</div>
-      <div class="hero-time">SOAT 18:00 DA</div>
+      <div class="hero-date">
+        17 DEKABR 2026
+      </div>
+
+      <div class="hero-time">
+        SOAT 18:00 DA
+      </div>
+
     </div>
   </section>
 
-  <!-- TAKLIF -->
-  <section class="section reveal">
-    <h2 class="section-title">Aziz mehmonimiz!</h2>
-    <div class="gold-line"></div>
-    <div class="ornament">❦</div>
+  <!-- MEHMONLARGA TAKLIF -->
 
-    <p class="section-text">
+  <section class="section reveal">
+
+    <h2 class="section-title">
+      Aziz mehmonimiz!
+    </h2>
+
+    <div class="gold-line"></div>
+
+    <div class="ornament-line">❦</div>
+
+    <p class="section-copy">
       Sizni hayotimizdagi eng unutilmas va quvonchli kunimiz —
       nikoh to'yimizga chin qalbimizdan taklif etamiz.
       Quvonchimizga sherik bo'lishingiz biz uchun katta baxtdir.
     </p>
 
-    <div class="ornament">✧ ✧ ✧</div>
+    <div class="ornament-line">✧ ✧ ✧</div>
+
   </section>
 
-  <!-- COUNTDOWN -->
+  <!-- TO'Y SANAGICHI -->
+
   <section class="countdown-section reveal">
-    <h2 class="section-title">Baxtli kunimizgacha</h2>
+
+    <h2 class="section-title">
+      Baxtli kunimizgacha
+    </h2>
+
     <div class="gold-line"></div>
 
     <div class="countdown">
+
       <div class="count-box">
         <span class="count-number" id="days">00</span>
         <div class="count-label">KUN</div>
       </div>
+
       <div class="count-box">
         <span class="count-number" id="hours">00</span>
         <div class="count-label">SOAT</div>
       </div>
+
       <div class="count-box">
         <span class="count-number" id="minutes">00</span>
         <div class="count-label">DAQIQA</div>
       </div>
+
       <div class="count-box">
         <span class="count-number" id="seconds">00</span>
         <div class="count-label">SONIYA</div>
       </div>
+
     </div>
   </section>
 
   <!-- MANZILLAR -->
+
   <section class="section address-section reveal">
-    <h2 class="section-title">Manzillarimiz</h2>
+
+    <h2 class="section-title">
+      Manzillarimiz
+    </h2>
+
     <div class="gold-line"></div>
 
-    <p class="section-text">
+    <p class="section-copy">
       Quyidagi manzillar orqali bizni osongina topishingiz mumkin.
     </p>
 
     <div class="address-grid">
 
-      <div class="address-card">
+      <!-- KUYOV UYI -->
+
+      <article class="address-card">
+
         <div class="address-icon">🏡</div>
+
         <h3>Kuyov uyi</h3>
-        <p>Azizning xonadoniga tashrif</p>
-        <div class="visit-time">SOAT 12:00 DA</div>
+
+        <p>Abdurashid xonadoniga tashrif</p>
+
+        <div class="visit-time">
+          SOAT 12:00 DA
+        </div>
 
         <div class="map-buttons">
-          <a class="map-btn" href="https://yandex.uz/maps/-/CXWGvI2W" target="_blank" rel="noopener">YANDEX MAPS</a>
-          <a class="map-btn" href="https://maps.app.goo.gl/RoAdJfmXVFVkLLAn9" target="_blank" rel="noopener">GOOGLE MAPS</a>
-        </div>
-      </div>
 
-      <div class="address-card">
+          <a class="map-btn"
+             href="https://yandex.uz/maps/-/CXWciF0R"
+             target="_blank"
+             rel="noopener noreferrer">
+            YANDEX MAPS
+          </a>
+
+          <a class="map-btn"
+             href="https://maps.app.goo.gl/8C8BY1PwHbMbqNHr8"
+             target="_blank"
+             rel="noopener noreferrer">
+            GOOGLE MAPS
+          </a>
+
+        </div>
+      </article>
+
+      <!-- KELIN UYI -->
+
+      <article class="address-card">
+
         <div class="address-icon">🌸</div>
+
         <h3>Kelin uyi</h3>
-        <p>Madina xonadoniga tashrif</p>
-        <div class="visit-time">SOAT 13:00 DA</div>
+
+        <p>Gulnora xonadoniga tashrif</p>
+
+        <div class="visit-time">
+          SOAT 13:00 DA
+        </div>
 
         <div class="map-buttons">
-          <a class="map-btn" href="https://yandex.uz/maps/-/CXWGzFia" target="_blank" rel="noopener">YANDEX MAPS</a>
-          <a class="map-btn" href="https://maps.app.goo.gl/5Pgzz1mfiVYKzGEv9" target="_blank" rel="noopener">GOOGLE MAPS</a>
-        </div>
-      </div>
 
-      <div class="address-card">
+          <a class="map-btn"
+             href="https://yandex.uz/maps/-/CXWcm4M3"
+             target="_blank"
+             rel="noopener noreferrer">
+            YANDEX MAPS
+          </a>
+
+          <a class="map-btn"
+             href="https://maps.app.goo.gl/xedHjRo8rPxhFXMe9"
+             target="_blank"
+             rel="noopener noreferrer">
+            GOOGLE MAPS
+          </a>
+
+        </div>
+      </article>
+
+      <!-- TO'YXONA -->
+
+      <article class="address-card">
+
         <div class="address-icon">💍</div>
+
         <h3>To'yxona</h3>
+
         <p>Versal tantanalar saroyi</p>
-        <div class="visit-time">SOAT 18:00 DA</div>
+
+        <div class="visit-time">
+          SOAT 18:00 DA
+        </div>
 
         <div class="map-buttons">
-          <a class="map-btn" href="https://yandex.uz/maps/-/CXWG7B7K" target="_blank" rel="noopener">YANDEX MAPS</a>
-          <a class="map-btn" href="https://maps.app.goo.gl/qbNbSPHZSezpeuAg7" target="_blank" rel="noopener">GOOGLE MAPS</a>
+
+          <a class="map-btn"
+             href="https://yandex.uz/maps/-/CXWG7B7K"
+             target="_blank"
+             rel="noopener noreferrer">
+            YANDEX MAPS
+          </a>
+
+          <a class="map-btn"
+             href="https://maps.app.goo.gl/qbNbSPHZSezpeuAg7"
+             target="_blank"
+             rel="noopener noreferrer">
+            GOOGLE MAPS
+          </a>
+
         </div>
-      </div>
+      </article>
 
     </div>
   </section>
 
-  <!-- YAKUNIY -->
+  <!-- YAKUNIY QISM -->
+
   <section class="closing reveal">
-    <div class="ornament">✧ ❦ ✧</div>
-    <h2>Madina & Aziz</h2>
+
+    <div class="ornament-line">✧ ❦ ✧</div>
+
+    <h2>Abdurashid & Gulnora</h2>
+
     <div class="gold-line"></div>
+
     <p>
       Sizni ushbu unutilmas kunimizda<br>
       intiqlik bilan kutamiz!
     </p>
-    <div class="ornament">✧ ❦ ✧</div>
+
+    <div class="ornament-line">✧ ❦ ✧</div>
+
   </section>
 
   <footer>
-    MADINA & AZIZ · 17.12.2026
+    ABDURASHID & GULNORA · 17.12.2026
   </footer>
 
 </main>
 
 <script>
+/* ELEMENTLAR */
+
 const cover = document.getElementById("cover");
 const invitation = document.getElementById("invitation");
 const openButton = document.getElementById("openButton");
 const music = document.getElementById("weddingMusic");
 const musicButton = document.getElementById("musicButton");
 
-let opened = false;
+let invitationOpened = false;
 
-/* TAKLIFNOMANI OCHISH */
+/* KONVERTNI OCHISH */
+
 openButton.addEventListener("click", () => {
-  if (opened) return;
-  opened = true;
 
-  cover.classList.add("hide");
-  invitation.classList.add("show");
-  musicButton.classList.add("active");
+  if (invitationOpened) return;
 
-  window.scrollTo(0, 0);
+  invitationOpened = true;
 
-  music.volume = 0.8;
+  cover.classList.add("opening");
+  openButton.disabled = true;
 
-  music.play().then(() => {
-    musicButton.classList.add("playing");
-  }).catch(error => {
-    console.log("Musiqa avtomatik ijro etilmadi:", error);
-    musicButton.classList.remove("playing");
-  });
-});
+  // Konvert animatsiyasidan keyin asosiy sahifa ochiladi
 
-/* MUSIQA BOSHQARUVI */
-musicButton.addEventListener("click", () => {
-  if (music.paused) {
+  window.setTimeout(() => {
+
+    invitation.classList.add("show");
+    cover.classList.add("hide");
+
+    musicButton.classList.add("active");
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+    // Musiqa foydalanuvchi bosganidan keyin boshlanadi
+
+    music.volume = 0.65;
+
     music.play().then(() => {
       musicButton.classList.add("playing");
-    }).catch(error => {
-      console.log("Musiqa ijro etilmadi:", error);
+    }).catch(() => {
+      musicButton.classList.remove("playing");
     });
+
+  }, 850);
+
+});
+
+/* MUSIQANI YOQISH VA O'CHIRISH */
+
+musicButton.addEventListener("click", () => {
+
+  if (music.paused) {
+
+    music.play().then(() => {
+      musicButton.classList.add("playing");
+    }).catch(() => {
+      musicButton.classList.remove("playing");
+    });
+
   } else {
+
     music.pause();
     musicButton.classList.remove("playing");
+
   }
+
 });
 
 /* TO'Y SANAGICHI */
-const weddingDate = new Date("2026-12-17T18:00:00+05:00").getTime();
+
+const weddingDate =
+  new Date("2026-12-17T18:00:00+05:00").getTime();
+
+const countdownIds = [
+  "days",
+  "hours",
+  "minutes",
+  "seconds"
+];
 
 function updateCountdown() {
+
   const distance = weddingDate - Date.now();
 
   if (distance <= 0) {
-    ["days","hours","minutes","seconds"].forEach(id => {
+
+    countdownIds.forEach(id => {
       document.getElementById(id).textContent = "00";
     });
+
     return;
   }
 
@@ -965,39 +1401,77 @@ function updateCountdown() {
 
   document.getElementById("seconds").textContent =
     String(Math.floor(distance / 1000) % 60).padStart(2,"0");
+
 }
 
 updateCountdown();
-setInterval(updateCountdown, 1000);
+window.setInterval(updateCountdown, 1000);
 
 /* OLTIN ZARRALAR */
+
 const particles = document.getElementById("particles");
 
-for (let i = 0; i < 28; i++) {
-  const item = document.createElement("span");
+const symbols = ["✧", "·", "❀", "✦", "✿"];
 
-  item.className = "particle";
-  item.textContent = ["✧", "·", "❀", "✦"][i % 4];
-  item.style.left = Math.random() * 100 + "%";
-  item.style.animationDuration = (10 + Math.random() * 10) + "s";
-  item.style.animationDelay = (Math.random() * 12) + "s";
-  item.style.fontSize = (9 + Math.random() * 14) + "px";
+for (let i = 0; i < 32; i++) {
 
-  particles.appendChild(item);
+  const particle = document.createElement("span");
+
+  particle.className = "particle";
+
+  particle.textContent =
+    symbols[i % symbols.length];
+
+  particle.style.left =
+    Math.random() * 100 + "%";
+
+  particle.style.animationDuration =
+    (11 + Math.random() * 11) + "s";
+
+  particle.style.animationDelay =
+    (Math.random() * 15) + "s";
+
+  particle.style.fontSize =
+    (9 + Math.random() * 13) + "px";
+
+  particles.appendChild(particle);
+
 }
 
-/* SCROLLDA SEKIN OCHILISH */
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-    }
-  });
-}, { threshold: 0.12 });
+/* SCROLL ANIMATSIYASI */
 
-document.querySelectorAll(".reveal").forEach(element => {
-  observer.observe(element);
-});
+if ("IntersectionObserver" in window) {
+
+  const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+
+        entry.target.classList.add("visible");
+
+        observer.unobserve(entry.target);
+
+      }
+
+    });
+
+  }, {
+    threshold: 0.12
+  });
+
+  document.querySelectorAll(".reveal").forEach(section => {
+    observer.observe(section);
+  });
+
+} else {
+
+  document.querySelectorAll(".reveal").forEach(section => {
+    section.classList.add("visible");
+  });
+
+}
+
 </script>
 
 </body>
