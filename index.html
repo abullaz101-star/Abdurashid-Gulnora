@@ -4,191 +4,525 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Madina & Aziz — To‘y taklifnomasi</title>
+<title>Madina & Aziz | Wedding Invitation</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+:root {
+  --ivory: #f8f5ed;
+  --cream: #fffdf8;
+  --gold: #b99a5b;
+  --dark-gold: #92733d;
+  --text: #65533b;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html { scroll-behavior: smooth; }
+
 body {
-  background: #f8f5ee;
-  color: #5c4a32;
+  background: var(--ivory);
+  color: var(--text);
   font-family: 'Montserrat', sans-serif;
-  text-align: center;
+  overflow-x: hidden;
 }
 
-.container {
-  max-width: 650px;
-  margin: 30px auto;
-  padding: 45px 25px;
-  background: #fffdf8;
-  border: 1px solid #d6bd83;
-  box-shadow: 0 10px 40px #8b754022;
-  position: relative;
-  overflow: hidden;
+button { font: inherit; }
+
+/* DECORATIONS */
+
+.gold-line {
+  width: 75px;
+  height: 1px;
+  background: var(--gold);
+  margin: 24px auto;
 }
 
-.container::before {
-  content: "";
-  position: absolute;
-  inset: 10px;
-  border: 1px solid #dfcda4;
+.ornament {
+  color: var(--gold);
+  letter-spacing: 8px;
+  font-size: 17px;
+}
+
+/* FIRST PAGE */
+
+.cover {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background:
+    radial-gradient(ellipse at center, #fffdf9 0%, #f1e8d6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+.cover.hidden {
+  opacity: 0;
+  visibility: hidden;
   pointer-events: none;
 }
 
-.top {
-  color: #a8894e;
+.cover-frame {
+  width: 100%;
+  max-width: 520px;
+  min-height: 690px;
+  max-height: 90vh;
+  position: relative;
+  border: 1px solid #c9ad73;
+  outline: 1px solid #dfcda7;
+  outline-offset: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 35px 22px;
+  background:
+    linear-gradient(145deg, #fffefa, #f8f1e3);
+  box-shadow: 0 20px 70px #79643b25;
+  overflow: hidden;
+}
+
+.cover-frame::before,
+.cover-frame::after {
+  content: "✧";
+  position: absolute;
+  color: var(--gold);
+  font-size: 42px;
+}
+
+.cover-frame::before {
+  top: 18px;
+  left: 20px;
+}
+
+.cover-frame::after {
+  bottom: 18px;
+  right: 20px;
+}
+
+.cover-small {
+  font-size: 10px;
   letter-spacing: 5px;
-  font-size: 11px;
-  margin-bottom: 25px;
+  color: var(--dark-gold);
+  margin-bottom: 35px;
 }
 
-h1 {
+.cover-names {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(48px, 10vw, 72px);
-  font-weight: 500;
-  color: #a8894e;
-  line-height: 1.1;
+  font-size: clamp(48px, 12vw, 75px);
+  color: var(--dark-gold);
+  line-height: .95;
 }
 
-.amp {
-  font-size: 38px;
+.cover-amp {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px;
+  color: var(--gold);
+  margin: 13px 0;
+}
+
+.cover-date {
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin-top: 30px;
+  color: var(--text);
+}
+
+.envelope {
+  margin: 45px auto 25px;
+  width: 180px;
+  height: 110px;
+  position: relative;
+  background: #e8d8b7;
+  border: 1px solid #c4a66b;
+  box-shadow: 0 10px 25px #8c70422b;
+  animation: float 3s ease-in-out infinite;
+}
+
+.envelope::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, #f5ead3, #d9c397);
+  clip-path: polygon(0 0, 100% 0, 50% 58%);
+  border-bottom: 1px solid #b99a5b;
+  transform-origin: top;
+  transition: transform .8s ease;
+  z-index: 2;
+}
+
+.envelope.opening::before {
+  transform: rotateX(180deg);
+}
+
+.envelope::after {
+  content: "M ♡ A";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 25px;
+  color: var(--dark-gold);
+  background: #efe3cc;
+}
+
+.open-button {
+  border: 1px solid var(--gold);
+  background: linear-gradient(135deg, #c6aa70, #a98a4e);
+  color: white;
+  padding: 15px 30px;
+  letter-spacing: 2px;
+  font-size: 10px;
+  cursor: pointer;
+  transition: .3s;
+  box-shadow: 0 7px 20px #9a7c432c;
+}
+
+.open-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px #9a7c4340;
+}
+
+.tap-hint {
+  margin-top: 15px;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #a28b60;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
+}
+
+/* MAIN INVITATION */
+
+#invitation {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(35px);
+  transition: opacity 1.2s ease, transform 1.2s ease,
+              visibility 1.2s ease;
+}
+
+#invitation.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.hero {
+  min-height: 100vh;
+  padding: 90px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  background:
+    radial-gradient(ellipse at center, #fffefa 0%, #f2eadb 100%);
+}
+
+.hero::before {
+  content: "✧";
+  position: absolute;
+  top: 50px;
+  left: 10%;
   color: #c5a96b;
+  font-size: 35px;
+  animation: sparkle 4s infinite;
 }
 
-.subtitle {
-  margin-top: 25px;
+.hero::after {
+  content: "✧";
+  position: absolute;
+  bottom: 55px;
+  right: 10%;
+  color: #c5a96b;
+  font-size: 35px;
+  animation: sparkle 4s infinite 1s;
+}
+
+@keyframes sparkle {
+  0%,100% { opacity: .3; transform: rotate(0) scale(.8); }
+  50% { opacity: 1; transform: rotate(90deg) scale(1.2); }
+}
+
+.hero-inner {
+  width: 100%;
+  max-width: 700px;
+  border: 1px solid #cbb27d;
+  outline: 1px solid #dfcda7;
+  outline-offset: 9px;
+  padding: 70px 20px;
+  background: #fffdf88c;
+  animation: rise 1.5s ease both;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(35px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.eyebrow {
+  letter-spacing: 5px;
+  font-size: 10px;
+  color: var(--dark-gold);
+  margin-bottom: 35px;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(60px, 13vw, 105px);
+  font-weight: 400;
+  line-height: .85;
+  color: var(--dark-gold);
+}
+
+.hero .amp {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 50px;
+  color: var(--gold);
+  margin: 20px 0;
+}
+
+.hero-message {
   font-family: 'Cormorant Garamond', serif;
   font-size: 25px;
   line-height: 1.5;
+  margin-top: 32px;
 }
 
-.date {
-  margin: 30px 0;
-  padding: 20px 10px;
-  border-top: 1px solid #d6bd83;
-  border-bottom: 1px solid #d6bd83;
-}
-
-.date h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 34px;
-  color: #a8894e;
-  font-weight: 500;
-}
-
-.date p {
-  margin-top: 8px;
+.hero-date {
+  font-size: 12px;
   letter-spacing: 3px;
-  font-size: 13px;
+  margin-top: 35px;
 }
+
+.scroll-note {
+  margin-top: 45px;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--dark-gold);
+}
+
+/* CONTENT SECTIONS */
 
 .section {
-  margin: 35px 0;
+  padding: 85px 20px;
+  text-align: center;
 }
 
-.section h3 {
+.section-inner {
+  max-width: 700px;
+  margin: auto;
+}
+
+.section-label {
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: var(--dark-gold);
+}
+
+.section-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 27px;
-  color: #a8894e;
-  margin-bottom: 10px;
+  font-size: clamp(37px, 8vw, 55px);
+  color: var(--dark-gold);
+  font-weight: 500;
+  margin-top: 15px;
 }
 
-.section p {
+.description {
+  max-width: 480px;
+  margin: 20px auto;
   font-size: 13px;
-  line-height: 1.8;
+  line-height: 2;
+  color: #77664e;
 }
 
 .countdown {
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin: 25px 0;
+  flex-wrap: wrap;
+  margin: 35px 0;
 }
 
-.countdown div {
-  background: #f4eddf;
-  border: 1px solid #dfcda4;
-  padding: 13px 10px;
-  min-width: 65px;
+.count-box {
+  min-width: 76px;
+  padding: 18px 10px;
+  border: 1px solid #d7c397;
+  background: #fffdf8;
 }
 
-.countdown strong {
+.count-box strong {
   display: block;
-  font-size: 23px;
-  color: #a8894e;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 35px;
+  color: var(--dark-gold);
+  font-weight: 500;
 }
 
-.countdown span {
+.count-box span {
   font-size: 9px;
   letter-spacing: 1px;
 }
 
-.map-button {
-  display: block;
-  max-width: 320px;
-  margin: 10px auto;
-  padding: 13px 15px;
-  border: 1px solid #b89b60;
-  color: #8b713e;
-  text-decoration: none;
+/* LOCATION CARDS */
+
+.locations {
+  background: #f0e9dc;
+}
+
+.location-card {
+  max-width: 520px;
+  margin: 25px auto;
+  padding: 35px 20px;
+  background: #fffdf8;
+  border: 1px solid #d7c397;
+  box-shadow: 0 10px 30px #88744a12;
+  transition: transform .4s, box-shadow .4s;
+}
+
+.location-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px #88744a24;
+}
+
+.location-icon {
+  font-size: 27px;
+  color: var(--gold);
+  margin-bottom: 15px;
+}
+
+.location-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  font-weight: 500;
+  color: var(--dark-gold);
+}
+
+.location-card p {
   font-size: 12px;
+  line-height: 2;
+  margin-top: 8px;
+}
+
+.map-links {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+
+.map-button {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 16px;
+  border: 1px solid var(--gold);
+  color: var(--dark-gold);
+  font-size: 10px;
   letter-spacing: 1px;
   transition: .3s;
 }
 
 .map-button:hover {
-  background: #b89b60;
+  background: var(--gold);
   color: white;
 }
 
-.gold-line {
-  width: 80px;
-  height: 1px;
-  background: #c5a96b;
-  margin: 25px auto;
-}
+/* FOOTER */
 
 .footer {
-  margin-top: 40px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 23px;
-  color: #a8894e;
+  padding: 90px 20px;
+  text-align: center;
+  background: #f7f1e6;
 }
 
-.music-button {
+.footer h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 43px;
+  color: var(--dark-gold);
+  font-weight: 400;
+}
+
+.footer p {
+  margin-top: 15px;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+/* MUSIC CONTROL */
+
+.music-control {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  border: none;
-  border-radius: 50%;
+  z-index: 50;
+  bottom: 22px;
+  right: 22px;
   width: 52px;
   height: 52px;
-  background: #b89b60;
+  border-radius: 50%;
+  border: 1px solid #d3bc89;
+  background: #b99a5b;
   color: white;
-  font-size: 21px;
+  font-size: 20px;
   cursor: pointer;
-  box-shadow: 0 4px 15px #0002;
+  box-shadow: 0 5px 20px #0002;
+  display: none;
+}
+
+.music-control.active {
+  display: block;
+}
+
+.music-control.playing {
+  animation: musicPulse 2s infinite;
+}
+
+@keyframes musicPulse {
+  0%,100% { box-shadow: 0 0 0 0 #b99a5b55; }
+  50% { box-shadow: 0 0 0 10px #b99a5b00; }
+}
+
+/* REVEAL ANIMATION */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media(max-width: 480px) {
-  .container {
-    margin: 10px;
-    padding: 40px 18px;
-  }
+  .cover-frame { min-height: 570px; }
+  .hero-inner { padding: 60px 12px; }
+  .section { padding: 65px 16px; }
+  .countdown { gap: 6px; }
+  .count-box { min-width: 65px; }
+  .map-links { flex-direction: column; }
+  .map-button { width: 100%; }
+}
 
-  .countdown {
-    gap: 6px;
-  }
-
-  .countdown div {
-    min-width: 58px;
-    padding: 10px 5px;
+@media(prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 </style>
@@ -196,143 +530,303 @@ h1 {
 
 <body>
 
-<div class="container">
+<!-- FIRST PAGE / COVER -->
 
-  <div class="top">WEDDING INVITATION</div>
+<div class="cover" id="cover">
+  <div class="cover-frame">
 
-  <h1>Madina</h1>
-  <div class="amp">&</div>
-  <h1>Aziz</h1>
+    <div class="cover-small">YOU ARE INVITED</div>
 
-  <div class="gold-line"></div>
+    <div class="cover-names">Madina</div>
+    <div class="cover-amp">&</div>
+    <div class="cover-names">Aziz</div>
 
-  <div class="subtitle">
-    Hayotimizning eng go‘zal kunida<br>
-    sizni yonimizda ko‘rishdan mamnun bo‘lamiz!
+    <div class="ornament">✧ ❦ ✧</div>
+
+    <div class="cover-date">17 DEKABR 2026</div>
+
+    <div class="envelope" id="envelope"></div>
+
+    <button class="open-button" id="openButton">
+      TAKLIFNOMANI OCHISH
+    </button>
+
+    <div class="tap-hint">BIZNING BAXTLI KUNIMIZGA MARHAMAT</div>
+
   </div>
-
-  <div class="date">
-    <h2>17 Dekabr 2026</h2>
-    <p>PAYSHANBA · SOAT 18:00</p>
-  </div>
-
-  <div class="section">
-    <h3>To‘yimizga qancha vaqt qoldi?</h3>
-    <div class="countdown">
-      <div><strong id="days">00</strong><span>KUN</span></div>
-      <div><strong id="hours">00</strong><span>SOAT</span></div>
-      <div><strong id="minutes">00</strong><span>DAQIQA</span></div>
-      <div><strong id="seconds">00</strong><span>SONIYA</span></div>
-    </div>
-  </div>
-
-  <div class="gold-line"></div>
-
-  <div class="section">
-    <h3>Kuyov xonadoni</h3>
-    <p>Azizning xonadoniga tashrif vaqti</p>
-    <p><strong>Soat 12:00</strong></p>
-
-    <a class="map-button"
-       href="https://yandex.uz/maps/-/CXWGvI2W"
-       target="_blank">Yandex Maps orqali ko‘rish</a>
-
-    <a class="map-button"
-       href="https://maps.app.goo.gl/RoAdJfmXVFVkLLAn9"
-       target="_blank">Google Maps orqali ko‘rish</a>
-  </div>
-
-  <div class="gold-line"></div>
-
-  <div class="section">
-    <h3>Kelin xonadoni</h3>
-    <p>Madinaning xonadoniga tashrif vaqti</p>
-    <p><strong>Soat 13:00</strong></p>
-
-    <a class="map-button"
-       href="https://yandex.uz/maps/-/CXWGzFia"
-       target="_blank">Yandex Maps orqali ko‘rish</a>
-
-    <a class="map-button"
-       href="https://maps.app.goo.gl/5Pgzz1mfiVYKzGEv9"
-       target="_blank">Google Maps orqali ko‘rish</a>
-  </div>
-
-  <div class="gold-line"></div>
-
-  <div class="section">
-    <h3>To‘y marosimi</h3>
-    <p><strong>Versal</strong></p>
-    <p>17-dekabr, soat 18:00</p>
-
-    <a class="map-button"
-       href="https://yandex.uz/maps/-/CXWG7B7K"
-       target="_blank">Yandex Maps orqali ko‘rish</a>
-
-    <a class="map-button"
-       href="https://maps.app.goo.gl/qbNbSPHZSezpeuAg7"
-       target="_blank">Google Maps orqali ko‘rish</a>
-  </div>
-
-  <div class="gold-line"></div>
-
-  <div class="footer">
-    Sizni intiqlik bilan kutamiz! ♡
-  </div>
-
 </div>
 
-<audio id="music" loop>
+<!-- MUSIC FILE -->
+
+<audio id="weddingMusic" loop preload="auto">
   <source src="assets/music.mp3" type="audio/mpeg">
 </audio>
 
-<button class="music-button" onclick="toggleMusic()" id="musicBtn">
+<!-- MUSIC BUTTON -->
+
+<button class="music-control" id="musicButton" aria-label="Musiqani boshqarish">
   ♫
 </button>
 
+<!-- MAIN INVITATION -->
+
+<main id="invitation">
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="hero-inner">
+
+      <div class="eyebrow">BIZNING TO‘YIMIZGA TAKLIFNOMA</div>
+
+      <h1>Madina</h1>
+      <div class="amp">&</div>
+      <h1>Aziz</h1>
+
+      <div class="gold-line"></div>
+
+      <div class="hero-message">
+        Hayotimizning eng go‘zal sahifasi boshlanayotgan
+        ushbu quvonchli kunimizda sizni aziz mehmonimiz
+        sifatida kutib qolamiz.
+      </div>
+
+      <div class="hero-date">
+        17 DEKABR 2026 · SOAT 18:00
+      </div>
+
+      <div class="scroll-note">↓ &nbsp; PASTGA TUSHING &nbsp; ↓</div>
+
+    </div>
+  </section>
+
+  <!-- COUNTDOWN -->
+
+  <section class="section">
+    <div class="section-inner reveal">
+
+      <div class="section-label">BAXTLI KUNIMIZGACHA</div>
+
+      <h2 class="section-title">Sanoq boshlandi...</h2>
+
+      <p class="description">
+        Ushbu unutilmas kunni siz bilan birgalikda
+        nishonlashni intiqlik bilan kutamiz.
+      </p>
+
+      <div class="countdown" id="countdown">
+        <div class="count-box">
+          <strong id="days">00</strong>
+          <span>KUN</span>
+        </div>
+        <div class="count-box">
+          <strong id="hours">00</strong>
+          <span>SOAT</span>
+        </div>
+        <div class="count-box">
+          <strong id="minutes">00</strong>
+          <span>DAQIQA</span>
+        </div>
+        <div class="count-box">
+          <strong id="seconds">00</strong>
+          <span>SONIYA</span>
+        </div>
+      </div>
+
+      <div class="ornament">✧ ❦ ✧</div>
+    </div>
+  </section>
+
+  <!-- LOCATIONS -->
+
+  <section class="section locations">
+    <div class="section-inner">
+
+      <div class="section-label reveal">MANZILLARIMIZ</div>
+      <h2 class="section-title reveal">Sizni kutamiz</h2>
+
+      <!-- GROOM HOME -->
+
+      <div class="location-card reveal">
+        <div class="location-icon">♔</div>
+        <h3>Kuyov xonadoni</h3>
+        <p>
+          Azizning xonadoniga tashrif<br>
+          <strong>Soat 12:00</strong>
+        </p>
+
+        <div class="map-links">
+          <a class="map-button"
+             href="https://yandex.uz/maps/-/CXWGvI2W"
+             target="_blank" rel="noopener">
+            YANDEX MAPS
+          </a>
+
+          <a class="map-button"
+             href="https://maps.app.goo.gl/RoAdJfmXVFVkLLAn9"
+             target="_blank" rel="noopener">
+            GOOGLE MAPS
+          </a>
+        </div>
+      </div>
+
+      <!-- BRIDE HOME -->
+
+      <div class="location-card reveal">
+        <div class="location-icon">❀</div>
+        <h3>Kelin xonadoni</h3>
+        <p>
+          Madinaning xonadoniga tashrif<br>
+          <strong>Soat 13:00</strong>
+        </p>
+
+        <div class="map-links">
+          <a class="map-button"
+             href="https://yandex.uz/maps/-/CXWGzFia"
+             target="_blank" rel="noopener">
+            YANDEX MAPS
+          </a>
+
+          <a class="map-button"
+             href="https://maps.app.goo.gl/5Pgzz1mfiVYKzGEv9"
+             target="_blank" rel="noopener">
+            GOOGLE MAPS
+          </a>
+        </div>
+      </div>
+
+      <!-- WEDDING HALL -->
+
+      <div class="location-card reveal">
+        <div class="location-icon">✧</div>
+        <h3>To‘y marosimi</h3>
+        <p>
+          <strong>Versal</strong><br>
+          17-dekabr · Soat 18:00
+        </p>
+
+        <div class="map-links">
+          <a class="map-button"
+             href="https://yandex.uz/maps/-/CXWG7B7K"
+             target="_blank" rel="noopener">
+            YANDEX MAPS
+          </a>
+
+          <a class="map-button"
+             href="https://maps.app.goo.gl/qbNbSPHZSezpeuAg7"
+             target="_blank" rel="noopener">
+            GOOGLE MAPS
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer class="footer reveal">
+    <div class="ornament">✧ ❦ ✧</div>
+    <h2>Madina & Aziz</h2>
+    <div class="gold-line"></div>
+    <p>SIZNI INTIQlik BILAN KUTAMIZ!</p>
+    <p>17 · 12 · 2026</p>
+  </footer>
+
+</main>
+
 <script>
+const cover = document.getElementById("cover");
+const envelope = document.getElementById("envelope");
+const openButton = document.getElementById("openButton");
+const invitation = document.getElementById("invitation");
+const music = document.getElementById("weddingMusic");
+const musicButton = document.getElementById("musicButton");
+
+let opened = false;
+
+openButton.addEventListener("click", async () => {
+  if (opened) return;
+  opened = true;
+
+  openButton.disabled = true;
+  envelope.classList.add("opening");
+
+  // Musiqa mehmon bosgan paytda ishga tushadi
+  try {
+    await music.play();
+    musicButton.classList.add("playing");
+  } catch (error) {
+    console.log("Musiqani ishga tushirish uchun qayta bosish kerak.");
+  }
+
+  musicButton.classList.add("active");
+
+  // Konvert animatsiyasi
+  setTimeout(() => {
+    cover.classList.add("hidden");
+    invitation.classList.add("show");
+    document.body.style.overflowY = "auto";
+  }, 900);
+});
+
+// Music on/off
+musicButton.addEventListener("click", async () => {
+  if (music.paused) {
+    try {
+      await music.play();
+      musicButton.classList.add("playing");
+    } catch (error) {
+      console.log(error);
+    }
+  } else {
+    music.pause();
+    musicButton.classList.remove("playing");
+  }
+});
+
+// Countdown
 const weddingDate = new Date("2026-12-17T18:00:00+05:00").getTime();
 
 function updateCountdown() {
-  const now = new Date().getTime();
+  const now = Date.now();
   const distance = weddingDate - now;
 
   if (distance <= 0) {
-    document.querySelector(".countdown").innerHTML =
-      "<h3>Bugun bizning baxtli kunimiz! ♡</h3>";
+    document.getElementById("countdown").innerHTML =
+      "<h2 class='section-title'>Bugun bizning baxtli kunimiz! ♡</h2>";
     return;
   }
 
   document.getElementById("days").textContent =
-    Math.floor(distance / (1000 * 60 * 60 * 24));
+    Math.floor(distance / 86400000);
 
   document.getElementById("hours").textContent =
-    Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    Math.floor((distance % 86400000) / 3600000);
 
   document.getElementById("minutes").textContent =
-    Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    Math.floor((distance % 3600000) / 60000);
 
   document.getElementById("seconds").textContent =
-    Math.floor((distance % (1000 * 60)) / 1000);
+    Math.floor((distance % 60000) / 1000);
 }
 
-setInterval(updateCountdown, 1000);
 updateCountdown();
+setInterval(updateCountdown, 1000);
 
-const music = document.getElementById("music");
+// Scroll reveal
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
 
-function toggleMusic() {
-  if (music.paused) {
-    music.play().then(() => {
-      document.getElementById("musicBtn").textContent = "Ⅱ";
-    }).catch(() => {
-      alert("Musiqa faylini tekshiring.");
-    });
-  } else {
-    music.pause();
-    document.getElementById("musicBtn").textContent = "♫";
-  }
-}
+document.querySelectorAll(".reveal").forEach(element => {
+  observer.observe(element);
+});
 </script>
 
 </body>
