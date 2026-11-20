@@ -2,867 +2,759 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#f8f3e8">
-<title>Madina & Aziz | To‘y taklifnomasi</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --ivory: #faf7f0;
-  --cream: #fffdf8;
-  --gold: #b99a5b;
-  --dark-gold: #92733d;
-  --text: #65533b;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: var(--ivory);
-  color: var(--text);
-  font-family: 'Montserrat', sans-serif;
-  overflow-x: hidden;
-}
-
-button {
-  font: inherit;
-}
-
-/* COVER */
-
-.cover {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 25px;
-  background:
-    radial-gradient(circle at center, #fffefa 0%, #eee2ca 100%);
-  transition: opacity 1s ease, visibility 1s ease;
-}
-
-.cover.hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.cover-frame {
-  width: 100%;
-  max-width: 500px;
-  min-height: 650px;
-  max-height: 90vh;
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 35px 20px;
-  text-align: center;
-  background: linear-gradient(145deg, #fffefa, #f7eedf);
-  border: 1px solid #c9ad73;
-  outline: 1px solid #dfcda7;
-  outline-offset: 7px;
-  box-shadow: 0 20px 70px #79643b25;
-}
-
-.cover-frame::before,
-.cover-frame::after {
-  content: "✧";
-  position: absolute;
-  color: var(--gold);
-  font-size: 40px;
-}
-
-.cover-frame::before {
-  top: 18px;
-  left: 20px;
-}
-
-.cover-frame::after {
-  bottom: 18px;
-  right: 20px;
-}
-
-.cover-small {
-  font-size: 10px;
-  letter-spacing: 5px;
-  color: var(--dark-gold);
-  margin-bottom: 30px;
-}
-
-.cover-names {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(48px, 12vw, 76px);
-  line-height: .9;
-  color: var(--dark-gold);
-}
-
-.cover-amp {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 42px;
-  color: var(--gold);
-  margin: 12px 0;
-}
-
-.cover-date {
-  margin-top: 25px;
-  font-size: 12px;
-  letter-spacing: 3px;
-}
-
-.ornament {
-  color: var(--gold);
-  letter-spacing: 8px;
-  font-size: 20px;
-  margin-top: 20px;
-}
-
-/* ENVELOPE */
-
-.envelope {
-  position: relative;
-  width: 180px;
-  height: 110px;
-  margin: 35px auto 28px;
-  background: #e8d8b7;
-  border: 1px solid #c4a66b;
-  box-shadow: 0 10px 25px #8c70422b;
-  animation: float 3s ease-in-out infinite;
-}
-
-.envelope::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  background: linear-gradient(145deg, #f5ead3, #d9c397);
-  clip-path: polygon(0 0, 100% 0, 50% 58%);
-  transform-origin: top;
-  transition: transform .8s ease;
-}
-
-.envelope.opening::before {
-  transform: rotateX(180deg);
-}
-
-.envelope::after {
-  content: "M ♡ A";
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 25px;
-  color: var(--dark-gold);
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-9px); }
-}
-
-.open-button {
-  border: 1px solid var(--gold);
-  background: linear-gradient(135deg, #c6aa70, #a98a4e);
-  color: white;
-  padding: 16px 30px;
-  letter-spacing: 2px;
-  font-size: 11px;
-  cursor: pointer;
-  box-shadow: 0 7px 20px #9a7c432c;
-  transition: .3s;
-}
-
-.open-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 25px #9a7c4340;
-}
-
-.open-button:disabled {
-  opacity: .7;
-  cursor: wait;
-}
-
-.tap-hint {
-  margin-top: 16px;
-  font-size: 9px;
-  letter-spacing: 2px;
-  color: #a28b60;
-}
-
-/* MAIN INVITATION */
-
-#invitation {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(25px);
-  transition: opacity 1s ease, transform 1s ease, visibility 1s ease;
-}
-
-#invitation.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.hero {
-  min-height: 100vh;
-  padding: 80px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: radial-gradient(ellipse at center, #fffefa, #f0e7d7);
-  position: relative;
-}
-
-.hero-inner {
-  width: 100%;
-  max-width: 700px;
-  padding: 65px 20px;
-  border: 1px solid #cbb27d;
-  outline: 1px solid #dfcda7;
-  outline-offset: 8px;
-  background: #fffdf88c;
-  animation: rise 1.5s ease both;
-}
-
-@keyframes rise {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.eyebrow {
-  letter-spacing: 4px;
-  font-size: 10px;
-  color: var(--dark-gold);
-  margin-bottom: 30px;
-}
-
-.hero h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(60px, 13vw, 105px);
-  font-weight: 400;
-  line-height: .85;
-  color: var(--dark-gold);
-}
-
-.hero .amp {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 48px;
-  color: var(--gold);
-  margin: 20px 0;
-}
-
-.gold-line {
-  width: 75px;
-  height: 1px;
-  background: var(--gold);
-  margin: 25px auto;
-}
-
-.hero-message {
-  max-width: 480px;
-  margin: 25px auto;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 25px;
-  line-height: 1.5;
-}
-
-.hero-date {
-  font-size: 12px;
-  letter-spacing: 3px;
-  margin-top: 30px;
-}
-
-.scroll-note {
-  margin-top: 45px;
-  font-size: 10px;
-  letter-spacing: 3px;
-  color: var(--dark-gold);
-}
-
-/* SECTIONS */
-
-.section {
-  padding: 85px 20px;
-  text-align: center;
-}
-
-.section-inner {
-  max-width: 700px;
-  margin: auto;
-}
-
-.section-label {
-  font-size: 10px;
-  letter-spacing: 4px;
-  color: var(--dark-gold);
-}
-
-.section-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(37px, 8vw, 55px);
-  color: var(--dark-gold);
-  font-weight: 500;
-  margin-top: 15px;
-}
-
-.description {
-  max-width: 480px;
-  margin: 20px auto;
-  font-size: 13px;
-  line-height: 2;
-  color: #77664e;
-}
-
-/* COUNTDOWN */
-
-.countdown {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin: 35px 0;
-}
-
-.count-box {
-  min-width: 76px;
-  padding: 18px 10px;
-  border: 1px solid #d7c397;
-  background: #fffdf8;
-}
-
-.count-box strong {
-  display: block;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 35px;
-  color: var(--dark-gold);
-  font-weight: 500;
-}
-
-.count-box span {
-  font-size: 9px;
-  letter-spacing: 1px;
-}
-
-/* LOCATIONS */
-
-.locations {
-  background: #f0e9dc;
-}
-
-.location-card {
-  max-width: 520px;
-  margin: 25px auto;
-  padding: 35px 20px;
-  background: #fffdf8;
-  border: 1px solid #d7c397;
-  box-shadow: 0 10px 30px #88744a12;
-  transition: transform .4s, box-shadow .4s;
-}
-
-.location-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px #88744a24;
-}
-
-.location-icon {
-  font-size: 30px;
-  color: var(--gold);
-  margin-bottom: 15px;
-}
-
-.location-card h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 35px;
-  font-weight: 500;
-  color: var(--dark-gold);
-}
-
-.location-card p {
-  font-size: 12px;
-  line-height: 2;
-  margin-top: 8px;
-}
-
-.map-links {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 22px;
-}
-
-.map-button {
-  display: inline-block;
-  text-decoration: none;
-  padding: 13px 18px;
-  border: 1px solid var(--gold);
-  color: var(--dark-gold);
-  font-size: 10px;
-  letter-spacing: 1px;
-  transition: .3s;
-}
-
-.map-button:hover {
-  background: var(--gold);
-  color: white;
-}
-
-/* FOOTER */
-
-.footer {
-  padding: 85px 20px;
-  text-align: center;
-  background: #f7f1e6;
-}
-
-.footer h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 45px;
-  color: var(--dark-gold);
-  font-weight: 400;
-}
-
-.footer p {
-  margin-top: 15px;
-  font-size: 11px;
-  letter-spacing: 2px;
-}
-
-/* MUSIC BUTTON */
-
-.music-control {
-  position: fixed;
-  z-index: 900;
-  bottom: 22px;
-  right: 22px;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  border: 1px solid #d3bc89;
-  background: #b99a5b;
-  color: white;
-  font-size: 22px;
-  cursor: pointer;
-  box-shadow: 0 5px 20px #0002;
-  display: none;
-}
-
-.music-control.active {
-  display: block;
-}
-
-.music-control.playing {
-  animation: musicPulse 2s infinite;
-}
-
-@keyframes musicPulse {
-  0%, 100% { box-shadow: 0 0 0 0 #b99a5b55; }
-  50% { box-shadow: 0 0 0 10px #b99a5b00; }
-}
-
-/* SCROLL ANIMATION */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media(max-width: 480px) {
-  .cover-frame { min-height: 560px; }
-  .hero-inner { padding: 55px 12px; }
-  .section { padding: 65px 16px; }
-  .countdown { gap: 6px; }
-  .count-box { min-width: 65px; }
-  .map-links { flex-direction: column; }
-  .map-button { width: 100%; }
-}
-
-@media(prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: .01ms !important;
-    transition-duration: .01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f4eb">
+  <title>Madina & Aziz | To‘y taklifnomasi</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f8f4eb;
+      color: #514536;
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    .gold {
+      color: #ae8950;
+    }
+
+    /* MUQOVA */
+
+    .cover {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background:
+        radial-gradient(circle at center, rgba(255,255,255,.95), transparent 65%),
+        #f4eee2;
+      transition: opacity 1s ease, visibility 1s ease;
+    }
+
+    .cover.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .cover-card {
+      position: relative;
+      width: 100%;
+      max-width: 440px;
+      min-height: 570px;
+      padding: 55px 25px;
+      border: 1px solid #c9a66c;
+      outline: 1px solid rgba(174,137,80,.35);
+      outline-offset: 8px;
+      background: rgba(255,255,255,.55);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 15px 50px rgba(90,70,40,.08);
+    }
+
+    .cover-card::before,
+    .cover-card::after {
+      content: "✦";
+      position: absolute;
+      color: #b28c52;
+      font-size: 25px;
+    }
+
+    .cover-card::before {
+      top: 18px;
+      left: 20px;
+    }
+
+    .cover-card::after {
+      right: 20px;
+      bottom: 18px;
+    }
+
+    .small-text {
+      color: #9d8056;
+      font-size: 10px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+
+    .cover-names {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(42px, 10vw, 60px);
+      font-weight: 400;
+      color: #9a7748;
+      line-height: 1.2;
+    }
+
+    .cover-and {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 38px;
+      color: #b99a6a;
+      margin: 5px 0;
+      font-style: italic;
+    }
+
+    .cover-date {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      margin-top: 30px;
+      color: #806844;
+      letter-spacing: 3px;
+    }
+
+    .envelope {
+      font-size: 50px;
+      margin: 35px 0 25px;
+      animation: float 2s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-9px); }
+    }
+
+    .open-button {
+      border: 1px solid #ad8953;
+      background: #ad8953;
+      color: white;
+      padding: 15px 28px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .open-button:hover {
+      background: transparent;
+      color: #947343;
+    }
+
+    /* ASOSIY TAKLIFNOMA */
+
+    .invitation {
+      display: none;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .invitation.show {
+      display: block;
+      opacity: 1;
+    }
+
+    .hero {
+      min-height: 100vh;
+      padding: 80px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      background:
+        linear-gradient(rgba(248,244,235,.80), rgba(248,244,235,.90)),
+        radial-gradient(circle at center, #fff 0%, #eee3d1 100%);
+    }
+
+    .hero-content {
+      width: 100%;
+      max-width: 650px;
+      padding: 45px 20px;
+      border-top: 1px solid #c9a66c;
+      border-bottom: 1px solid #c9a66c;
+    }
+
+    .hero-label {
+      font-size: 11px;
+      letter-spacing: 5px;
+      color: #9e8056;
+      margin-bottom: 35px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(45px, 10vw, 78px);
+      font-weight: 400;
+      line-height: 1.15;
+      color: #927044;
+    }
+
+    .hero .and {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 40px;
+      font-style: italic;
+      color: #bd9b68;
+      margin: 8px 0;
+    }
+
+    .hero-description {
+      max-width: 440px;
+      margin: 35px auto 25px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 23px;
+      line-height: 1.6;
+      color: #76664f;
+    }
+
+    .date-big {
+      font-family: 'Playfair Display', serif;
+      font-size: 27px;
+      color: #a17e4c;
+      margin-top: 25px;
+    }
+
+    .time {
+      margin-top: 12px;
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: #8d7859;
+    }
+
+    /* UMUMIY SECTION */
+
+    .section {
+      padding: 85px 20px;
+      text-align: center;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 7vw, 42px);
+      font-weight: 400;
+      color: #99784c;
+      margin-bottom: 15px;
+    }
+
+    .section-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 21px;
+      color: #82735e;
+      margin-bottom: 35px;
+    }
+
+    .ornament {
+      color: #b79664;
+      font-size: 24px;
+      margin: 20px 0;
+    }
+
+    /* SANAGICH */
+
+    .countdown-section {
+      background: #eee5d6;
+      padding: 70px 15px;
+      text-align: center;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .count-box {
+      min-width: 72px;
+      padding: 18px 10px;
+      border: 1px solid #c6a875;
+      background: rgba(255,255,255,.4);
+    }
+
+    .count-number {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      color: #987648;
+    }
+
+    .count-label {
+      font-size: 9px;
+      letter-spacing: 1px;
+      color: #8b795d;
+      margin-top: 8px;
+    }
+
+    /* MANZILLAR */
+
+    .addresses {
+      background: #faf7f0;
+    }
+
+    .address-container {
+      max-width: 950px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+    }
+
+    .address-card {
+      padding: 35px 22px;
+      background: #fffdf9;
+      border: 1px solid #d4bd95;
+      box-shadow: 0 8px 25px rgba(90,70,40,.05);
+      transition: transform .3s;
+    }
+
+    .address-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .address-icon {
+      font-size: 34px;
+      margin-bottom: 18px;
+    }
+
+    .address-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 25px;
+      font-weight: 400;
+      color: #987648;
+      margin-bottom: 12px;
+    }
+
+    .address-card p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      color: #786a55;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+
+    .visit-time {
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: #a18150;
+      margin-bottom: 20px;
+    }
+
+    .map-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .map-button {
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      background: #aa8958;
+      padding: 12px 16px;
+      font-size: 10px;
+      letter-spacing: 1px;
+      transition: .3s;
+    }
+
+    .map-button:hover {
+      background: #80633d;
+    }
+
+    /* YAKUNIY QISM */
+
+    .closing {
+      padding: 90px 20px;
+      text-align: center;
+      background: #eee5d6;
+    }
+
+    .closing h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 7vw, 48px);
+      font-weight: 400;
+      color: #987648;
+      margin-bottom: 20px;
+    }
+
+    .closing p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 23px;
+      line-height: 1.6;
+      color: #79694f;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      background: #e7ddcc;
+      color: #927b58;
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    /* MUSIQA TUGMASI */
+
+    .music-button {
+      position: fixed;
+      z-index: 100;
+      right: 20px;
+      bottom: 20px;
+      width: 48px;
+      height: 48px;
+      border: 1px solid #b79868;
+      border-radius: 50%;
+      background: #aa8958;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,.15);
+      display: none;
+    }
+
+    .music-button.active {
+      display: block;
+    }
+
+    .music-button.playing {
+      animation: rotateMusic 4s linear infinite;
+    }
+
+    @keyframes rotateMusic {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 480px) {
+      .cover-card {
+        min-height: 520px;
+      }
+
+      .hero {
+        min-height: 90vh;
+      }
+
+      .section {
+        padding: 65px 15px;
+      }
+
+      .count-box {
+        min-width: 65px;
+      }
+
+      .count-number {
+        font-size: 25px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- BIRINCHI SAHIFA -->
-<div class="cover" id="cover">
-  <div class="cover-frame">
+  <!-- MUSIQA: vafodorim.mp3 index.html bilan bir papkada bo'lishi kerak -->
+  <audio id="weddingMusic" loop preload="auto">
+    <source src="./vafodorim.mp3" type="audio/mpeg">
+  </audio>
 
-    <div class="cover-small">YOU ARE INVITED</div>
+  <!-- MUQOVA -->
+  <div class="cover" id="cover">
+    <div class="cover-card">
+      <div class="small-text">Sizni to'yimizga taklif qilamiz</div>
 
-    <div class="cover-names">Madina</div>
-    <div class="cover-amp">&</div>
-    <div class="cover-names">Aziz</div>
+      <div class="cover-names">Madina</div>
+      <div class="cover-and">&</div>
+      <div class="cover-names">Aziz</div>
 
-    <div class="ornament">✧ ❦ ✧</div>
+      <div class="ornament">✦ ❦ ✦</div>
 
-    <div class="cover-date">17 DEKABR 2026</div>
+      <div class="cover-date">17 · 12 · 2026</div>
 
-    <div class="envelope" id="envelope"></div>
+      <div class="envelope">💌</div>
 
-    <button class="open-button" id="openButton">
-      TAKLIFNOMANI OCHISH
-    </button>
-
-    <div class="tap-hint">BIZNING BAXTLI KUNIMIZGA MARHAMAT</div>
-
-  </div>
-</div>
-
-<!-- MUSIQA FAYLI -->
-<audio id="weddingMusic" loop preload="auto">
-  <source src="assets/music.mp3" type="audio/mpeg">
-</audio>
-
-<!-- MUSIQA BOSHQARUVI -->
-<button class="music-control" id="musicButton" aria-label="Musiqani yoqish yoki to‘xtatish">
-  ♫
-</button>
-
-<!-- ASOSIY TAKLIFNOMA -->
-<main id="invitation">
-
-  <!-- BOSH SAHIFA -->
-  <section class="hero">
-    <div class="hero-inner">
-
-      <div class="eyebrow">BIZNING TO‘YIMIZGA TAKLIFNOMA</div>
-
-      <h1>Madina</h1>
-      <div class="amp">&</div>
-      <h1>Aziz</h1>
-
-      <div class="gold-line"></div>
-
-      <div class="hero-message">
-        Hayotimizning eng go‘zal sahifasi boshlanayotgan
-        ushbu quvonchli kunimizda sizni aziz mehmonimiz
-        sifatida kutib qolamiz.
-      </div>
-
-      <div class="hero-date">
-        17 DEKABR 2026 · SOAT 18:00
-      </div>
-
-      <div class="scroll-note">↓ &nbsp; PASTGA TUSHING &nbsp; ↓</div>
-
+      <button class="open-button" id="openButton">
+        TAKLIFNOMANI OCHISH
+      </button>
     </div>
-  </section>
+  </div>
 
-  <!-- ORTGA SANOQ -->
-  <section class="section">
-    <div class="section-inner reveal">
+  <!-- MUSIQA TUGMASI -->
+  <button class="music-button" id="musicButton" title="Musiqani yoqish yoki o'chirish">
+    ♪
+  </button>
 
-      <div class="section-label">BAXTLI KUNIMIZGACHA</div>
+  <!-- ASOSIY TAKLIFNOMA -->
+  <main class="invitation" id="invitation">
 
-      <h2 class="section-title">Sanoq boshlandi...</h2>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-label">BIZNING ENG BAXTLI KUNIMIZ</div>
 
-      <p class="description">
-        Ushbu unutilmas kunni siz bilan birgalikda
-        nishonlashni intiqlik bilan kutamiz.
+        <h1>
+          Madina
+          <span class="and">&</span>
+          Aziz
+        </h1>
+
+        <div class="ornament">✦ ❦ ✦</div>
+
+        <p class="hero-description">
+          Hayotimizning eng go‘zal va unutilmas kunida
+          sizni biz bilan birga bo‘lishga taklif qilamiz.
+          Sizning tashrifingiz biz uchun katta baxt!
+        </p>
+
+        <div class="date-big">17 Dekabr 2026</div>
+        <div class="time">SOAT 18:00 DA</div>
+      </div>
+    </section>
+
+    <!-- TAKLIF -->
+    <section class="section">
+      <h2 class="section-title">Hurmatli mehmonimiz!</h2>
+      <div class="ornament">✦</div>
+
+      <p class="section-subtitle">
+        Sizni nikoh to‘yimiz munosabati bilan
+        tashkil etiladigan shodiyonamizga
+        chin qalbimizdan taklif etamiz.
       </p>
 
-      <div class="countdown" id="countdown">
+      <p class="section-subtitle">
+        Ushbu quvonchli kunimizda yonimizda bo‘lishingizdan
+        mamnun bo‘lamiz.
+      </p>
+    </section>
+
+    <!-- SANAGICH -->
+    <section class="countdown-section">
+      <h2 class="section-title">To‘yimizgacha qoldi</h2>
+      <div class="ornament">✦</div>
+
+      <div class="countdown">
         <div class="count-box">
-          <strong id="days">00</strong>
-          <span>KUN</span>
+          <span class="count-number" id="days">00</span>
+          <div class="count-label">KUN</div>
         </div>
 
         <div class="count-box">
-          <strong id="hours">00</strong>
-          <span>SOAT</span>
+          <span class="count-number" id="hours">00</span>
+          <div class="count-label">SOAT</div>
         </div>
 
         <div class="count-box">
-          <strong id="minutes">00</strong>
-          <span>DAQIQA</span>
+          <span class="count-number" id="minutes">00</span>
+          <div class="count-label">DAQIQA</div>
         </div>
 
         <div class="count-box">
-          <strong id="seconds">00</strong>
-          <span>SONIYA</span>
+          <span class="count-number" id="seconds">00</span>
+          <div class="count-label">SONIYA</div>
         </div>
       </div>
+    </section>
 
-      <div class="ornament">✧ ❦ ✧</div>
+    <!-- MANZILLAR -->
+    <section class="section addresses">
+      <h2 class="section-title">Manzillar</h2>
+      <p class="section-subtitle">
+        Siz uchun kerakli manzillar va yo'nalishlar
+      </p>
 
-    </div>
-  </section>
+      <div class="address-container">
 
-  <!-- MANZILLAR -->
-  <section class="section locations">
-    <div class="section-inner">
+        <!-- KUYOV UYI -->
+        <div class="address-card">
+          <div class="address-icon">🏡</div>
+          <h3>Kuyov uyi</h3>
+          <p>Azizning xonadoniga tashrif</p>
+          <div class="visit-time">SOAT 12:00 DA</div>
 
-      <div class="section-label reveal">MANZILLARIMIZ</div>
+          <div class="map-buttons">
+            <a class="map-button"
+               href="https://yandex.uz/maps/-/CXWGvI2W"
+               target="_blank" rel="noopener">
+              YANDEX MAPS
+            </a>
 
-      <h2 class="section-title reveal">Sizni kutamiz</h2>
-
-      <!-- KUYOV UYI -->
-      <div class="location-card reveal">
-
-        <div class="location-icon">♔</div>
-
-        <h3>Kuyov xonadoni</h3>
-
-        <p>
-          Azizning xonadoniga tashrif<br>
-          <strong>Soat 12:00</strong>
-        </p>
-
-        <div class="map-links">
-          <a class="map-button"
-             href="https://yandex.uz/maps/-/CXWGvI2W"
-             target="_blank" rel="noopener">
-            YANDEX MAPS
-          </a>
-
-          <a class="map-button"
-             href="https://maps.app.goo.gl/RoAdJfmXVFVkLLAn9"
-             target="_blank" rel="noopener">
-            GOOGLE MAPS
-          </a>
+            <a class="map-button"
+               href="https://maps.app.goo.gl/RoAdJfmXVFVkLLAn9"
+               target="_blank" rel="noopener">
+              GOOGLE MAPS
+            </a>
+          </div>
         </div>
 
-      </div>
+        <!-- KELIN UYI -->
+        <div class="address-card">
+          <div class="address-icon">🏡</div>
+          <h3>Kelin uyi</h3>
+          <p>Madina xonadoniga tashrif</p>
+          <div class="visit-time">SOAT 13:00 DA</div>
 
-      <!-- KELIN UYI -->
-      <div class="location-card reveal">
+          <div class="map-buttons">
+            <a class="map-button"
+               href="https://yandex.uz/maps/-/CXWGzFia"
+               target="_blank" rel="noopener">
+              YANDEX MAPS
+            </a>
 
-        <div class="location-icon">❀</div>
-
-        <h3>Kelin xonadoni</h3>
-
-        <p>
-          Madinaning xonadoniga tashrif<br>
-          <strong>Soat 13:00</strong>
-        </p>
-
-        <div class="map-links">
-          <a class="map-button"
-             href="https://yandex.uz/maps/-/CXWGzFia"
-             target="_blank" rel="noopener">
-            YANDEX MAPS
-          </a>
-
-          <a class="map-button"
-             href="https://maps.app.goo.gl/5Pgzz1mfiVYKzGEv9"
-             target="_blank" rel="noopener">
-            GOOGLE MAPS
-          </a>
+            <a class="map-button"
+               href="https://maps.app.goo.gl/5Pgzz1mfiVYKzGEv9"
+               target="_blank" rel="noopener">
+              GOOGLE MAPS
+            </a>
+          </div>
         </div>
 
-      </div>
+        <!-- TO'YXONA -->
+        <div class="address-card">
+          <div class="address-icon">💍</div>
+          <h3>To'yxona</h3>
+          <p>Versal tantanalar saroyi</p>
+          <div class="visit-time">SOAT 18:00 DA</div>
 
-      <!-- TO'YXONA -->
-      <div class="location-card reveal">
+          <div class="map-buttons">
+            <a class="map-button"
+               href="https://yandex.uz/maps/-/CXWG7B7K"
+               target="_blank" rel="noopener">
+              YANDEX MAPS
+            </a>
 
-        <div class="location-icon">✧</div>
-
-        <h3>To‘y marosimi</h3>
-
-        <p>
-          <strong>Versal</strong><br>
-          17-dekabr · Soat 18:00
-        </p>
-
-        <div class="map-links">
-          <a class="map-button"
-             href="https://yandex.uz/maps/-/CXWG7B7K"
-             target="_blank" rel="noopener">
-            YANDEX MAPS
-          </a>
-
-          <a class="map-button"
-             href="https://maps.app.goo.gl/qbNbSPHZSezpeuAg7"
-             target="_blank" rel="noopener">
-            GOOGLE MAPS
-          </a>
+            <a class="map-button"
+               href="https://maps.app.goo.gl/qbNbSPHZSezpeuAg7"
+               target="_blank" rel="noopener">
+              GOOGLE MAPS
+            </a>
+          </div>
         </div>
 
       </div>
+    </section>
 
-    </div>
-  </section>
+    <!-- YAKUNIY QISM -->
+    <section class="closing">
+      <div class="ornament">✦ ❦ ✦</div>
 
-  <!-- YAKUNIY QISM -->
-  <footer class="footer reveal">
+      <h2>Hurmat bilan,</h2>
 
-    <div class="ornament">✧ ❦ ✧</div>
+      <h2>Madina & Aziz</h2>
 
-    <h2>Madina & Aziz</h2>
+      <p>
+        Baxtimizga sherik bo'ling!
+        <br>
+        Sizni intiqlik bilan kutamiz.
+      </p>
 
-    <div class="gold-line"></div>
+      <div class="ornament">✦ ❦ ✦</div>
+    </section>
 
-    <p>SIZNI INTIQLIK BILAN KUTAMIZ!</p>
+    <footer>
+      MADINA & AZIZ · 17.12.2026
+    </footer>
 
-    <p>17 · 12 · 2026</p>
+  </main>
 
-  </footer>
+  <script>
+    const cover = document.getElementById("cover");
+    const invitation = document.getElementById("invitation");
+    const openButton = document.getElementById("openButton");
+    const music = document.getElementById("weddingMusic");
+    const musicButton = document.getElementById("musicButton");
 
-</main>
+    let opened = false;
 
-<script>
-/* ELEMENTLAR */
-const cover = document.getElementById("cover");
-const envelope = document.getElementById("envelope");
-const openButton = document.getElementById("openButton");
-const invitation = document.getElementById("invitation");
-const music = document.getElementById("weddingMusic");
-const musicButton = document.getElementById("musicButton");
+    // TAKLIFNOMANI OCHISH
+    openButton.addEventListener("click", function () {
+      if (opened) return;
 
-let opened = false;
+      opened = true;
+      openButton.disabled = true;
 
-/* TAKLIFNOMANI OCHISH */
-openButton.addEventListener("click", () => {
+      // Taklifnoma musiqadan mustaqil ochiladi
+      cover.classList.add("hidden");
+      invitation.classList.add("show");
+      document.body.style.overflowY = "auto";
 
-  if (opened) return;
+      musicButton.classList.add("active");
 
-  opened = true;
-  openButton.disabled = true;
+      // Musiqa foydalanuvchi tugmani bosgandan keyin ishga tushadi
+      music.volume = 0.8;
 
-  // Konvert animatsiyasi
-  envelope.classList.add("opening");
-
-  // Musiqa tugmasini ko'rsatish
-  musicButton.classList.add("active");
-
-  // ENG MUHIMI:
-  // Musiqa natijasini kutmasdan taklifnomani ochamiz.
-  setTimeout(() => {
-
-    cover.classList.add("hidden");
-    invitation.classList.add("show");
-
-    document.body.style.overflowY = "auto";
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
+      music.play()
+        .then(function () {
+          musicButton.classList.add("playing");
+          musicButton.textContent = "♪";
+        })
+        .catch(function (error) {
+          console.log("Musiqa avtomatik ishga tushmadi:", error);
+          musicButton.classList.remove("playing");
+          musicButton.textContent = "♪";
+        });
     });
 
-  }, 700);
-
-  // Musiqa alohida ishga tushadi.
-  // Musiqa ishlamasa ham taklifnoma ochiq qoladi.
-  music.play()
-    .then(() => {
-      musicButton.classList.add("playing");
-    })
-    .catch((error) => {
-      console.log("Musiqa avtomatik ishga tushmadi:", error);
+    // MUSIQANI YOQISH VA O'CHIRISH
+    musicButton.addEventListener("click", function () {
+      if (music.paused) {
+        music.play()
+          .then(function () {
+            musicButton.classList.add("playing");
+            musicButton.textContent = "♪";
+          })
+          .catch(function (error) {
+            console.log("Musiqa ijro etilmadi:", error);
+          });
+      } else {
+        music.pause();
+        musicButton.classList.remove("playing");
+        musicButton.textContent = "♪";
+      }
     });
 
-});
+    // TO'Y SANAGICHI
+    const weddingDate = new Date("2026-12-17T18:00:00+05:00").getTime();
 
-/* MUSIQANI BOSHQARISH */
-musicButton.addEventListener("click", () => {
+    function updateCountdown() {
+      const now = Date.now();
+      const distance = weddingDate - now;
 
-  if (music.paused) {
+      if (distance <= 0) {
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
+        return;
+      }
 
-    music.play()
-      .then(() => {
-        musicButton.classList.add("playing");
-      })
-      .catch((error) => {
-        console.log("Musiqani yoqib bo'lmadi:", error);
-      });
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
 
-  } else {
-
-    music.pause();
-    musicButton.classList.remove("playing");
-
-  }
-
-});
-
-/* ORTGA SANOQ */
-const weddingDate = new Date("2026-12-17T18:00:00+05:00").getTime();
-
-function updateCountdown() {
-
-  const now = Date.now();
-  const distance = weddingDate - now;
-
-  if (distance <= 0) {
-
-    document.getElementById("countdown").innerHTML =
-      "<h2 class='section-title'>Bugun bizning baxtli kunimiz! ♡</h2>";
-
-    return;
-  }
-
-  document.getElementById("days").textContent =
-    Math.floor(distance / 86400000);
-
-  document.getElementById("hours").textContent =
-    Math.floor((distance % 86400000) / 3600000);
-
-  document.getElementById("minutes").textContent =
-    Math.floor((distance % 3600000) / 60000);
-
-  document.getElementById("seconds").textContent =
-    Math.floor((distance % 60000) / 1000);
-
-}
-
-updateCountdown();
-setInterval(updateCountdown, 1000);
-
-/* SCROLL ANIMATSIYASI */
-const observer = new IntersectionObserver((entries) => {
-
-  entries.forEach(entry => {
-
-    if (entry.isIntersecting) {
-
-      entry.target.classList.add("visible");
-      observer.unobserve(entry.target);
-
+      document.getElementById("days").textContent = String(days).padStart(2, "0");
+      document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+      document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+      document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
     }
 
-  });
-
-}, { threshold: 0.12 });
-
-document.querySelectorAll(".reveal").forEach(element => {
-  observer.observe(element);
-});
-
-/* SAHIFA YUKLANGANDA SCROLLNI YOPISH */
-document.body.style.overflowY = "hidden";
-</script>
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
 
 </body>
 </html>
