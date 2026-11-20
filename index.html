@@ -34,38 +34,124 @@ body {
   overflow-x: hidden;
 }
 
-button { font-family: inherit; }
+/* LUXURY ORQA FON */
 
-.gold-line {
-  width: 75px;
-  height: 1px;
-  background: var(--gold);
-  margin: 22px auto;
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 10% 15%, rgba(205,174,126,.20), transparent 32%),
+    radial-gradient(ellipse at 90% 80%, rgba(205,174,126,.18), transparent 35%),
+    radial-gradient(ellipse at 50% 50%, #fffdf8 0%, #f8f3e9 65%, #eee3d1 100%);
 }
 
-/* ANIMATSIYALI FON */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .24;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 45px,
+      rgba(177,138,80,.08) 46px,
+      transparent 47px
+    );
+}
+
+/* ORQA FON ZARRALARI */
 
 .particles {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 20;
+  z-index: 30;
   overflow: hidden;
 }
 
 .particle {
   position: absolute;
   top: -30px;
-  color: #c5a36f;
-  opacity: .55;
+  color: #bd995e;
+  opacity: 0;
+  text-shadow: 0 0 10px rgba(193,156,96,.6);
   animation: falling linear infinite;
 }
 
 @keyframes falling {
-  0% { transform: translateY(-40px) rotate(0deg); opacity: 0; }
-  15% { opacity: .6; }
+  0% {
+    transform: translate3d(0,-40px,0) rotate(0deg);
+    opacity: 0;
+  }
+  15% { opacity: .65; }
   85% { opacity: .5; }
-  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+  100% {
+    transform: translate3d(35px,110vh,0) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* MAYIN YORUG'LIK */
+
+.glow {
+  position: fixed;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,.8), transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+  animation: glowMove 12s ease-in-out infinite alternate;
+}
+
+.glow.one {
+  top: 5%;
+  left: -100px;
+}
+
+.glow.two {
+  right: -100px;
+  bottom: 5%;
+  animation-delay: -6s;
+}
+
+@keyframes glowMove {
+  from { transform: translateY(-15px) scale(.9); opacity: .4; }
+  to { transform: translateY(25px) scale(1.2); opacity: .9; }
+}
+
+/* GULLAR VA BARG'LAR */
+
+.floral {
+  position: absolute;
+  color: #b99a6b;
+  opacity: .55;
+  pointer-events: none;
+  z-index: 2;
+  font-size: 42px;
+  animation: flowerFloat 6s ease-in-out infinite;
+}
+
+.floral.left {
+  top: 35px;
+  left: 15px;
+}
+
+.floral.right {
+  top: 35px;
+  right: 15px;
+  animation-delay: -3s;
+}
+
+@keyframes flowerFloat {
+  0%,100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(10px) rotate(5deg); }
 }
 
 /* MUQOVA */
@@ -79,14 +165,35 @@ button { font-family: inherit; }
   justify-content: center;
   padding: 24px;
   background:
-    radial-gradient(ellipse at center, #fffdf8 0%, #f5ecdc 65%, #e8dac2 100%);
+    radial-gradient(ellipse at center, rgba(255,255,255,.96), rgba(245,236,220,.95)),
+    #f5ecdc;
   transition: opacity 1.2s ease, visibility 1.2s ease;
+  overflow: hidden;
 }
 
 .cover.hide {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+}
+
+.cover::before,
+.cover::after {
+  content: "❀";
+  position: absolute;
+  color: rgba(177,138,80,.22);
+  font-size: 180px;
+  pointer-events: none;
+}
+
+.cover::before {
+  top: -55px;
+  left: -45px;
+}
+
+.cover::after {
+  bottom: -65px;
+  right: -45px;
 }
 
 .cover-frame {
@@ -98,13 +205,13 @@ button { font-family: inherit; }
   border: 1px solid var(--gold);
   outline: 1px solid rgba(177,138,80,.35);
   outline-offset: 9px;
-  background: rgba(255,255,255,.48);
+  background: rgba(255,255,255,.52);
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 20px 70px rgba(90,65,30,.1);
+  box-shadow: 0 20px 70px rgba(90,65,30,.12);
   animation: frameAppear 1.5s ease both;
 }
 
@@ -118,6 +225,7 @@ button { font-family: inherit; }
   color: var(--gold);
   font-size: 26px;
 }
+
 .top-left { top: 13px; left: 16px; }
 .top-right { top: 13px; right: 16px; }
 .bottom-left { bottom: 13px; left: 16px; }
@@ -140,7 +248,7 @@ button { font-family: inherit; }
 
 @keyframes nameGlow {
   from { text-shadow: 0 0 0 rgba(177,138,80,0); }
-  to { text-shadow: 0 0 18px rgba(177,138,80,.35); }
+  to { text-shadow: 0 0 18px rgba(177,138,80,.4); }
 }
 
 .cover-and {
@@ -190,6 +298,8 @@ button { font-family: inherit; }
 
 .invitation {
   display: none;
+  position: relative;
+  z-index: 3;
 }
 
 .invitation.show {
@@ -210,9 +320,29 @@ button { font-family: inherit; }
   align-items: center;
   text-align: center;
   position: relative;
+  overflow: hidden;
   background:
-    linear-gradient(rgba(248,243,233,.76),rgba(248,243,233,.9)),
-    radial-gradient(circle at 50% 45%, #fff 0%, #e8d8bd 100%);
+    radial-gradient(ellipse at center, rgba(255,255,255,.8), rgba(248,243,233,.65));
+}
+
+.hero::before,
+.hero::after {
+  content: "❀";
+  position: absolute;
+  color: rgba(177,138,80,.16);
+  font-size: clamp(130px, 25vw, 260px);
+  animation: flowerFloat 8s ease-in-out infinite;
+}
+
+.hero::before {
+  top: 5%;
+  left: -50px;
+}
+
+.hero::after {
+  bottom: 2%;
+  right: -50px;
+  animation-delay: -4s;
 }
 
 .hero-inner {
@@ -222,6 +352,8 @@ button { font-family: inherit; }
   border-top: 1px solid var(--gold);
   border-bottom: 1px solid var(--gold);
   position: relative;
+  background: rgba(255,253,248,.28);
+  backdrop-filter: blur(2px);
 }
 
 .hero-inner:before,
@@ -235,6 +367,7 @@ button { font-family: inherit; }
   padding: 0 15px;
   font-size: 24px;
 }
+
 .hero-inner:before { top: -16px; }
 .hero-inner:after { bottom: -16px; }
 
@@ -296,6 +429,8 @@ button { font-family: inherit; }
 .section {
   padding: 95px 20px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .section-title {
@@ -321,13 +456,39 @@ button { font-family: inherit; }
   letter-spacing: 8px;
 }
 
+.gold-line {
+  width: 75px;
+  height: 1px;
+  background: var(--gold);
+  margin: 22px auto;
+}
+
 /* COUNTDOWN */
 
 .countdown-section {
   text-align: center;
   padding: 80px 15px;
-  background:
-    linear-gradient(rgba(238,227,209,.9),rgba(238,227,209,.9));
+  background: linear-gradient(135deg, #eee3d1, #f8f3e9, #eee3d1);
+  position: relative;
+  overflow: hidden;
+}
+
+.countdown-section::before {
+  content: "✧";
+  position: absolute;
+  left: 8%;
+  top: 15%;
+  font-size: 80px;
+  color: rgba(177,138,80,.15);
+}
+
+.countdown-section::after {
+  content: "✧";
+  position: absolute;
+  right: 8%;
+  bottom: 15%;
+  font-size: 80px;
+  color: rgba(177,138,80,.15);
 }
 
 .countdown {
@@ -336,14 +497,16 @@ button { font-family: inherit; }
   flex-wrap: wrap;
   gap: 16px;
   margin-top: 35px;
+  position: relative;
+  z-index: 1;
 }
 
 .count-box {
   width: 90px;
   padding: 18px 8px;
   border: 1px solid #c5a16a;
-  background: rgba(255,255,255,.45);
-  box-shadow: 0 5px 20px rgba(90,70,40,.04);
+  background: rgba(255,255,255,.55);
+  box-shadow: 0 5px 20px rgba(90,70,40,.06);
 }
 
 .count-number {
@@ -363,7 +526,7 @@ button { font-family: inherit; }
 /* MANZILLAR */
 
 .address-section {
-  background: #faf7f0;
+  background: rgba(255,253,248,.72);
 }
 
 .address-grid {
@@ -375,31 +538,27 @@ button { font-family: inherit; }
 }
 
 .address-card {
-  background: var(--white);
+  background: rgba(255,253,248,.92);
   border: 1px solid #d5bf98;
   padding: 40px 23px;
-  box-shadow: 0 12px 35px rgba(92,69,34,.06);
+  box-shadow: 0 12px 35px rgba(92,69,34,.07);
   transition: transform .5s, box-shadow .5s;
   position: relative;
   overflow: hidden;
 }
 
-.address-card:before {
-  content: "";
+.address-card::before {
+  content: "✧";
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg,transparent,#c5a16a,transparent);
-  transition: left .7s;
+  top: 10px;
+  right: 14px;
+  font-size: 25px;
+  color: rgba(177,138,80,.35);
 }
-
-.address-card:hover:before { left: 100%; }
 
 .address-card:hover {
   transform: translateY(-9px);
-  box-shadow: 0 18px 40px rgba(92,69,34,.12);
+  box-shadow: 0 18px 40px rgba(92,69,34,.13);
 }
 
 .address-icon {
@@ -450,19 +609,36 @@ button { font-family: inherit; }
   box-shadow: 0 7px 18px rgba(142,107,60,.2);
 }
 
-/* YAKUN */
+/* YAKUNIY QISM */
 
 .closing {
   padding: 100px 20px;
   text-align: center;
-  background: linear-gradient(135deg,#eee3d1,#f9f4ea);
+  background:
+    radial-gradient(ellipse at center, rgba(255,255,255,.7), transparent 75%),
+    linear-gradient(135deg,#eee3d1,#f9f4ea);
+  position: relative;
+  overflow: hidden;
 }
+
+.closing::before,
+.closing::after {
+  content: "❀";
+  position: absolute;
+  color: rgba(177,138,80,.18);
+  font-size: 150px;
+}
+
+.closing::before { top: -30px; left: -35px; }
+.closing::after { bottom: -35px; right: -35px; }
 
 .closing h2 {
   font-family: 'Great Vibes', cursive;
   font-size: clamp(52px, 10vw, 75px);
   font-weight: 400;
   color: var(--darkgold);
+  position: relative;
+  z-index: 1;
 }
 
 .closing p {
@@ -470,6 +646,8 @@ button { font-family: inherit; }
   font-size: 24px;
   line-height: 1.6;
   margin-top: 25px;
+  position: relative;
+  z-index: 1;
 }
 
 footer {
@@ -523,19 +701,35 @@ footer {
   transform: translateY(0);
 }
 
+/* TELEFON UCHUN */
+
 @media(max-width:500px) {
   .cover-frame { min-height: 540px; }
   .section { padding: 70px 16px; }
   .count-box { width: 72px; }
   .count-number { font-size: 28px; }
   .hero-inner { padding: 45px 12px; }
+  .floral { font-size: 30px; }
+}
+
+/* HARAKATNI KAMAYTIRISH SOZLAMASI */
+@media(prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
 }
 </style>
 </head>
 
 <body>
 
+<!-- LUXURY EFFEKTLAR -->
 <div class="particles" id="particles"></div>
+<div class="glow one"></div>
+<div class="glow two"></div>
 
 <audio id="weddingMusic" loop preload="auto">
   <source src="./vafodorim.mp3" type="audio/mpeg">
@@ -543,6 +737,9 @@ footer {
 
 <!-- MUQOVA -->
 <div class="cover" id="cover">
+  <div class="floral left">❀</div>
+  <div class="floral right">❀</div>
+
   <div class="cover-frame">
     <span class="corner top-left">❧</span>
     <span class="corner top-right">❧</span>
@@ -565,10 +762,13 @@ footer {
 
 <button class="music-btn" id="musicButton" aria-label="Musiqani boshqarish">♫</button>
 
+<!-- ASOSIY TAKLIFNOMA -->
 <main class="invitation" id="invitation">
 
-  <!-- BOSH SAHIFA -->
   <section class="hero">
+    <div class="floral left">❀</div>
+    <div class="floral right">❀</div>
+
     <div class="hero-inner">
       <div class="eyebrow">BIZNING ENG BAXTLI KUNIMIZ</div>
 
@@ -633,6 +833,7 @@ footer {
   <section class="section address-section reveal">
     <h2 class="section-title">Manzillarimiz</h2>
     <div class="gold-line"></div>
+
     <p class="section-text">
       Quyidagi manzillar orqali bizni osongina topishingiz mumkin.
     </p>
@@ -644,6 +845,7 @@ footer {
         <h3>Kuyov uyi</h3>
         <p>Azizning xonadoniga tashrif</p>
         <div class="visit-time">SOAT 12:00 DA</div>
+
         <div class="map-buttons">
           <a class="map-btn" href="https://yandex.uz/maps/-/CXWGvI2W" target="_blank" rel="noopener">YANDEX MAPS</a>
           <a class="map-btn" href="https://maps.app.goo.gl/RoAdJfmXVFVkLLAn9" target="_blank" rel="noopener">GOOGLE MAPS</a>
@@ -655,6 +857,7 @@ footer {
         <h3>Kelin uyi</h3>
         <p>Madina xonadoniga tashrif</p>
         <div class="visit-time">SOAT 13:00 DA</div>
+
         <div class="map-buttons">
           <a class="map-btn" href="https://yandex.uz/maps/-/CXWGzFia" target="_blank" rel="noopener">YANDEX MAPS</a>
           <a class="map-btn" href="https://maps.app.goo.gl/5Pgzz1mfiVYKzGEv9" target="_blank" rel="noopener">GOOGLE MAPS</a>
@@ -666,6 +869,7 @@ footer {
         <h3>To'yxona</h3>
         <p>Versal tantanalar saroyi</p>
         <div class="visit-time">SOAT 18:00 DA</div>
+
         <div class="map-buttons">
           <a class="map-btn" href="https://yandex.uz/maps/-/CXWG7B7K" target="_blank" rel="noopener">YANDEX MAPS</a>
           <a class="map-btn" href="https://maps.app.goo.gl/qbNbSPHZSezpeuAg7" target="_blank" rel="noopener">GOOGLE MAPS</a>
@@ -702,7 +906,7 @@ const musicButton = document.getElementById("musicButton");
 
 let opened = false;
 
-/* KONVERTNI OCHISH */
+/* TAKLIFNOMANI OCHISH */
 openButton.addEventListener("click", () => {
   if (opened) return;
   opened = true;
@@ -714,9 +918,11 @@ openButton.addEventListener("click", () => {
   window.scrollTo(0, 0);
 
   music.volume = 0.8;
+
   music.play().then(() => {
     musicButton.classList.add("playing");
-  }).catch(() => {
+  }).catch(error => {
+    console.log("Musiqa avtomatik ijro etilmadi:", error);
     musicButton.classList.remove("playing");
   });
 });
@@ -735,7 +941,7 @@ musicButton.addEventListener("click", () => {
   }
 });
 
-/* SANAGICH */
+/* TO'Y SANAGICHI */
 const weddingDate = new Date("2026-12-17T18:00:00+05:00").getTime();
 
 function updateCountdown() {
@@ -764,17 +970,19 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-/* UCHIB YURUVCHI OLTIN ZARRALAR */
+/* OLTIN ZARRALAR */
 const particles = document.getElementById("particles");
 
-for (let i = 0; i < 22; i++) {
+for (let i = 0; i < 28; i++) {
   const item = document.createElement("span");
+
   item.className = "particle";
-  item.textContent = Math.random() > .5 ? "✧" : "❀";
+  item.textContent = ["✧", "·", "❀", "✦"][i % 4];
   item.style.left = Math.random() * 100 + "%";
-  item.style.animationDuration = (9 + Math.random() * 12) + "s";
+  item.style.animationDuration = (10 + Math.random() * 10) + "s";
   item.style.animationDelay = (Math.random() * 12) + "s";
-  item.style.fontSize = (10 + Math.random() * 12) + "px";
+  item.style.fontSize = (9 + Math.random() * 14) + "px";
+
   particles.appendChild(item);
 }
 
