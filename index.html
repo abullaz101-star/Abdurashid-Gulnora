@@ -527,9 +527,11 @@ body::before {
 
 .couple-art {
   width: min(100%, 240px);
-  height: auto;
-  margin: 4px auto 14px;
+  max-height: 270px;
+  object-fit: contain;
+  margin: 4px auto 16px;
   display: block;
+  border-radius: 6px;
 }
 
 .couple-names {
@@ -1216,53 +1218,8 @@ footer {
 
         <div class="sheet-title">Taklifnoma</div>
 
-        <!-- KUYOV VA KELIN ILLYUSTRATSIYASI -->
-        <svg class="couple-art" viewBox="0 0 210 245" fill="none" aria-label="Kuyov va kelin illyustratsiyasi">
-          <!-- Kuyov: mayin harakat chiziqlari -->
-          <path d="M68 18c-3 6-4 12-3 18" stroke="#332e2a" stroke-width="1.2" stroke-linecap="round"/>
-          <path d="M28 74c-2 8-2 16 0 24" stroke="#332e2a" stroke-width="1.2" stroke-linecap="round"/>
-          <path d="M40 156c-1 8-1 16 1 24" stroke="#332e2a" stroke-width="1.2" stroke-linecap="round"/>
-          <path d="M77 174c1 7 1 14 0 21" stroke="#332e2a" stroke-width="1.2" stroke-linecap="round"/>
-
-          <!-- Kuyov boshi va sochi -->
-          <path d="M64 26c6-3 14-2 18 4 3 4 3 10 1 15 2 2 2 5 0 7-1 4-4 7-7 9l1 7-11-1v-6c-5-3-8-8-8-14 0-5 2-9 5-12Z" fill="#9d7b5d"/>
-          <path d="M63 32c-1-6 3-12 9-13 6-1 12 1 15 6 2 3 2 7 0 10-2-3-6-5-10-4-3 1-5 3-7 5-3 1-5-1-7-4Z" fill="#2c2927"/>
-          <path d="M74 37l4-1M76 40h2" stroke="#2c2927" stroke-width="1.2" stroke-linecap="round"/>
-
-          <!-- Kuyov kostyumi, ko'ylagi va galstugi -->
-          <path d="M61 60l-20 16-14 48 13 5 11-36 1 38-9 57h17l8-51 7 51h17l-2-55 15-36-9-4-11 26-3-58-17-10-12 2-11-2Z" fill="#7c5b3f"/>
-          <path d="M61 60l11 2 12-2M52 84l3 24M78 86l-2 26M56 164l-4 53M78 164l3 53" stroke="#2c2927" stroke-width="1.2" stroke-linecap="round"/>
-          <path d="M64 61l8 16 8-16-8 4-8-4Z" fill="#e6e2dc" stroke="#2c2927" stroke-width="1.1"/>
-          <path d="M72 65l-2 26 2 4 2-4-2-26Z" fill="#2c2927"/>
-          <path d="M28 124l-2 11 7 4 4-10-9-5ZM95 112l7 4 4-8-7-4-4 8Z" fill="#9d7b5d" stroke="#2c2927" stroke-width="1.1"/>
-          <path d="M44 217h15c4 0 6 3 6 7H42l2-7ZM69 217h15c4 0 6 3 6 7H67l2-7Z" fill="#2c2927"/>
-
-          <!-- Kelin: mayin harakat chiziqlari -->
-          <path d="M126 30c-3 6-4 13-3 20" stroke="#332e2a" stroke-width="1.2" stroke-linecap="round"/>
-          <path d="M159 86c3 5 5 11 6 17" stroke="#332e2a" stroke-width="1.2" stroke-linecap="round"/>
-          <path d="M180 144c3 7 4 14 3 21" stroke="#332e2a" stroke-width="1.2" stroke-linecap="round"/>
-          <path d="M169 182c-5 6-12 9-19 10" stroke="#332e2a" stroke-width="1.2" stroke-linecap="round"/>
-          <path d="M111 180c5 5 11 8 18 9" stroke="#332e2a" stroke-width="1.2" stroke-linecap="round"/>
-
-          <!-- Kelin boshi va qora sochlari -->
-          <path d="M128 38c6-3 14-1 17 5 2 5 1 11-1 16 2 2 2 5 0 7-1 4-4 7-7 8l1 7-10-1v-6c-4-3-6-8-6-14 0-5 2-10 6-13Z" fill="#9d7b5d"/>
-          <path d="M127 38c2-7 10-11 17-9 7 2 11 8 11 15 0 9 3 18 6 26-4 2-8-1-10-7-2-6-5-10-10-10-5 0-9 3-12-1-3-4-4-10-2-16Z" fill="#2c2927"/>
-          <path d="M125 46c-2 8-2 17 1 25" stroke="#2c2927" stroke-width="1.3" stroke-linecap="round"/>
-          <path d="M135 48l3-1M136 51h2" stroke="#2c2927" stroke-width="1.1" stroke-linecap="round"/>
-
-          <!-- Kelin qo'llari va birlashgan qo'l -->
-          <path d="M127 81l-19 25-10 2 2 7 11-2 20-24-4-8ZM145 81l17 28 11 32-7 2-11-30-15-24 5-8Z" fill="#9d7b5d"/>
-          <path d="M127 81l-19 25M145 81l17 28 11 32" stroke="#2c2927" stroke-width="1.1" stroke-linecap="round"/>
-
-          <!-- Kelin oq ko'ylagi -->
-          <path d="M125 81h21l-1 26c15 16 32 34 39 55-22 14-56 15-78 4 6-24 13-53 19-85Z" fill="#dcdad6"/>
-          <path d="M128 73v8M142 73v8M125 81h21M124 107h21M134 114c-4 21-8 42-11 60M144 120c7 18 14 36 19 53M156 134c9 13 17 25 22 36" stroke="#2c2927" stroke-width="1.2" stroke-linecap="round"/>
-
-          <!-- Kelin oyoqlari va poshnali tuflilari -->
-          <path d="M131 175l-3 36M146 176l3 27" stroke="#9d7b5d" stroke-width="4.5" stroke-linecap="round"/>
-          <path d="M131 175l-3 36M146 176l3 27" stroke="#2c2927" stroke-width="1.1" stroke-linecap="round"/>
-          <path d="M122 211h11v7h-13l2-7ZM144 203h10v6h-12l2-6Z" fill="#cbc5bc" stroke="#2c2927" stroke-width="1.1"/>
-        </svg>
+        <!-- KUYOV VA KELIN RASMI -->
+        <img src="./couple.png" alt="Kuyov va kelin" class="couple-art">
 
         <div class="couple-names">ABDURASHID <span>&amp;</span> GULNORA</div>
 
