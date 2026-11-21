@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="uz">
 <head>
@@ -6,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#fbf7ef">
   <meta name="description" content="Abdurashid va Gulnoraning nikoh to‘yiga taklifnoma">
-  <title>Abdurashid & Gulnora | Wedding Invitation</title>
+  <title>Abdurashid &amp; Gulnora | Wedding Invitation</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -467,6 +466,38 @@ body::before {
   to { opacity: 1; }
 }
 
+/* TEZKOR NAVIGATSIYA */
+
+.quick-nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  padding: 12px 14px;
+  background: rgba(251, 247, 239, 0.88);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(177, 138, 80, 0.25);
+}
+
+.quick-nav a {
+  color: var(--darkgold);
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 8px;
+  border-bottom: 1px solid transparent;
+  transition: color .25s ease, border-color .25s ease;
+}
+
+.quick-nav a:hover {
+  color: var(--text);
+  border-bottom-color: var(--gold);
+}
+
 /* BOSH SAHIFA */
 
 .hero {
@@ -474,7 +505,7 @@ body::before {
   min-height: 100svh;
   display: grid;
   place-items: center;
-  padding: 90px 20px;
+  padding: 76px 20px 90px;
   overflow: hidden;
   text-align: center;
   background:
@@ -625,11 +656,31 @@ body::before {
   letter-spacing: 4px;
 }
 
+.calendar-btn {
+  margin-top: 24px;
+  display: inline-block;
+  padding: 12px 22px;
+  border: 1px solid #c4a16c;
+  color: #fffdf8;
+  background: linear-gradient(135deg, #c7a36d, #927044);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.calendar-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(142,107,60,.24);
+}
+
 /* UMUMIY BO'LIMLAR */
 
 .section {
   position: relative;
-  padding: 88px 20px;
+  padding: 84px 20px;
   overflow: hidden;
   text-align: center;
 }
@@ -724,755 +775,12 @@ body::before {
   letter-spacing: 2px;
 }
 
-/* MANZILLAR */
+/* TO'Y DASTURI */
 
-.address-section {
-  background: rgba(255,253,248,.62);
+.timeline-section {
+  background: rgba(255,253,248,.45);
 }
 
-.address-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%,255px),1fr));
-  gap: 23px;
-  width: min(100%,1040px);
-  margin: 42px auto 0;
-}
-
-.address-card {
-  position: relative;
-  overflow: hidden;
-  padding: 38px 22px;
-  border: 1px solid #d7c19b;
-  background: rgba(255,253,248,.88);
-  box-shadow: 0 12px 34px rgba(92,69,34,.07);
-  transition: transform .45s ease, box-shadow .45s ease;
-}
-
-.address-card::before {
-  content: "❀";
-  position: absolute;
-  top: 8px;
-  right: 13px;
-  color: rgba(177,138,80,.3);
-  font-size: 25px;
-}
-
-.address-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 42px rgba(92,69,34,.13);
-}
-
-.address-icon {
-  margin-bottom: 17px;
-  font-size: 36px;
-}
-
-.address-card h3 {
-  color: var(--darkgold);
-  font-family: 'Playfair Display', serif;
-  font-size: 27px;
-  font-weight: 400;
-}
-
-.address-card p {
-  min-height: 32px;
-  margin: 13px 0;
-  color: #78664d;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 21px;
-  line-height: 1.45;
-}
-
-.visit-time {
-  margin: 17px 0;
-  color: #a27e4a;
-  font-size: 10px;
-  letter-spacing: 2px;
-}
-
-.map-buttons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 9px;
-}
-
-.map-btn {
-  display: inline-block;
-  padding: 12px 14px;
-  border: 1px solid rgba(255,255,255,.4);
-  color: white;
-  background: linear-gradient(135deg,#c3a06c,#927044);
-  text-decoration: none;
-  font-size: 9px;
-  letter-spacing: 1px;
-  transition: transform .3s ease, box-shadow .3s ease;
-}
-
-.map-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(142,107,60,.22);
-}
-
-/* YAKUNIY QISM */
-
-.closing {
-  position: relative;
-  overflow: hidden;
-  padding: 95px 20px;
-  text-align: center;
-  background:
-    radial-gradient(ellipse at center, rgba(255,255,255,.75), transparent 72%),
-    linear-gradient(135deg,#efe3d1,#fbf7ef);
-}
-
-.closing::before,
-.closing::after {
-  content: "❀";
-  position: absolute;
-  color: rgba(177,138,80,.16);
-  font-size: 155px;
-}
-
-.closing::before {
-  top: -30px;
-  left: -38px;
-}
-
-.closing::after {
-  bottom: -42px;
-  right: -35px;
-}
-
-.closing h2 {
-  position: relative;
-  z-index: 1;
-  color: var(--darkgold);
-  font-family: 'Great Vibes', cursive;
-  font-size: clamp(55px, 11vw, 82px);
-  font-weight: 400;
-}
-
-.closing p {
-  position: relative;
-  z-index: 1;
-  margin-top: 20px;
-  color: #78664d;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 24px;
-  line-height: 1.6;
-}
-
-footer {
-  padding: 23px 15px;
-  color: #927c5e;
-  background: #e9decc;
-  text-align: center;
-  font-size: 9px;
-  letter-spacing: 3px;
-}
-
-/* MUSIQA TUGMASI */
-
-.music-btn {
-  position: fixed;
-  right: 19px;
-  bottom: 19px;
-  z-index: 50;
-  display: none;
-  width: 52px;
-  height: 52px;
-  border: 1px solid #d2b27f;
-  border-radius: 50%;
-  color: white;
-  background: linear-gradient(135deg,#c5a16c,#927044);
-  box-shadow: 0 7px 22px rgba(90,70,40,.2);
-  font-size: 23px;
-  cursor: pointer;
-}
-
-.music-btn.active {
-  display: block;
-}
-
-.music-btn.playing {
-  animation: musicRotate 5s linear infinite;
-}
-
-@keyframes musicRotate {
-  to { transform: rotate(360deg); }
-}
-
-/* SCROLL ANIMATSIYA */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity .9s ease, transform .9s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* TELEFON UCHUN */
-
-@media (max-width: 540px) {
-  .cover-card {
-    min-height: 560px;
-    padding: 35px 18px;
-  }
-
-  .cover-names {
-    font-size: 62px;
-  }
-
-  .hero {
-    min-height: 92svh;
-    padding: 75px 15px;
-  }
-
-  .hero-frame {
-    padding: 48px 12px;
-  }
-
-  .hero h1 {
-    font-size: clamp(72px,18vw,100px);
-  }
-
-  .section {
-    padding: 68px 16px;
-  }
-
-  .count-box {
-    width: 75px;
-  }
-
-  .count-number {
-    font-size: 28px;
-  }
-
-  .flower.f1 { font-size: 43px; }
-  .flower.f2 { font-size: 36px; }
-}
-
-/* HARAKATNI KAMAYTIRISH */
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: .01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: .01ms !important;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<!-- ORQA FON EFFEKTLARI -->
-
-<div class="particles" id="particles"></div>
-<div class="glow one"></div>
-<div class="glow two"></div>
-
-<!-- MUSIQA: MP3 FAYL INDEX.HTML BILAN BIR PAPKADA BO'LISHI KERAK -->
-
-<audio id="weddingMusic" loop preload="auto">
-  <source src="./vafodorim.mp3" type="audio/mpeg">
-</audio>
-
-<!-- BIRINCHI SAHIFA: KONVERT -->
-
-<section class="cover" id="cover">
-
-  <span class="flower f1">❀</span>
-  <span class="flower f2">❧</span>
-  <span class="flower f3">✿</span>
-  <span class="flower f4">❀</span>
-
-  <div class="cover-card">
-
-    <div class="cover-kicker">
-      SIZNI NIKOH TO'YIMIZGA TAKLIF QILAMIZ
-    </div>
-
-    <div class="cover-names">Abdurashid</div>
-    <div class="ampersand">&</div>
-    <div class="cover-names">Gulnora</div>
-
-    <div class="ornament">✧ ❦ ✧</div>
-
-    <div class="cover-date">22 · 07 · 2000</div>
-
-    <!-- KONVERT -->
-
-    <div class="envelope-stage">
-      <div class="envelope">
-        <div class="envelope-back"></div>
-        <div class="envelope-letter">With love</div>
-        <div class="envelope-flap"></div>
-        <div class="envelope-seal">♥</div>
-      </div>
-    </div>
-
-    <button class="open-btn" id="openButton" type="button">
-      TAKLIFNOMANI OCHISH
-    </button>
-
-    <div class="cover-hint">
-      Siz uchun mehr bilan tayyorlandi
-    </div>
-
-  </div>
-</section>
-
-<!-- MUSIQA BOSHQARUVI -->
-
-<button class="music-btn" id="musicButton" type="button"
-  aria-label="Musiqani yoqish yoki to'xtatish">
-  ♫
-</button>
-
-<!-- ASOSIY TAKLIFNOMA -->
-
-<main class="invitation" id="invitation">
-
-  <!-- BOSH SAHIFA -->
-
-  <section class="hero">
-
-    <span class="flower f1">❀</span>
-    <span class="flower f2">❧</span>
-    <span class="flower f3">✿</span>
-    <span class="flower f4">❀</span>
-
-    <div class="hero-frame">
-
-      <!-- ARABCHA VA O'ZBEKCHA YOZUV -->
-
-      <div class="quote">
-
-        <span class="quote-ar" lang="ar" dir="rtl">
-          وَأَلَّفَ بَيْنَ قُلُوبِهِمْ
-        </span>
-
-        Alloh ularning qalblarini sevgi ila birlashtirdi!
-
-      </div>
-
-      <div class="eyebrow">
-        BIZNING ENG BAXTLI KUNIMIZ
-      </div>
-
-      <h1>Abdurashid</h1>
-
-      <div class="hero-and">&</div>
-
-      <h1 class="second">Gulnora</h1>
-
-      <div class="ornament">✧ ❦ ✧</div>
-
-      <p class="hero-copy">
-        Ikki qalb, bir taqdir, bir umrga atalgan muhabbat...
-        Hayotimizning eng go'zal kunida sizni yonimizda
-        ko'rishdan baxtiyor bo'lamiz.
-      </p>
-
-      <div class="hero-date">
-        22 IYUL 2000
-      </div>
-
-      <div class="hero-time">
-        SOAT 18:00 DA
-      </div>
-
-    </div>
-  </section>
-
-  <!-- MEHMONLARGA TAKLIF -->
-
-  <section class="section reveal">
-
-    <h2 class="section-title">
-      Aziz mehmonimiz!
-    </h2>
-
-    <div class="gold-line"></div>
-
-    <div class="ornament-line">❦</div>
-
-    <p class="section-copy">
-      Sizni hayotimizdagi eng unutilmas va quvonchli kunimiz —
-      nikoh to'yimizga chin qalbimizdan taklif etamiz.
-      Quvonchimizga sherik bo'lishingiz biz uchun katta baxtdir.
-    </p>
-
-    <div class="ornament-line">✧ ✧ ✧</div>
-
-  </section>
-
-  <!-- TO'Y SANAGICHI -->
-
-  <section class="countdown-section reveal">
-
-    <h2 class="section-title">
-      Baxtli kunimizgacha
-    </h2>
-
-    <div class="gold-line"></div>
-
-    <div class="countdown">
-
-      <div class="count-box">
-        <span class="count-number" id="days">00</span>
-        <div class="count-label">KUN</div>
-      </div>
-
-      <div class="count-box">
-        <span class="count-number" id="hours">00</span>
-        <div class="count-label">SOAT</div>
-      </div>
-
-      <div class="count-box">
-        <span class="count-number" id="minutes">00</span>
-        <div class="count-label">DAQIQA</div>
-      </div>
-
-      <div class="count-box">
-        <span class="count-number" id="seconds">00</span>
-        <div class="count-label">SONIYA</div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- MANZILLAR -->
-
-  <section class="section address-section reveal">
-
-    <h2 class="section-title">
-      Manzillarimiz
-    </h2>
-
-    <div class="gold-line"></div>
-
-    <p class="section-copy">
-      Quyidagi manzillar orqali bizni osongina topishingiz mumkin.
-    </p>
-
-    <div class="address-grid">
-
-      <!-- KUYOV UYI -->
-
-      <article class="address-card">
-
-        <div class="address-icon">🏡</div>
-
-        <h3>Kuyov uyi</h3>
-
-        <p>Abdurashid xonadoniga tashrif</p>
-
-        <div class="visit-time">
-          SOAT 12:00 DA
-        </div>
-
-        <div class="map-buttons">
-
-          <a class="map-btn"
-             href="https://yandex.uz/maps/-/CXWciF0R"
-             target="_blank"
-             rel="noopener noreferrer">
-            YANDEX MAPS
-          </a>
-
-          <a class="map-btn"
-             href="https://maps.app.goo.gl/8C8BY1PwHbMbqNHr8"
-             target="_blank"
-             rel="noopener noreferrer">
-            GOOGLE MAPS
-          </a>
-
-        </div>
-      </article>
-
-      <!-- KELIN UYI -->
-
-      <article class="address-card">
-
-        <div class="address-icon">🌸</div>
-
-        <h3>Kelin uyi</h3>
-
-        <p>Gulnora xonadoniga tashrif</p>
-
-        <div class="visit-time">
-          SOAT 13:00 DA
-        </div>
-
-        <div class="map-buttons">
-
-          <a class="map-btn"
-             href="https://yandex.uz/maps/-/CXWcm4M3"
-             target="_blank"
-             rel="noopener noreferrer">
-            YANDEX MAPS
-          </a>
-
-          <a class="map-btn"
-             href="https://maps.app.goo.gl/xedHjRo8rPxhFXMe9"
-             target="_blank"
-             rel="noopener noreferrer">
-            GOOGLE MAPS
-          </a>
-
-        </div>
-      </article>
-
-      <!-- TO'YXONA -->
-
-      <article class="address-card">
-
-        <div class="address-icon">💍</div>
-
-        <h3>To'yxona</h3>
-
-        <p>Versal tantanalar saroyi</p>
-
-        <div class="visit-time">
-          SOAT 18:00 DA
-        </div>
-
-        <div class="map-buttons">
-
-          <a class="map-btn"
-             href="https://yandex.uz/maps/-/CXWG7B7K"
-             target="_blank"
-             rel="noopener noreferrer">
-            YANDEX MAPS
-          </a>
-
-          <a class="map-btn"
-             href="https://maps.app.goo.gl/qbNbSPHZSezpeuAg7"
-             target="_blank"
-             rel="noopener noreferrer">
-            GOOGLE MAPS
-          </a>
-
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- YAKUNIY QISM -->
-
-  <section class="closing reveal">
-
-    <div class="ornament-line">✧ ❦ ✧</div>
-
-    <h2>Abdurashid & Gulnora</h2>
-
-    <div class="gold-line"></div>
-
-    <p>
-      Sizni ushbu unutilmas kunimizda<br>
-      intiqlik bilan kutamiz!
-    </p>
-
-    <div class="ornament-line">✧ ❦ ✧</div>
-
-  </section>
-
-  <footer>
-    ABDURASHID & GULNORA · 17.12.2026
-  </footer>
-
-</main>
-
-<script>
-/* ELEMENTLAR */
-
-const cover = document.getElementById("cover");
-const invitation = document.getElementById("invitation");
-const openButton = document.getElementById("openButton");
-const music = document.getElementById("weddingMusic");
-const musicButton = document.getElementById("musicButton");
-
-let invitationOpened = false;
-
-/* KONVERTNI OCHISH */
-
-openButton.addEventListener("click", () => {
-
-  if (invitationOpened) return;
-
-  invitationOpened = true;
-
-  cover.classList.add("opening");
-  openButton.disabled = true;
-
-  // Konvert animatsiyasidan keyin asosiy sahifa ochiladi
-
-  window.setTimeout(() => {
-
-    invitation.classList.add("show");
-    cover.classList.add("hide");
-
-    musicButton.classList.add("active");
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-
-    // Musiqa foydalanuvchi bosganidan keyin boshlanadi
-
-    music.volume = 0.65;
-
-    music.play().then(() => {
-      musicButton.classList.add("playing");
-    }).catch(() => {
-      musicButton.classList.remove("playing");
-    });
-
-  }, 850);
-
-});
-
-/* MUSIQANI YOQISH VA O'CHIRISH */
-
-musicButton.addEventListener("click", () => {
-
-  if (music.paused) {
-
-    music.play().then(() => {
-      musicButton.classList.add("playing");
-    }).catch(() => {
-      musicButton.classList.remove("playing");
-    });
-
-  } else {
-
-    music.pause();
-    musicButton.classList.remove("playing");
-
-  }
-
-});
-
-/* TO'Y SANAGICHI */
-
-const weddingDate =
-  new Date("2000-07-22T18:00:00+05:00").getTime();
-
-const countdownIds = [
-  "days",
-  "hours",
-  "minutes",
-  "seconds"
-];
-
-function updateCountdown() {
-
-  const distance = weddingDate - Date.now();
-
-  if (distance <= 0) {
-
-    countdownIds.forEach(id => {
-      document.getElementById(id).textContent = "00";
-    });
-
-    return;
-  }
-
-  document.getElementById("days").textContent =
-    String(Math.floor(distance / 86400000)).padStart(2,"0");
-
-  document.getElementById("hours").textContent =
-    String(Math.floor(distance / 3600000) % 24).padStart(2,"0");
-
-  document.getElementById("minutes").textContent =
-    String(Math.floor(distance / 60000) % 60).padStart(2,"0");
-
-  document.getElementById("seconds").textContent =
-    String(Math.floor(distance / 1000) % 60).padStart(2,"0");
-
-}
-
-updateCountdown();
-window.setInterval(updateCountdown, 1000);
-
-/* OLTIN ZARRALAR */
-
-const particles = document.getElementById("particles");
-
-const symbols = ["✧", "·", "❀", "✦", "✿"];
-
-for (let i = 0; i < 32; i++) {
-
-  const particle = document.createElement("span");
-
-  particle.className = "particle";
-
-  particle.textContent =
-    symbols[i % symbols.length];
-
-  particle.style.left =
-    Math.random() * 100 + "%";
-
-  particle.style.animationDuration =
-    (11 + Math.random() * 11) + "s";
-
-  particle.style.animationDelay =
-    (Math.random() * 15) + "s";
-
-  particle.style.fontSize =
-    (9 + Math.random() * 13) + "px";
-
-  particles.appendChild(particle);
-
-}
-
-/* SCROLL ANIMATSIYASI */
-
-if ("IntersectionObserver" in window) {
-
-  const observer = new IntersectionObserver((entries) => {
-
-    entries.forEach(entry => {
-
-      if (entry.isIntersecting) {
-
-        entry.target.classList.add("visible");
-
-        observer.unobserve(entry.target);
-
-      }
-
-    });
-
-  }, {
-    threshold: 0.12
-  });
-
-  document.querySelectorAll(".reveal").forEach(section => {
-    observer.observe(section);
-  });
-
-} else {
-
-  document.querySelectorAll(".reveal").forEach(section => {
-    section.classList.add("visible");
-  });
-
-}
-
-</script>
-
-</body>
-</html>
+.timeline-list {
+  width: min(100%, 640px);
+  margin
