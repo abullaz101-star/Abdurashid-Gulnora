@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#e6e1d8">
-  <meta name="description" content="Abdurashid va Gulnoraning nikoh to‘yiga taklifnoma">
-  <title>Abdurashid &amp; Gulnora | Taklifnoma</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#e6e1d8">
+<meta name="description" content="Abdurashid va Gulnoraning nikoh to‘yiga taklifnoma">
+<title>Abdurashid &amp; Gulnora | Taklifnoma</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -31,9 +31,7 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   min-width: 320px;
@@ -53,16 +51,13 @@ body::before {
   z-index: -1;
   pointer-events: none;
   opacity: .22;
-  background-image:
-    repeating-linear-gradient(
-      45deg,
-      transparent 0 46px,
-      rgba(93, 112, 82, 0.045) 47px,
-      transparent 48px
-    );
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent 0 46px,
+    rgba(93, 112, 82, 0.045) 47px,
+    transparent 48px
+  );
 }
-
-/* ШКАЛА ПРОКРУТКИ */
 
 .scroll-progress {
   position: fixed;
@@ -75,8 +70,6 @@ body::before {
   transition: width .12s linear;
   pointer-events: none;
 }
-
-/* МЯГКОЕ СВЕЧЕНИЕ И ЧАСТИЦЫ */
 
 .glow {
   position: fixed;
@@ -94,16 +87,8 @@ body::before {
   animation: glowDrift 14s ease-in-out infinite alternate;
 }
 
-.glow.one {
-  left: -160px;
-  top: 10%;
-}
-
-.glow.two {
-  right: -160px;
-  bottom: 6%;
-  animation-delay: -7s;
-}
+.glow.one { left: -160px; top: 10%; }
+.glow.two { right: -160px; bottom: 6%; animation-delay: -7s; }
 
 @keyframes glowDrift {
   from { transform: translateY(-12px) scale(.95); opacity: .45; }
@@ -133,7 +118,7 @@ body::before {
   100% { transform: translate(26px, 108vh) rotate(240deg); opacity: 0; }
 }
 
-/* ЭКРАН КОНВЕРТА */
+/* KONVERT EKRANI */
 
 .cover {
   position: fixed;
@@ -226,7 +211,7 @@ body::before {
   letter-spacing: 3.5px;
 }
 
-/* КОНВЕРТ */
+/* KONVERT */
 
 .envelope-stage {
   position: relative;
@@ -340,13 +325,8 @@ body::before {
   z-index: 1;
 }
 
-.cover.opening .envelope-letter {
-  transform: translateY(-72px);
-}
-
-.cover.opening .envelope-seal {
-  opacity: 0;
-}
+.cover.opening .envelope-letter { transform: translateY(-72px); }
+.cover.opening .envelope-seal { opacity: 0; }
 
 .open-btn {
   position: relative;
@@ -370,9 +350,7 @@ body::before {
   box-shadow: 0 14px 28px rgba(62, 56, 49, 0.25);
 }
 
-.open-btn:disabled {
-  cursor: default;
-}
+.open-btn:disabled { cursor: default; }
 
 .cover-hint {
   position: relative;
@@ -384,7 +362,7 @@ body::before {
   font-size: 18px;
 }
 
-/* ОСНОВНОЕ ПРИГЛАШЕНИЕ */
+/* ASOSIY TAKLIFNOMA */
 
 .invitation {
   display: none;
@@ -402,7 +380,7 @@ body::before {
   to { opacity: 1; }
 }
 
-/* НАВИГАЦИЯ */
+/* NAVIGATSIYA */
 
 .quick-nav {
   position: sticky;
@@ -434,7 +412,7 @@ body::before {
   border-bottom-color: var(--brass);
 }
 
-/* ГЛАВНЫЙ БОТАНИЧЕСКИЙ ЛИСТ (ПО МОТИВАМ РЕФЕРЕНСА) */
+/* ASOSIY BOTANIK DIZAYN */
 
 .hero {
   position: relative;
@@ -464,8 +442,6 @@ body::before {
   border: 1px solid rgba(93, 112, 82, 0.16);
   pointer-events: none;
 }
-
-/* БОКОВЫЕ И УГЛОВЫЕ БОТАНИЧЕСКИЕ ВЕТВИ */
 
 .botanical-branch {
   position: absolute;
@@ -562,8 +538,6 @@ body::before {
   color: var(--ink);
   text-transform: uppercase;
 }
-
-/* БЛОК ДАТЫ КАК НА РЕФЕРЕНСЕ */
 
 .date-showcase {
   max-width: 470px;
@@ -690,7 +664,7 @@ body::before {
   box-shadow: 0 8px 20px rgba(62, 56, 49, 0.14);
 }
 
-/* СЕКЦИИ НИЖЕ */
+/* SECTIONS */
 
 .section {
   position: relative;
@@ -723,7 +697,7 @@ body::before {
   background: linear-gradient(90deg, transparent, var(--brass), transparent);
 }
 
-/* СЧЁТЧИК */
+/* COUNTDOWN */
 
 .countdown-box {
   background: rgba(255, 253, 248, 0.55);
@@ -762,7 +736,7 @@ body::before {
   text-transform: uppercase;
 }
 
-/* ПРОГРАММА ДНЯ */
+/* TO‘Y DASTURI */
 
 .timeline-list {
   position: relative;
@@ -820,7 +794,7 @@ body::before {
   color: var(--ink-soft);
 }
 
-/* АДРЕСА */
+/* MANZILLAR */
 
 .address-grid {
   display: grid;
@@ -903,9 +877,7 @@ body::before {
   color: var(--ink);
 }
 
-.map-link:hover {
-  transform: translateY(-2px);
-}
+.map-link:hover { transform: translateY(-2px); }
 
 /* RSVP */
 
@@ -919,9 +891,7 @@ body::before {
   text-align: left;
 }
 
-.form-field {
-  margin-bottom: 18px;
-}
+.form-field { margin-bottom: 18px; }
 
 .form-field label {
   display: block;
@@ -968,7 +938,7 @@ body::before {
   color: var(--olive);
 }
 
-/* ФИНАЛ И ФУТЕР */
+/* YAKUN VA FOOTER */
 
 .closing {
   padding: 86px 18px;
@@ -1004,7 +974,7 @@ footer {
   background: #dcd5c8;
 }
 
-/* КНОПКА МУЗЫКИ И TOAST */
+/* MUSIQA VA XABAR */
 
 .music-btn {
   position: fixed;
@@ -1023,12 +993,10 @@ footer {
   cursor: pointer;
 }
 
-.music-btn.active { display: block; }
+.music-btn.active { display: grid; place-items: center; }
 .music-btn.playing { animation: spinSlow 6s linear infinite; }
 
-@keyframes spinSlow {
-  to { transform: rotate(360deg); }
-}
+@keyframes spinSlow { to { transform: rotate(360deg); } }
 
 .toast {
   position: fixed;
@@ -1065,6 +1033,8 @@ footer {
   transform: translateY(0);
 }
 
+/* TELEFON VA PLANSHEET UCHUN */
+
 @media (max-width: 540px) {
   .botanical-sheet { padding: 42px 16px 48px; }
   .date-row { gap: 8px; }
@@ -1075,12 +1045,138 @@ footer {
   .timeline-item::before { left: -26px; }
 }
 
+/* KAMROQ ANIMATSIYA SO‘RAGAN FOYDALANUVCHILAR UCHUN */
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: .01ms !important;
+  }
+}
+
+/* PROFESSIONAL RESPONSIVE VA ACCESSIBILITY */
+
+:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 3px;
+}
+
+button, a, select, input, textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button { touch-action: manipulation; }
+
+.quick-nav {
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.quick-nav a { white-space: nowrap; }
+
+.address-card, .rsvp-card, .timeline-item { min-width: 0; }
+
+.map-link, .btn-primary, .btn-secondary, .open-btn {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  min-height: 46px;
+}
+
+.form-field textarea { resize: vertical; }
+
+@media (max-width: 700px) {
+  .quick-nav {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 8px;
+    padding: 10px 12px;
+  }
+
+  .quick-nav a {
+    font-size: 9px;
+    letter-spacing: 1.2px;
+  }
+
+  .hero { padding: 28px 12px 52px; }
+
+  .botanical-sheet {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .section { padding: 58px 14px; }
+  .section-copy { font-size: 20px; }
+
+  .address-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .address-card { padding: 26px 16px; }
+  .rsvp-card { padding: 25px 17px; }
+  .timeline-list { padding-left: 18px; }
+  .timeline-item { padding: 16px; }
+
+  .music-btn {
+    right: 12px;
+    bottom: 12px;
+    width: 46px;
+    height: 46px;
+  }
+}
+
+@media (max-width: 380px) {
+  .cover-card {
+    min-height: 82vh;
+    padding: 30px 18px;
+  }
+
+  .cover-kicker {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+  }
+
+  .cover-names {
+    font-size: 17px;
+    letter-spacing: 1.2px;
+  }
+
+  .envelope-stage {
+    transform: scale(.88);
+    margin: 12px auto;
+  }
+
+  .date-row { gap: 5px; }
+
+  .date-side {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .countdown { gap: 8px; }
+  .count-card { width: calc(50% - 8px); }
+
+  .rsvp-buttons { flex-direction: column; }
+  .rsvp-buttons button { width: 100%; }
+}
+
+@media (hover: none) {
+  .address-card:hover,
+  .btn-primary:hover,
+  .btn-secondary:hover,
+  .map-link:hover,
+  .open-btn:hover {
+    transform: none;
+    box-shadow: none;
   }
 }
 </style>
@@ -1098,10 +1194,11 @@ footer {
   <source src="./vafodorim.mp3" type="audio/mpeg">
 </audio>
 
-<!-- КОНВЕРТ -->
+<!-- KONVERT -->
 
 <section class="cover" id="cover">
   <div class="cover-card">
+
     <svg class="cover-rings" viewBox="0 0 80 42" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
       <circle cx="31" cy="23" r="12"/>
       <circle cx="49" cy="23" r="12"/>
@@ -1109,9 +1206,7 @@ footer {
     </svg>
 
     <div class="cover-kicker">Taklifnoma</div>
-
     <div class="cover-names">ABDURASHID &amp; GULNORA</div>
-
     <div class="cover-date" id="coverDate">17 · 12 · 2026</div>
 
     <div class="envelope-stage" id="envelopeStage" role="button" tabindex="0" aria-label="Konvertni ochish">
@@ -1130,8 +1225,6 @@ footer {
 
 <button class="music-btn" id="musicButton" type="button" aria-label="Musiqani yoqish yoki to'xtatish">♫</button>
 
-<!-- ОСНОВНОЙ САЙТ -->
-
 <main class="invitation" id="invitation">
 
   <nav class="quick-nav" aria-label="Bo'limlarga o'tish">
@@ -1142,18 +1235,20 @@ footer {
     <a href="#rsvp-sec">Tasdiqlash</a>
   </nav>
 
-  <!-- БОТАНИЧЕСКИЙ ЛИСТ -->
+  <!-- TAKLIFNOMA ASOSIY QISMI -->
+
   <section class="hero" id="top">
     <article class="botanical-sheet">
 
-      <!-- Левая верхняя ветвь с цветами и листьями -->
+      <!-- Chap yuqori botanika -->
+
       <svg class="botanical-branch left-top" viewBox="0 0 150 260" fill="none" aria-hidden="true">
         <path d="M12 248C26 184 44 114 78 36" stroke="#5d7052" stroke-width="2" stroke-linecap="round"/>
         <path d="M28 196C14 186 8 172 12 162C24 166 32 178 28 196Z" fill="#7e9172"/>
         <path d="M34 192C48 186 60 188 64 198C52 204 40 202 34 192Z" fill="#5d7052"/>
         <path d="M48 134C32 124 24 110 28 100C40 104 48 116 48 134Z" fill="#7e9172"/>
         <path d="M54 128C68 122 80 124 84 134C72 140 60 138 54 128Z" fill="#5d7052"/>
-        <!-- Цветы -->
+
         <g transform="translate(46, 162)">
           <circle cx="0" cy="-10" r="8" fill="#f7f4ee" stroke="#8e9e82" stroke-width="1"/>
           <circle cx="9.5" cy="-3" r="8" fill="#f7f4ee" stroke="#8e9e82" stroke-width="1"/>
@@ -1162,6 +1257,7 @@ footer {
           <circle cx="-9.5" cy="-3" r="8" fill="#f7f4ee" stroke="#8e9e82" stroke-width="1"/>
           <circle cx="0" cy="0" r="4.5" fill="#c2a467"/>
         </g>
+
         <g transform="translate(64, 92)">
           <circle cx="0" cy="-9.5" r="7.5" fill="#f7f4ee" stroke="#8e9e82" stroke-width="1"/>
           <circle cx="9" cy="-3" r="7.5" fill="#f7f4ee" stroke="#8e9e82" stroke-width="1"/>
@@ -1172,13 +1268,15 @@ footer {
         </g>
       </svg>
 
-      <!-- Правая верхняя симметричная ветвь -->
+      <!-- O‘ng yuqori botanika -->
+
       <svg class="botanical-branch right-top" viewBox="0 0 150 260" fill="none" aria-hidden="true">
         <path d="M12 248C26 184 44 114 78 36" stroke="#5d7052" stroke-width="2" stroke-linecap="round"/>
         <path d="M28 196C14 186 8 172 12 162C24 166 32 178 28 196Z" fill="#7e9172"/>
         <path d="M34 192C48 186 60 188 64 198C52 204 40 202 34 192Z" fill="#5d7052"/>
         <path d="M48 134C32 124 24 110 28 100C40 104 48 116 48 134Z" fill="#7e9172"/>
         <path d="M54 128C68 122 80 124 84 134C72 140 60 138 54 128Z" fill="#5d7052"/>
+
         <g transform="translate(46, 162)">
           <circle cx="0" cy="-10" r="8" fill="#f7f4ee" stroke="#8e9e82" stroke-width="1"/>
           <circle cx="9.5" cy="-3" r="8" fill="#f7f4ee" stroke="#8e9e82" stroke-width="1"/>
@@ -1187,6 +1285,7 @@ footer {
           <circle cx="-9.5" cy="-3" r="8" fill="#f7f4ee" stroke="#8e9e82" stroke-width="1"/>
           <circle cx="0" cy="0" r="4.5" fill="#c2a467"/>
         </g>
+
         <g transform="translate(64, 92)">
           <circle cx="0" cy="-9.5" r="7.5" fill="#f7f4ee" stroke="#8e9e82" stroke-width="1"/>
           <circle cx="9" cy="-3" r="7.5" fill="#f7f4ee" stroke="#8e9e82" stroke-width="1"/>
@@ -1197,7 +1296,8 @@ footer {
         </g>
       </svg>
 
-      <!-- Левая нижняя веточка -->
+      <!-- Chap pastki botanika -->
+
       <svg class="botanical-branch left-bottom" viewBox="0 0 150 210" fill="none" aria-hidden="true">
         <path d="M22 198C34 142 54 84 92 24" stroke="#5d7052" stroke-width="1.8" stroke-linecap="round"/>
         <path d="M40 144C24 138 16 126 20 116C32 118 40 128 40 144Z" fill="#7e9172"/>
@@ -1210,7 +1310,6 @@ footer {
 
       <div class="sheet-inner">
 
-        <!-- Переплетённые кольца -->
         <svg class="top-rings" viewBox="0 0 80 42" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
           <circle cx="31" cy="23" r="12"/>
           <circle cx="49" cy="23" r="12"/>
@@ -1219,9 +1318,11 @@ footer {
 
         <div class="sheet-title">Taklifnoma</div>
 
-        <!-- Иллюстрация пары в костюме и белом платье -->
+        <!-- Kelin-kuyov rasmi -->
+
         <svg class="couple-art" viewBox="0 0 260 275" fill="none" aria-label="Kuyov va kelin illyustratsiyasi">
-          <!-- Жених -->
+
+          <!-- Kuyov -->
           <path d="M95 54c0-11 8-18 17-18s17 7 17 18c0 9-5 16-12 18v8h-10v-8c-7-2-12-9-12-18Z" fill="#cfa98a" stroke="#3e3831" stroke-width="1.4"/>
           <path d="M96 50c2-11 12-16 22-14 6 1 10 5 11 10-7-2-14-1-20 3-5 3-9 3-13 1Z" fill="#3e3831"/>
           <path d="M84 82l18-5h22l16 6 8 56-16 4-4-34-4 66h-32l2-66-6 28-14-4 12-59Z" fill="#8b6745" stroke="#3e3831" stroke-width="1.4" stroke-linejoin="round"/>
@@ -1230,16 +1331,14 @@ footer {
           <path d="M88 184h17l-2 52H84l4-52ZM107 184h17l4 52h-19l-2-52Z" fill="#8b6745" stroke="#3e3831" stroke-width="1.4"/>
           <path d="M84 236h19v9H81l3-9ZM109 236h19l3 9h-22v-9Z" fill="#3e3831"/>
 
-          <!-- Невеста -->
+          <!-- Kelin -->
           <path d="M148 64c0-10 7-17 16-17s16 7 16 17c0 8-5 15-11 17v7h-10v-7c-6-2-11-9-11-17Z" fill="#cfa98a" stroke="#3e3831" stroke-width="1.4"/>
           <path d="M146 62c0-13 9-20 20-19 10 1 17 9 17 20 0 11 4 22 7 31-5 2-10-1-12-8-3-8-7-12-14-12-8 0-14 4-18-3Z" fill="#3e3831"/>
           <path d="M148 88h24l-2 24h-20l-2-24Z" fill="#f5f2ec" stroke="#3e3831" stroke-width="1.4"/>
           <path d="M152 77v11M168 77v11" stroke="#3e3831" stroke-width="1.2"/>
           <path d="M148 112h24c14 24 27 56 35 84-22 10-54 10-76 0 6-26 11-56 17-84Z" fill="#f5f2ec" stroke="#3e3831" stroke-width="1.4" stroke-linejoin="round"/>
-          <!-- Соединённые руки -->
           <path d="M142 126l-10 8" stroke="#cfa98a" stroke-width="6" stroke-linecap="round"/>
           <path d="M142 126l-10 8" stroke="#3e3831" stroke-width="1.3" stroke-linecap="round"/>
-          <!-- Ноги и туфли -->
           <path d="M154 202l-4 34M168 202l4 34" stroke="#cfa98a" stroke-width="5" stroke-linecap="round"/>
           <path d="M154 202l-4 34M168 202l4 34" stroke="#3e3831" stroke-width="1.2" stroke-linecap="round"/>
           <path d="M144 236h10v7h-12l2-7ZM168 236h10l2 7h-12v-7Z" fill="#d9c6b0" stroke="#3e3831" stroke-width="1.2"/>
@@ -1266,7 +1365,6 @@ footer {
 
         <div class="venue-line" id="sheetVenue">Versal tantanalar saroyi</div>
 
-        <!-- Нижняя орнаментальная веточка с сердцем -->
         <svg class="bottom-flourish" viewBox="0 0 320 50" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
           <path d="M24 34c38-14 82-12 118 2"/>
           <path d="M296 34c-38-14-82-12-118 2"/>
@@ -1289,7 +1387,8 @@ footer {
     </article>
   </section>
 
-  <!-- СЧЁТЧИК -->
+  <!-- SANAGICH -->
+
   <section class="section countdown-box reveal" id="countdown-sec">
     <h2 class="section-title">Baxtli kunimizgacha</h2>
     <div class="divider"></div>
@@ -1301,11 +1400,13 @@ footer {
     </div>
   </section>
 
-  <!-- ПРОГРАММА ДНЯ -->
+  <!-- TO‘Y DASTURI -->
+
   <section class="section reveal" id="program-sec">
     <h2 class="section-title">To‘y dasturi</h2>
     <div class="divider"></div>
     <p class="section-copy">Shu quvonchli kunning asosiy lahzalari tartibi.</p>
+
     <div class="timeline-list">
       <div class="timeline-item">
         <div class="timeline-time">12:00</div>
@@ -1314,6 +1415,7 @@ footer {
           <p>Mehmonlarni kutib olish va xayrli duolar</p>
         </div>
       </div>
+
       <div class="timeline-item">
         <div class="timeline-time">13:00</div>
         <div class="timeline-details">
@@ -1321,6 +1423,7 @@ footer {
           <p>Qutlov marosimi va samimiy uchrashuv</p>
         </div>
       </div>
+
       <div class="timeline-item">
         <div class="timeline-time">18:00</div>
         <div class="timeline-details">
@@ -1331,17 +1434,21 @@ footer {
     </div>
   </section>
 
-  <!-- АДРЕСА -->
+  <!-- MANZILLAR -->
+
   <section class="section countdown-box reveal" id="addresses-sec">
     <h2 class="section-title">Manzillarimiz</h2>
     <div class="divider"></div>
     <p class="section-copy">Quyidagi manzillar orqali bizni osongina topishingiz mumkin.</p>
+
     <div class="address-grid">
+
       <article class="address-card">
         <div class="card-index">01</div>
         <h3>Kuyov uyi</h3>
         <p>Abdurashid xonadoniga tashrif</p>
         <div class="visit-time">Soat 12:00 da</div>
+
         <div class="map-actions">
           <a class="map-link" href="https://yandex.uz/maps/-/CXWciF0R" target="_blank" rel="noopener noreferrer">Yandex Maps</a>
           <a class="map-link" href="https://maps.app.goo.gl/8C8BY1PwHbMbqNHr8" target="_blank" rel="noopener noreferrer">Google Maps</a>
@@ -1354,6 +1461,7 @@ footer {
         <h3>Kelin uyi</h3>
         <p>Gulnora xonadoniga tashrif</p>
         <div class="visit-time">Soat 13:00 da</div>
+
         <div class="map-actions">
           <a class="map-link" href="https://yandex.uz/maps/-/CXWcm4M3" target="_blank" rel="noopener noreferrer">Yandex Maps</a>
           <a class="map-link" href="https://maps.app.goo.gl/xedHjRo8rPxhFXMe9" target="_blank" rel="noopener noreferrer">Google Maps</a>
@@ -1366,50 +1474,60 @@ footer {
         <h3>To‘yxona</h3>
         <p>Versal tantanalar saroyi</p>
         <div class="visit-time">Soat 18:00 da</div>
+
         <div class="map-actions">
           <a class="map-link" href="https://yandex.uz/maps/-/CXWG7B7K" target="_blank" rel="noopener noreferrer">Yandex Maps</a>
           <a class="map-link" href="https://maps.app.goo.gl/qbNbSPHZSezpeuAg7" target="_blank" rel="noopener noreferrer">Google Maps</a>
           <button class="map-link outline copy-addr-btn" type="button" data-copy="To'yxona — Versal tantanalar saroyi (Soat 18:00): https://maps.app.goo.gl/qbNbSPHZSezpeuAg7">Nusxalash</button>
         </div>
       </article>
+
     </div>
   </section>
 
   <!-- RSVP -->
+
   <section class="section reveal" id="rsvp-sec">
     <h2 class="section-title">Ishtirokingizni tasdiqlang</h2>
     <div class="divider"></div>
     <p class="section-copy">Mehmonlar sonini aniq rejalashtirishimiz uchun javobingizni qoldiring.</p>
+
     <form class="rsvp-card" id="rsvpForm">
+
       <div class="form-field">
         <label for="guestName">Ism-sharifingiz</label>
         <input id="guestName" name="guestName" type="text" required placeholder="Masalan: Jasurbek Karimov">
       </div>
+
       <div class="form-field">
         <label for="attendance">Ishtirok etasizmi?</label>
-        <select id="attendance" name="attendance">
+        <select id="attendance" name="attendance" required>
           <option value="Albatta boraman">Albatta boraman</option>
           <option value="Oilam bilan boraman">Oilam bilan boraman</option>
           <option value="Afsuski bora olmayman">Afsuski bora olmayman</option>
         </select>
       </div>
+
       <div class="form-field">
         <label for="guestCount">Mehmonlar soni</label>
-        <select id="guestCount" name="guestCount">
+        <select id="guestCount" name="guestCount" required>
           <option value="1">1 kishi</option>
           <option value="2">2 kishi</option>
           <option value="3">3 kishi</option>
           <option value="4+">4 yoki undan ko‘p</option>
         </select>
       </div>
+
       <div class="form-field">
         <label for="wishText">Samimiy tilagingiz (ixtiyoriy)</label>
         <textarea id="wishText" name="wishText" rows="3" placeholder="Baxt va farovonlik tilaklaringiz..."></textarea>
       </div>
+
       <div class="rsvp-buttons">
         <button class="btn-primary" type="submit">Javobni tayyorlash</button>
         <button class="btn-secondary" type="button" id="copyRsvpBtn">Matnni nusxalash</button>
       </div>
+
       <div class="rsvp-msg" id="rsvpStatus" role="status" aria-live="polite"></div>
     </form>
   </section>
@@ -1425,6 +1543,8 @@ footer {
 </main>
 
 <script>
+/* TO‘Y MA’LUMOTLARI */
+
 const WEDDING_CONFIG = {
   isoDateTime: "2026-12-17T18:00:00+05:00",
   coverText: "17 · 12 · 2026",
@@ -1435,11 +1555,16 @@ const WEDDING_CONFIG = {
   yearText: "2026",
   venueName: "Versal tantanalar saroyi",
   footerText: "ABDURASHID & GULNORA · 17.12.2026",
+
   icsStart: "20261217T130000Z",
   icsEnd: "20261217T180000Z",
-  telegramBotToken: "",
-  telegramChatId: ""
+
+  // Agar RSVP serveringiz bo‘lsa, uning URL manzilini shu yerga yozing.
+  // Telegram bot tokenini bu HTML faylga yozmang.
+  rsvpEndpoint: ""
 };
+
+/* SAHIFADAGI MA’LUMOTLARNI YANGILASH */
 
 document.getElementById("coverDate").textContent = WEDDING_CONFIG.coverText;
 document.getElementById("sheetMonth").textContent = WEDDING_CONFIG.monthText;
@@ -1450,20 +1575,54 @@ document.getElementById("sheetYear").textContent = WEDDING_CONFIG.yearText;
 document.getElementById("sheetVenue").textContent = WEDDING_CONFIG.venueName;
 document.getElementById("footerDate").textContent = WEDDING_CONFIG.footerText;
 
+/* TO‘G‘RI ISHLAYDIGAN NUSXALASH FUNKSIYASI */
+
 const toastEl = document.getElementById("toast");
 let toastTimer = null;
+
+async function copyText(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+
+  const helper = document.createElement("textarea");
+  helper.value = text;
+  helper.setAttribute("readonly", "");
+  helper.style.position = "fixed";
+  helper.style.opacity = "0";
+
+  document.body.appendChild(helper);
+  helper.select();
+
+  const copied = document.execCommand("copy");
+  helper.remove();
+
+  if (!copied) {
+    throw new Error("Nusxalash amalga oshmadi");
+  }
+}
+
+/* EKRANDA XABAR CHIQARISH */
 
 function showToast(msg) {
   toastEl.textContent = msg;
   toastEl.classList.add("show");
+
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => toastEl.classList.remove("show"), 2200);
+
+  toastTimer = setTimeout(() => {
+    toastEl.classList.remove("show");
+  }, 2200);
 }
+
+/* KONVERTNI OCHISH */
 
 const cover = document.getElementById("cover");
 const invitation = document.getElementById("invitation");
 const openButton = document.getElementById("openButton");
 const envelopeStage = document.getElementById("envelopeStage");
+
 const music = document.getElementById("weddingMusic");
 const musicButton = document.getElementById("musicButton");
 
@@ -1474,13 +1633,19 @@ let fadeTimer = null;
 music.addEventListener("error", () => {
   musicAvailable = false;
   musicButton.classList.remove("active", "playing");
+  musicButton.setAttribute("aria-hidden", "true");
 });
+
+/* MUSIQANI SEKIN OCHISH */
 
 function fadeMusicIn(targetVolume = 0.65) {
   clearInterval(fadeTimer);
+
   music.volume = 0.05;
+
   music.play().then(() => {
     musicButton.classList.add("playing");
+
     fadeTimer = setInterval(() => {
       if (music.volume + 0.06 < targetVolume) {
         music.volume = Number((music.volume + 0.06).toFixed(2));
@@ -1489,13 +1654,17 @@ function fadeMusicIn(targetVolume = 0.65) {
         clearInterval(fadeTimer);
       }
     }, 120);
+
   }).catch(() => {
     musicButton.classList.remove("playing");
   });
 }
 
+/* TAKLIFNOMANI OCHISH */
+
 function openInvitation() {
   if (invitationOpened) return;
+
   invitationOpened = true;
 
   cover.classList.add("opening");
@@ -1504,14 +1673,23 @@ function openInvitation() {
   window.setTimeout(() => {
     invitation.classList.add("show");
     cover.classList.add("hide");
-    if (musicAvailable) musicButton.classList.add("active");
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    if (musicAvailable) fadeMusicIn(0.65);
+
+    if (musicAvailable) {
+      musicButton.classList.add("active");
+      fadeMusicIn(0.65);
+    }
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
   }, 850);
 }
 
 openButton.addEventListener("click", openInvitation);
 envelopeStage.addEventListener("click", openInvitation);
+
 envelopeStage.addEventListener("keydown", (e) => {
   if (e.key === "Enter" || e.key === " ") {
     e.preventDefault();
@@ -1519,8 +1697,11 @@ envelopeStage.addEventListener("keydown", (e) => {
   }
 });
 
+/* MUSIQANI BOSHQARISH */
+
 musicButton.addEventListener("click", () => {
   if (!musicAvailable) return;
+
   if (music.paused) {
     fadeMusicIn(0.65);
     showToast("Musiqa yoqildi");
@@ -1532,25 +1713,54 @@ musicButton.addEventListener("click", () => {
   }
 });
 
+/* TO‘Y SANAGICHI */
+
 const weddingDate = new Date(WEDDING_CONFIG.isoDateTime).getTime();
-const countdownIds = ["days", "hours", "minutes", "seconds"];
+
+const countdownIds = [
+  "days",
+  "hours",
+  "minutes",
+  "seconds"
+];
 
 function updateCountdown() {
   const distance = weddingDate - Date.now();
+
   if (distance <= 0) {
-    countdownIds.forEach(id => { document.getElementById(id).textContent = "00"; });
+    countdownIds.forEach(id => {
+      document.getElementById(id).textContent = "00";
+    });
+
+    const heading = document.querySelector("#countdown-sec .section-title");
+
+    if (heading) {
+      heading.textContent = "Bugun baxtli kunimiz!";
+    }
+
     return;
   }
-  document.getElementById("days").textContent = String(Math.floor(distance / 86400000)).padStart(2, "0");
-  document.getElementById("hours").textContent = String(Math.floor(distance / 3600000) % 24).padStart(2, "0");
-  document.getElementById("minutes").textContent = String(Math.floor(distance / 60000) % 60).padStart(2, "0");
-  document.getElementById("seconds").textContent = String(Math.floor(distance / 1000) % 60).padStart(2, "0");
+
+  document.getElementById("days").textContent =
+    String(Math.floor(distance / 86400000)).padStart(2, "0");
+
+  document.getElementById("hours").textContent =
+    String(Math.floor(distance / 3600000) % 24).padStart(2, "0");
+
+  document.getElementById("minutes").textContent =
+    String(Math.floor(distance / 60000) % 60).padStart(2, "0");
+
+  document.getElementById("seconds").textContent =
+    String(Math.floor(distance / 1000) % 60).padStart(2, "0");
 }
 
 updateCountdown();
 window.setInterval(updateCountdown, 1000);
 
+/* KALENDAR FAYLINI YUKLASH */
+
 document.getElementById("addCalendarBtn").addEventListener("click", () => {
+
   const icsContent = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
@@ -1566,140 +1776,320 @@ document.getElementById("addCalendarBtn").addEventListener("click", () => {
     "END:VCALENDAR"
   ].join("\r\n");
 
-  const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
+  const blob = new Blob(
+    [icsContent],
+    { type: "text/calendar;charset=utf-8" }
+  );
+
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
+
   a.href = url;
   a.download = "Abdurashid-Gulnora-Toy.ics";
+
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
-  URL.revokeObjectURL(url);
+
+  // Fayl yuklanishiga vaqt beriladi.
+  window.setTimeout(() => {
+    URL.revokeObjectURL(url);
+  }, 1500);
+
   showToast("Kalendar fayli yuklandi");
 });
 
+/* TAKLIFNOMANI ULASHISH */
+
 document.getElementById("shareInviteBtn").addEventListener("click", async () => {
+
   const shareUrl = window.location.href;
   const shareText = "Abdurashid va Gulnoraning nikoh to'yiga taklifnoma";
+
   if (navigator.share) {
     try {
-      await navigator.share({ title: shareText, text: shareText, url: shareUrl });
+      await navigator.share({
+        title: shareText,
+        text: shareText,
+        url: shareUrl
+      });
+
       return;
     } catch {}
   }
+
   try {
-    await navigator.clipboard.writeText(shareUrl);
+    await copyText(shareUrl);
     showToast("Taklifnoma havolasi nusxalandi");
   } catch {
     showToast(shareUrl);
   }
 });
 
+/* MANZILLARNI NUSXALASH */
+
 document.querySelectorAll(".copy-addr-btn").forEach((btn) => {
+
   btn.addEventListener("click", async () => {
+
     const text = btn.getAttribute("data-copy") || "";
+
     try {
-      await navigator.clipboard.writeText(text);
+      await copyText(text);
+
       const prev = btn.textContent;
+
       btn.textContent = "Nusxalandi ✓";
+
       showToast("Manzil nusxalandi");
-      setTimeout(() => { btn.textContent = prev; }, 1800);
+
+      setTimeout(() => {
+        btn.textContent = prev;
+      }, 1800);
+
     } catch {
       alert("Manzil: " + text);
     }
+
   });
+
 });
+
+/* RSVP FORMASI */
 
 const rsvpForm = document.getElementById("rsvpForm");
 const rsvpStatus = document.getElementById("rsvpStatus");
 const copyRsvpBtn = document.getElementById("copyRsvpBtn");
+
+const attendanceSelect = document.getElementById("attendance");
+const guestCountSelect = document.getElementById("guestCount");
+
+const guestCountField = guestCountSelect.closest(".form-field");
+
 let lastRsvpMessage = "";
 
-function buildRsvpMessage() {
-  const name = document.getElementById("guestName").value.trim() || "Mehmon";
-  const attendance = document.getElementById("attendance").value;
-  const count = document.getElementById("guestCount").value;
-  const wish = document.getElementById("wishText").value.trim();
+/* BORA OLMAYDIGAN MEHMON UCHUN SON MAYDONINI YASHIRISH */
 
-  return [
-    "💍 Nikoh to'yi javobi (Abdurashid & Gulnora)",
-    `👤 Ism: ${name}`,
-    `📌 Holat: ${attendance}`,
-    `👥 Mehmonlar soni: ${count}`,
-    wish ? `💌 Tilak: ${wish}` : ""
-  ].filter(Boolean).join("\n");
+function syncGuestCountField() {
+
+  const declined =
+    attendanceSelect.value === "Afsuski bora olmayman";
+
+  guestCountField.hidden = declined;
+  guestCountSelect.disabled = declined;
+  guestCountSelect.required = !declined;
+
+  if (declined) {
+    guestCountSelect.value = "1";
+  }
 }
 
+attendanceSelect.addEventListener("change", syncGuestCountField);
+syncGuestCountField();
+
+/* RSVP XABARINI TAYYORLASH */
+
+function buildRsvpMessage() {
+
+  const name =
+    document.getElementById("guestName").value.trim() || "Mehmon";
+
+  const attendance = attendanceSelect.value;
+  const count = guestCountSelect.value;
+
+  const wish =
+    document.getElementById("wishText").value.trim();
+
+  const lines = [
+    "💍 Nikoh to'yi javobi (Abdurashid & Gulnora)",
+    `👤 Ism: ${name}`,
+    `📌 Holat: ${attendance}`
+  ];
+
+  if (attendance !== "Afsuski bora olmayman") {
+    lines.push(`👥 Mehmonlar soni: ${count}`);
+  }
+
+  if (wish) {
+    lines.push(`💌 Tilak: ${wish}`);
+  }
+
+  return lines.join("\n");
+}
+
+/* RSVP YUBORISH */
+
 rsvpForm.addEventListener("submit", async (e) => {
+
   e.preventDefault();
+
+  if (!rsvpForm.reportValidity()) return;
+
   lastRsvpMessage = buildRsvpMessage();
 
-  if (WEDDING_CONFIG.telegramBotToken && WEDDING_CONFIG.telegramChatId) {
+  /*
+    Agar server endpoint sozlangan bo‘lsa,
+    RSVP ma’lumotlari serverga yuboriladi.
+
+    Agar endpoint bo‘sh bo‘lsa,
+    mehmon javob matnini nusxalab yuborishi mumkin.
+  */
+
+  if (WEDDING_CONFIG.rsvpEndpoint) {
+
     rsvpStatus.textContent = "Yuborilmoqda...";
+
+    const submitButton =
+      rsvpForm.querySelector('button[type="submit"]');
+
+    submitButton.disabled = true;
+
     try {
-      const resp = await fetch(`https://api.telegram.org/bot${WEDDING_CONFIG.telegramBotToken}/sendMessage`, {
+
+      const resp = await fetch(WEDDING_CONFIG.rsvpEndpoint, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json"
+        },
         body: JSON.stringify({
-          chat_id: WEDDING_CONFIG.telegramChatId,
-          text: lastRsvpMessage
+          guestName: document.getElementById("guestName").value.trim(),
+
+          attendance: attendanceSelect.value,
+
+          guestCount:
+            attendanceSelect.value === "Afsuski bora olmayman"
+              ? 0
+              : guestCountSelect.value,
+
+          wish: document.getElementById("wishText").value.trim()
         })
       });
-      if (resp.ok) {
-        rsvpStatus.textContent = "Rahmat! Javobingiz muvaffaqiyatli yuborildi.";
-        rsvpForm.reset();
-        return;
+
+      if (!resp.ok) {
+        throw new Error("Server javobi xato");
       }
-    } catch {}
+
+      rsvpStatus.textContent =
+        "Rahmat! Javobingiz muvaffaqiyatli yuborildi.";
+
+      rsvpForm.reset();
+      syncGuestCountField();
+
+      lastRsvpMessage = "";
+
+    } catch (error) {
+
+      rsvpStatus.textContent =
+        "Serverga yuborilmadi. Javob matnini nusxalab yuborishingiz mumkin.";
+
+    } finally {
+
+      submitButton.disabled = false;
+
+    }
+
+    return;
   }
 
-  rsvpStatus.textContent = "Javob matni tayyor! «Matnni nusxalash» tugmasi orqali yuborishingiz mumkin.";
+  rsvpStatus.textContent =
+    "Javob tayyor. «Matnni nusxalash» tugmasini bosing va tashkilotchiga yuboring.";
+
 });
+
+/* RSVP MATNINI NUSXALASH */
 
 copyRsvpBtn.addEventListener("click", async () => {
+
   const msg = lastRsvpMessage || buildRsvpMessage();
+
   try {
-    await navigator.clipboard.writeText(msg);
-    rsvpStatus.textContent = "Javob matni buferga nusxalandi ✓";
+
+    await copyText(msg);
+
+    rsvpStatus.textContent =
+      "Javob matni buferga nusxalandi ✓";
+
     showToast("Javob matni nusxalandi");
+
   } catch {
+
     rsvpStatus.textContent = msg;
+
   }
+
 });
 
+/* SAHIFA PROGRESS CHIZIG‘I */
+
 const scrollProgress = document.getElementById("scrollProgress");
+
 window.addEventListener("scroll", () => {
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const pct = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
-  scrollProgress.style.width = Math.min(100, Math.max(0, pct)) + "%";
+
+  const docHeight =
+    document.documentElement.scrollHeight - window.innerHeight;
+
+  const pct =
+    docHeight > 0
+      ? (window.scrollY / docHeight) * 100
+      : 0;
+
+  scrollProgress.style.width =
+    Math.min(100, Math.max(0, pct)) + "%";
+
 }, { passive: true });
 
-if ("IntersectionObserver" in window) {
+/* SCROLL ANIMATSIYALARI */
+
+if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+
+  document.querySelectorAll(".reveal").forEach(el => {
+    el.classList.add("visible");
+  });
+
+} else if ("IntersectionObserver" in window) {
+
   const observer = new IntersectionObserver((entries) => {
+
     entries.forEach(entry => {
+
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
         observer.unobserve(entry.target);
       }
+
     });
+
   }, { threshold: 0.12 });
 
-  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+  document.querySelectorAll(".reveal").forEach(el => {
+    observer.observe(el);
+  });
+
 } else {
-  document.querySelectorAll(".reveal").forEach(el => el.classList.add("visible"));
+
+  document.querySelectorAll(".reveal").forEach(el => {
+    el.classList.add("visible");
+  });
+
 }
+
+/* YENGIL DEKORATIV ZARRALAR */
 
 const particles = document.getElementById("particles");
 const glyphs = ["❧", "·", "❀", "✦"];
 
 for (let i = 0; i < 22; i++) {
+
   const p = document.createElement("span");
+
   p.className = "particle";
   p.textContent = glyphs[i % glyphs.length];
+
   p.style.left = Math.random() * 100 + "%";
   p.style.animationDuration = (12 + Math.random() * 11) + "s";
   p.style.animationDelay = (Math.random() * 14) + "s";
   p.style.fontSize = (9 + Math.random() * 10) + "px";
+
   particles.appendChild(p);
 }
 </script>
