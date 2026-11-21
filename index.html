@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#fbf7ef">
+  <meta name="theme-color" content="#fbf6f6">
   <meta name="description" content="Abdurashid va Gulnoraning nikoh to‘yiga taklifnoma">
   <title>Abdurashid &amp; Gulnora | Wedding Invitation</title>
 
@@ -13,12 +13,15 @@
 
 <style>
 :root {
-  --ivory: #fbf7ef;
-  --cream: #f1e6d4;
-  --gold: #bd965c;
-  --darkgold: #8f6b3e;
-  --text: #594832;
-  --white: #fffdf9;
+  --bg-cream: #fbf6f6;
+  --bg-rose: #f4e8ea;
+  --burgundy: #5c1d2c;
+  --burgundy-deep: #3d111c;
+  --champagne: #cfa468;
+  --champagne-dark: #9c723d;
+  --text: #4a1824;
+  --text-soft: #75424e;
+  --surface: #fffdfd;
 }
 
 * {
@@ -37,9 +40,9 @@ body {
   color: var(--text);
   font-family: 'Montserrat', sans-serif;
   background:
-    radial-gradient(ellipse at 12% 12%, rgba(222,196,151,.28), transparent 32%),
-    radial-gradient(ellipse at 88% 78%, rgba(222,196,151,.24), transparent 34%),
-    linear-gradient(135deg, #fffdf8, var(--ivory) 48%, #f0e5d4);
+    radial-gradient(ellipse at 12% 12%, rgba(207,164,104,.20), transparent 34%),
+    radial-gradient(ellipse at 88% 78%, rgba(92,29,44,.08), transparent 36%),
+    linear-gradient(135deg, #fffdfd, var(--bg-cream) 50%, var(--bg-rose));
 }
 
 body::before {
@@ -53,9 +56,23 @@ body::before {
     repeating-linear-gradient(
       45deg,
       transparent 0 42px,
-      rgba(174,137,82,.10) 43px,
+      rgba(92,29,44,.06) 43px,
       transparent 44px
     );
+}
+
+/* YUQORI O'QISH CHIZIG'I */
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  z-index: 60;
+  background: linear-gradient(90deg, var(--burgundy), var(--champagne));
+  transition: width .12s linear;
+  pointer-events: none;
 }
 
 /* MAYIN YORUG'LIK */
@@ -69,8 +86,8 @@ body::before {
   z-index: 0;
   background: radial-gradient(
     circle,
-    rgba(255,255,255,.85),
-    rgba(229,205,165,.08) 58%,
+    rgba(255,253,253,.85),
+    rgba(207,164,104,.10) 58%,
     transparent 72%
   );
   animation: glowMove 13s ease-in-out infinite alternate;
@@ -98,7 +115,7 @@ body::before {
   }
 }
 
-/* OLTIN ZARRALAR */
+/* SHAMPAN ZARRALAR */
 
 .particles {
   position: fixed;
@@ -111,9 +128,9 @@ body::before {
 .particle {
   position: absolute;
   top: -30px;
-  color: #c5a16a;
+  color: var(--champagne);
   opacity: 0;
-  text-shadow: 0 0 12px rgba(189,150,92,.55);
+  text-shadow: 0 0 12px rgba(207,164,104,.55);
   animation: falling linear infinite;
 }
 
@@ -123,7 +140,7 @@ body::before {
     opacity: 0;
   }
   15% {
-    opacity: .6;
+    opacity: .65;
   }
   85% {
     opacity: .4;
@@ -140,11 +157,11 @@ body::before {
   position: absolute;
   z-index: 1;
   pointer-events: none;
-  color: rgba(169,129,73,.38);
+  color: rgba(92,29,44,.22);
   font-family: Georgia, serif;
   line-height: 1;
   animation: flowerFloat 7s ease-in-out infinite;
-  text-shadow: 0 4px 18px rgba(178,139,83,.12);
+  text-shadow: 0 4px 18px rgba(92,29,44,.10);
 }
 
 .flower.f1 {
@@ -196,10 +213,10 @@ body::before {
   background:
     radial-gradient(
       ellipse at 50% 42%,
-      rgba(255,255,255,.97),
-      rgba(245,235,217,.96) 65%
+      rgba(255,253,253,.97),
+      rgba(246,234,236,.96) 68%
     ),
-    var(--ivory);
+    var(--bg-cream);
   transition: opacity 1.25s ease, visibility 1.25s ease;
 }
 
@@ -207,7 +224,7 @@ body::before {
 .cover::after {
   content: "❀";
   position: absolute;
-  color: rgba(177,138,80,.13);
+  color: rgba(92,29,44,.10);
   font-size: clamp(150px, 26vw, 290px);
   pointer-events: none;
 }
@@ -238,11 +255,11 @@ body::before {
   justify-content: center;
   padding: 42px 26px;
   text-align: center;
-  border: 1px solid rgba(177,138,80,.75);
-  outline: 1px solid rgba(177,138,80,.24);
+  border: 1px solid rgba(207,164,104,.85);
+  outline: 1px solid rgba(92,29,44,.22);
   outline-offset: 8px;
-  background: rgba(255,253,248,.62);
-  box-shadow: 0 24px 70px rgba(91,66,34,.12);
+  background: rgba(255,253,253,.76);
+  box-shadow: 0 24px 70px rgba(61,17,28,.14);
   animation: cardEnter 1.4s ease both;
 }
 
@@ -257,25 +274,33 @@ body::before {
   }
 }
 
+.monogram {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  letter-spacing: 5px;
+  color: var(--champagne-dark);
+  margin-bottom: 10px;
+}
+
 .cover-kicker {
-  color: var(--darkgold);
+  color: var(--burgundy);
   font-size: 10px;
   letter-spacing: 4px;
   line-height: 1.8;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .cover-names {
-  color: var(--darkgold);
+  color: var(--burgundy);
   font-family: 'Great Vibes', cursive;
   font-size: clamp(54px, 12vw, 76px);
   line-height: 1.08;
-  text-shadow: 0 5px 24px rgba(177,138,80,.16);
+  text-shadow: 0 5px 24px rgba(92,29,44,.14);
 }
 
 .ampersand {
-  color: #c4a16c;
+  color: var(--champagne-dark);
   font-family: 'Cormorant Garamond', serif;
   font-size: 34px;
   font-style: italic;
@@ -284,7 +309,7 @@ body::before {
 
 .cover-date {
   margin-top: 18px;
-  color: var(--darkgold);
+  color: var(--burgundy);
   font-family: 'Playfair Display', serif;
   font-size: 15px;
   letter-spacing: 4px;
@@ -292,7 +317,7 @@ body::before {
 
 .ornament {
   margin: 16px 0;
-  color: var(--gold);
+  color: var(--champagne-dark);
   font-size: 23px;
   letter-spacing: 8px;
 }
@@ -306,7 +331,7 @@ body::before {
   margin: 18px auto 25px;
   perspective: 900px;
   cursor: pointer;
-  filter: drop-shadow(0 13px 16px rgba(107,78,39,.17));
+  filter: drop-shadow(0 13px 18px rgba(61,17,28,.18));
   animation: envelopeFloat 3s ease-in-out infinite;
 }
 
@@ -324,14 +349,14 @@ body::before {
   inset: 0;
   overflow: visible;
   border-radius: 5px;
-  background: linear-gradient(145deg,#f2e3c9,#dfc49a);
-  border: 1px solid #c5a16a;
+  background: linear-gradient(145deg,#742639,#5c1d2c);
+  border: 1px solid var(--champagne);
 }
 
 .envelope-back {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg,#e8d4b1,#f4e8d4);
+  background: linear-gradient(135deg,#672031,#4c1623);
   border-radius: 5px;
 }
 
@@ -349,13 +374,13 @@ body::before {
 .envelope::before {
   left: 0;
   border-width: 64px 95px 0 0;
-  border-color: transparent #ead7b7 transparent transparent;
+  border-color: transparent #6a2233 transparent transparent;
 }
 
 .envelope::after {
   right: 0;
   border-width: 64px 0 0 95px;
-  border-color: transparent transparent transparent #e5d0ac;
+  border-color: transparent transparent transparent #541927;
 }
 
 .envelope-letter {
@@ -367,9 +392,9 @@ body::before {
   z-index: 2;
   display: grid;
   place-items: center;
-  color: var(--darkgold);
-  background: #fffaf0;
-  border: 1px solid rgba(177,138,80,.5);
+  color: var(--burgundy);
+  background: var(--surface);
+  border: 1px solid rgba(207,164,104,.75);
   font-family: 'Great Vibes', cursive;
   font-size: 26px;
   transition: transform 1s ease .25s;
@@ -383,7 +408,7 @@ body::before {
   height: 0;
   border-left: 95px solid transparent;
   border-right: 95px solid transparent;
-  border-top: 72px solid #d4b582;
+  border-top: 72px solid #822c41;
   transform-origin: top center;
   z-index: 5;
   transition: transform .9s ease, z-index .1s .45s;
@@ -400,10 +425,10 @@ body::before {
   place-items: center;
   transform: translateX(-50%);
   border-radius: 50%;
-  color: #fff8e9;
-  background: linear-gradient(145deg,#bd965c,#8f6b3e);
-  border: 1px solid rgba(255,255,255,.7);
-  font-size: 17px;
+  color: var(--burgundy-deep);
+  background: linear-gradient(145deg,#e2be88,#cfa468);
+  border: 1px solid rgba(255,253,253,.85);
+  font-size: 16px;
   transition: opacity .3s ease;
 }
 
@@ -421,20 +446,21 @@ body::before {
 }
 
 .open-btn {
-  border: 1px solid #c4a16c;
+  border: 1px solid var(--champagne);
   padding: 15px 27px;
-  color: #fffdf8;
-  background: linear-gradient(135deg,#c7a36d,#927044);
-  box-shadow: 0 10px 26px rgba(142,107,60,.2);
+  color: #fffdf9;
+  background: linear-gradient(135deg,#6e2436,#4a1522);
+  box-shadow: 0 10px 26px rgba(61,17,28,.22);
   font-size: 10px;
   letter-spacing: 2px;
+  text-transform: uppercase;
   cursor: pointer;
   transition: transform .35s ease, box-shadow .35s ease;
 }
 
 .open-btn:hover {
   transform: translateY(-4px);
-  box-shadow: 0 14px 32px rgba(142,107,60,.3);
+  box-shadow: 0 14px 32px rgba(61,17,28,.32);
 }
 
 .open-btn:disabled {
@@ -443,7 +469,7 @@ body::before {
 
 .cover-hint {
   margin-top: 14px;
-  color: #927c5e;
+  color: var(--text-soft);
   font-family: 'Cormorant Garamond', serif;
   font-size: 18px;
 }
@@ -477,13 +503,13 @@ body::before {
   flex-wrap: wrap;
   gap: 8px 18px;
   padding: 12px 14px;
-  background: rgba(251, 247, 239, 0.88);
+  background: rgba(251, 246, 246, 0.90);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(177, 138, 80, 0.25);
+  border-bottom: 1px solid rgba(207, 164, 104, 0.35);
 }
 
 .quick-nav a {
-  color: var(--darkgold);
+  color: var(--burgundy);
   text-decoration: none;
   font-size: 10px;
   letter-spacing: 2px;
@@ -494,8 +520,8 @@ body::before {
 }
 
 .quick-nav a:hover {
-  color: var(--text);
-  border-bottom-color: var(--gold);
+  color: var(--champagne-dark);
+  border-bottom-color: var(--champagne);
 }
 
 /* BOSH SAHIFA */
@@ -509,15 +535,15 @@ body::before {
   overflow: hidden;
   text-align: center;
   background:
-    radial-gradient(ellipse at center, rgba(255,255,255,.78), rgba(249,244,235,.48) 70%),
-    linear-gradient(135deg, rgba(239,225,202,.45), rgba(255,253,248,.35));
+    radial-gradient(ellipse at center, rgba(255,253,253,.82), rgba(246,234,236,.55) 70%),
+    linear-gradient(135deg, rgba(207,164,104,.12), rgba(255,253,253,.45));
 }
 
 .hero::before,
 .hero::after {
   content: "❀";
   position: absolute;
-  color: rgba(177,138,80,.13);
+  color: rgba(92,29,44,.10);
   font-size: clamp(160px, 28vw, 300px);
   animation: flowerFloat 9s ease-in-out infinite;
   pointer-events: none;
@@ -538,10 +564,10 @@ body::before {
   position: relative;
   width: min(100%, 780px);
   padding: 58px 24px;
-  border-top: 1px solid rgba(177,138,80,.75);
-  border-bottom: 1px solid rgba(177,138,80,.75);
-  background: rgba(255,253,248,.3);
-  backdrop-filter: blur(3px);
+  border-top: 1px solid rgba(207,164,104,.85);
+  border-bottom: 1px solid rgba(207,164,104,.85);
+  background: rgba(255,253,253,.42);
+  backdrop-filter: blur(4px);
 }
 
 .hero-frame::before,
@@ -551,8 +577,8 @@ body::before {
   left: 50%;
   transform: translateX(-50%);
   padding: 0 16px;
-  color: var(--gold);
-  background: var(--ivory);
+  color: var(--champagne-dark);
+  background: var(--bg-cream);
   font-size: 25px;
 }
 
@@ -564,7 +590,7 @@ body::before {
 .quote {
   max-width: 650px;
   margin: 0 auto 35px;
-  color: #806744;
+  color: var(--text-soft);
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(21px, 4vw, 27px);
   line-height: 1.5;
@@ -574,7 +600,7 @@ body::before {
 .quote-ar {
   display: block;
   margin-bottom: 8px;
-  color: #a77d43;
+  color: var(--burgundy);
   font-family: 'Amiri', serif;
   font-size: clamp(30px, 6vw, 43px);
   line-height: 1.8;
@@ -593,19 +619,19 @@ body::before {
 }
 
 .eyebrow {
-  color: var(--darkgold);
+  color: var(--champagne-dark);
   font-size: 10px;
   letter-spacing: 5px;
   margin-bottom: 28px;
 }
 
 .hero h1 {
-  color: var(--darkgold);
+  color: var(--burgundy);
   font-family: 'Great Vibes', cursive;
   font-size: clamp(78px, 16vw, 132px);
   font-weight: 400;
   line-height: 1.02;
-  text-shadow: 0 8px 30px rgba(177,138,80,.14);
+  text-shadow: 0 8px 30px rgba(92,29,44,.12);
   animation: nameRise 1.5s ease both;
 }
 
@@ -626,7 +652,7 @@ body::before {
 
 .hero-and {
   margin: 2px 0;
-  color: #c4a16c;
+  color: var(--champagne-dark);
   font-family: 'Cormorant Garamond', serif;
   font-size: 44px;
   font-style: italic;
@@ -635,7 +661,7 @@ body::before {
 .hero-copy {
   max-width: 520px;
   margin: 27px auto 0;
-  color: #78664d;
+  color: var(--text-soft);
   font-family: 'Cormorant Garamond', serif;
   font-size: 25px;
   line-height: 1.55;
@@ -643,26 +669,40 @@ body::before {
 
 .hero-date {
   margin-top: 28px;
-  color: var(--darkgold);
+  color: var(--burgundy);
   font-family: 'Playfair Display', serif;
   font-size: 25px;
   letter-spacing: 3px;
 }
 
+.hero-weekday {
+  margin-top: 6px;
+  color: var(--champagne-dark);
+  font-size: 11px;
+  letter-spacing: 4px;
+}
+
 .hero-time {
-  margin-top: 12px;
-  color: #927c5e;
+  margin-top: 10px;
+  color: var(--text-soft);
   font-size: 10px;
   letter-spacing: 4px;
 }
 
-.calendar-btn {
+.hero-actions {
   margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.calendar-btn {
   display: inline-block;
-  padding: 12px 22px;
-  border: 1px solid #c4a16c;
-  color: #fffdf8;
-  background: linear-gradient(135deg, #c7a36d, #927044);
+  padding: 12px 20px;
+  border: 1px solid var(--champagne);
+  color: #fffdf9;
+  background: linear-gradient(135deg, #6e2436, #4a1522);
   font-family: 'Montserrat', sans-serif;
   font-size: 10px;
   letter-spacing: 2px;
@@ -671,9 +711,15 @@ body::before {
   transition: transform .3s ease, box-shadow .3s ease;
 }
 
+.calendar-btn.alt {
+  background: rgba(255,253,253,.82);
+  color: var(--burgundy);
+  border: 1px solid var(--champagne-dark);
+}
+
 .calendar-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 22px rgba(142,107,60,.24);
+  box-shadow: 0 10px 22px rgba(61,17,28,.22);
 }
 
 /* UMUMIY BO'LIMLAR */
@@ -686,7 +732,7 @@ body::before {
 }
 
 .section-title {
-  color: var(--darkgold);
+  color: var(--burgundy);
   font-family: 'Playfair Display', serif;
   font-size: clamp(31px, 6vw, 46px);
   font-weight: 400;
@@ -695,7 +741,7 @@ body::before {
 .section-copy {
   max-width: 680px;
   margin: 22px auto;
-  color: #78664d;
+  color: var(--text-soft);
   font-family: 'Cormorant Garamond', serif;
   font-size: 24px;
   line-height: 1.6;
@@ -705,12 +751,12 @@ body::before {
   width: 78px;
   height: 1px;
   margin: 20px auto;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  background: linear-gradient(90deg, transparent, var(--champagne), transparent);
 }
 
 .ornament-line {
   margin: 19px 0;
-  color: var(--gold);
+  color: var(--champagne-dark);
   font-size: 24px;
   letter-spacing: 8px;
 }
@@ -722,14 +768,14 @@ body::before {
   padding: 78px 15px;
   overflow: hidden;
   text-align: center;
-  background: linear-gradient(120deg,#efe2cc,#fbf7ef 48%,#efe2cc);
+  background: linear-gradient(120deg, var(--bg-rose), var(--bg-cream) 48%, var(--bg-rose));
 }
 
 .countdown-section::before,
 .countdown-section::after {
   content: "✧";
   position: absolute;
-  color: rgba(177,138,80,.16);
+  color: rgba(92,29,44,.12);
   font-size: 90px;
 }
 
@@ -756,21 +802,21 @@ body::before {
 .count-box {
   width: 94px;
   padding: 17px 8px;
-  border: 1px solid rgba(177,138,80,.75);
-  background: rgba(255,253,248,.7);
-  box-shadow: 0 8px 24px rgba(91,66,34,.06);
+  border: 1px solid rgba(207,164,104,.85);
+  background: rgba(255,253,253,.82);
+  box-shadow: 0 8px 24px rgba(61,17,28,.07);
 }
 
 .count-number {
   display: block;
-  color: var(--darkgold);
+  color: var(--burgundy);
   font-family: 'Playfair Display', serif;
   font-size: 34px;
 }
 
 .count-label {
   margin-top: 7px;
-  color: #927c5e;
+  color: var(--text-soft);
   font-size: 9px;
   letter-spacing: 2px;
 }
@@ -778,7 +824,7 @@ body::before {
 /* TO'Y DASTURI */
 
 .timeline-section {
-  background: rgba(255,253,248,.45);
+  background: rgba(255,253,253,.52);
 }
 
 .timeline-list {
@@ -794,21 +840,21 @@ body::before {
   align-items: center;
   gap: 20px;
   padding: 20px 24px;
-  border: 1px solid #d7c19b;
-  background: rgba(255,253,248,.86);
-  box-shadow: 0 8px 24px rgba(92,69,34,.05);
+  border: 1px solid rgba(207,164,104,.75);
+  background: rgba(255,253,253,.90);
+  box-shadow: 0 8px 24px rgba(61,17,28,.06);
 }
 
 .timeline-time {
   min-width: 84px;
-  color: var(--darkgold);
+  color: var(--burgundy);
   font-family: 'Playfair Display', serif;
   font-size: 20px;
   font-weight: 600;
 }
 
 .timeline-details h3 {
-  color: var(--darkgold);
+  color: var(--burgundy);
   font-family: 'Playfair Display', serif;
   font-size: 22px;
   font-weight: 400;
@@ -816,7 +862,7 @@ body::before {
 
 .timeline-details p {
   margin-top: 4px;
-  color: #78664d;
+  color: var(--text-soft);
   font-family: 'Cormorant Garamond', serif;
   font-size: 20px;
 }
@@ -824,7 +870,7 @@ body::before {
 /* MANZILLAR */
 
 .address-section {
-  background: rgba(255,253,248,.62);
+  background: rgba(255,253,253,.68);
 }
 
 .address-grid {
@@ -839,9 +885,9 @@ body::before {
   position: relative;
   overflow: hidden;
   padding: 38px 22px;
-  border: 1px solid #d7c19b;
-  background: rgba(255,253,248,.88);
-  box-shadow: 0 12px 34px rgba(92,69,34,.07);
+  border: 1px solid rgba(207,164,104,.78);
+  background: rgba(255,253,253,.92);
+  box-shadow: 0 12px 34px rgba(61,17,28,.08);
   transition: transform .45s ease, box-shadow .45s ease;
 }
 
@@ -850,13 +896,13 @@ body::before {
   position: absolute;
   top: 8px;
   right: 13px;
-  color: rgba(177,138,80,.3);
+  color: rgba(92,29,44,.16);
   font-size: 25px;
 }
 
 .address-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 42px rgba(92,69,34,.13);
+  box-shadow: 0 20px 42px rgba(61,17,28,.14);
 }
 
 .address-icon {
@@ -865,7 +911,7 @@ body::before {
 }
 
 .address-card h3 {
-  color: var(--darkgold);
+  color: var(--burgundy);
   font-family: 'Playfair Display', serif;
   font-size: 27px;
   font-weight: 400;
@@ -874,7 +920,7 @@ body::before {
 .address-card p {
   min-height: 32px;
   margin: 13px 0;
-  color: #78664d;
+  color: var(--text-soft);
   font-family: 'Cormorant Garamond', serif;
   font-size: 21px;
   line-height: 1.45;
@@ -882,7 +928,7 @@ body::before {
 
 .visit-time {
   margin: 17px 0;
-  color: #a27e4a;
+  color: var(--champagne-dark);
   font-size: 10px;
   letter-spacing: 2px;
 }
@@ -897,9 +943,9 @@ body::before {
 .map-btn {
   display: inline-block;
   padding: 12px 14px;
-  border: 1px solid rgba(255,255,255,.4);
-  color: white;
-  background: linear-gradient(135deg,#c3a06c,#927044);
+  border: 1px solid var(--champagne);
+  color: #fffdf9;
+  background: linear-gradient(135deg,#6e2436,#4a1522);
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
   font-size: 9px;
@@ -910,28 +956,28 @@ body::before {
 
 .map-btn.secondary {
   background: transparent;
-  color: var(--darkgold);
-  border: 1px solid #c3a06c;
+  color: var(--burgundy);
+  border: 1px solid var(--champagne-dark);
 }
 
 .map-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(142,107,60,.22);
+  box-shadow: 0 8px 18px rgba(61,17,28,.22);
 }
 
 /* RSVP FORMA */
 
 .rsvp-section {
-  background: rgba(255,253,248,.78);
+  background: rgba(255,253,253,.80);
 }
 
 .rsvp-card {
   width: min(100%, 560px);
   margin: 34px auto 0;
   padding: 36px 24px;
-  border: 1px solid #d7c19b;
-  background: rgba(255,253,248,.92);
-  box-shadow: 0 14px 36px rgba(92,69,34,.08);
+  border: 1px solid rgba(207,164,104,.80);
+  background: rgba(255,253,253,.94);
+  box-shadow: 0 14px 36px rgba(61,17,28,.09);
   text-align: left;
 }
 
@@ -942,7 +988,7 @@ body::before {
 .form-group label {
   display: block;
   margin-bottom: 8px;
-  color: var(--darkgold);
+  color: var(--burgundy);
   font-size: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -953,8 +999,8 @@ body::before {
 .form-group textarea {
   width: 100%;
   padding: 12px 14px;
-  border: 1px solid #d4bc93;
-  background: #fffdf9;
+  border: 1px solid rgba(207,164,104,.75);
+  background: #fffdfd;
   color: var(--text);
   font-family: 'Montserrat', sans-serif;
   font-size: 13px;
@@ -965,7 +1011,7 @@ body::before {
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-  border-color: var(--darkgold);
+  border-color: var(--burgundy);
 }
 
 .rsvp-actions {
@@ -977,7 +1023,7 @@ body::before {
 
 .rsvp-status {
   margin-top: 16px;
-  color: var(--darkgold);
+  color: var(--burgundy);
   font-family: 'Cormorant Garamond', serif;
   font-size: 21px;
   min-height: 28px;
@@ -991,15 +1037,15 @@ body::before {
   padding: 95px 20px;
   text-align: center;
   background:
-    radial-gradient(ellipse at center, rgba(255,255,255,.75), transparent 72%),
-    linear-gradient(135deg,#efe3d1,#fbf7ef);
+    radial-gradient(ellipse at center, rgba(255,253,253,.78), transparent 72%),
+    linear-gradient(135deg, var(--bg-rose), var(--bg-cream));
 }
 
 .closing::before,
 .closing::after {
   content: "❀";
   position: absolute;
-  color: rgba(177,138,80,.16);
+  color: rgba(92,29,44,.12);
   font-size: 155px;
 }
 
@@ -1016,7 +1062,7 @@ body::before {
 .closing h2 {
   position: relative;
   z-index: 1;
-  color: var(--darkgold);
+  color: var(--burgundy);
   font-family: 'Great Vibes', cursive;
   font-size: clamp(55px, 11vw, 82px);
   font-weight: 400;
@@ -1026,7 +1072,7 @@ body::before {
   position: relative;
   z-index: 1;
   margin-top: 20px;
-  color: #78664d;
+  color: var(--text-soft);
   font-family: 'Cormorant Garamond', serif;
   font-size: 24px;
   line-height: 1.6;
@@ -1034,14 +1080,15 @@ body::before {
 
 footer {
   padding: 23px 15px;
-  color: #927c5e;
-  background: #e9decc;
+  color: var(--text-soft);
+  background: var(--bg-rose);
+  border-top: 1px solid rgba(207,164,104,.35);
   text-align: center;
   font-size: 9px;
   letter-spacing: 3px;
 }
 
-/* MUSIQA TUGMASI */
+/* MUSIQA TUGMASI VA TOAST */
 
 .music-btn {
   position: fixed;
@@ -1051,11 +1098,11 @@ footer {
   display: none;
   width: 52px;
   height: 52px;
-  border: 1px solid #d2b27f;
+  border: 1px solid var(--champagne);
   border-radius: 50%;
-  color: white;
-  background: linear-gradient(135deg,#c5a16c,#927044);
-  box-shadow: 0 7px 22px rgba(90,70,40,.2);
+  color: #fffdf9;
+  background: linear-gradient(135deg,#6e2436,#4a1522);
+  box-shadow: 0 7px 22px rgba(61,17,28,.25);
   font-size: 23px;
   cursor: pointer;
 }
@@ -1070,6 +1117,41 @@ footer {
 
 @keyframes musicRotate {
   to { transform: rotate(360deg); }
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translate(-50%, 16px);
+  z-index: 70;
+  padding: 10px 18px;
+  background: var(--burgundy-deep);
+  color: #fffdf9;
+  border: 1px solid var(--champagne);
+  font-size: 11px;
+  letter-spacing: 1px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease, transform .3s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* SCROLL ANIMATSIYA */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .9s ease, transform .9s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* TELEFON UCHUN */
@@ -1136,11 +1218,14 @@ footer {
 
 <body>
 
+<div class="scroll-progress" id="scrollProgress"></div>
+
 <!-- ORQA FON EFFEKTLARI -->
 
 <div class="particles" id="particles"></div>
 <div class="glow one"></div>
 <div class="glow two"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <!-- MUSIQA: MP3 FAYL HTML FAYL BILAN BIR PAPKADA BO'LISHI KERAK -->
 
@@ -1158,6 +1243,8 @@ footer {
   <span class="flower f4">❀</span>
 
   <div class="cover-card">
+
+    <div class="monogram">A &amp; G</div>
 
     <div class="cover-kicker">
       SIZNI NIKOH TO'YIMIZGA TAKLIF QILAMIZ
@@ -1224,16 +1311,11 @@ footer {
 
     <div class="hero-frame">
 
-      <!-- ARABCHA VA O'ZBEKCHA YOZUV -->
-
       <div class="quote">
-
         <span class="quote-ar" lang="ar" dir="rtl">
           وَأَلَّفَ بَيْنَ قُلُوبِهِمْ
         </span>
-
         Alloh ularning qalblarini sevgi ila birlashtirdi!
-
       </div>
 
       <div class="eyebrow">
@@ -1258,20 +1340,29 @@ footer {
         17 DEKABR 2026
       </div>
 
+      <div class="hero-weekday" id="heroWeekday">
+        PAYSHANBA
+      </div>
+
       <div class="hero-time" id="heroTime">
         SOAT 18:00 DA
       </div>
 
-      <button class="calendar-btn" id="addCalendarBtn" type="button">
-        📅 KALENDARGA QO'SHISH (.ICS)
-      </button>
+      <div class="hero-actions">
+        <button class="calendar-btn" id="addCalendarBtn" type="button">
+          📅 KALENDARGA QO'SHISH (.ICS)
+        </button>
+        <button class="calendar-btn alt" id="shareInviteBtn" type="button">
+          🔗 HAVOLANI ULASHISH
+        </button>
+      </div>
 
     </div>
   </section>
 
   <!-- MEHMONLARGA TAKLIF -->
 
-  <section class="section">
+  <section class="section reveal">
 
     <h2 class="section-title">
       Aziz mehmonimiz!
@@ -1293,7 +1384,7 @@ footer {
 
   <!-- TO'Y SANAGICHI -->
 
-  <section class="countdown-section" id="countdown-sec">
+  <section class="countdown-section reveal" id="countdown-sec">
 
     <h2 class="section-title">
       Baxtli kunimizgacha
@@ -1328,7 +1419,7 @@ footer {
 
   <!-- TO'Y DASTURI -->
 
-  <section class="section timeline-section" id="program-sec">
+  <section class="section timeline-section reveal" id="program-sec">
 
     <h2 class="section-title">
       To'y dasturi
@@ -1371,7 +1462,7 @@ footer {
 
   <!-- MANZILLAR -->
 
-  <section class="section address-section" id="addresses-sec">
+  <section class="section address-section reveal" id="addresses-sec">
 
     <h2 class="section-title">
       Manzillarimiz
@@ -1507,7 +1598,7 @@ footer {
 
   <!-- RSVP: KELISHNI TASDIQLASH -->
 
-  <section class="section rsvp-section" id="rsvp-sec">
+  <section class="section rsvp-section reveal" id="rsvp-sec">
 
     <h2 class="section-title">
       Ishtirokingizni tasdiqlang
@@ -1563,7 +1654,7 @@ footer {
 
   <!-- YAKUNIY QISM -->
 
-  <section class="closing">
+  <section class="closing reveal">
 
     <div class="ornament-line">✧ ❦ ✧</div>
 
@@ -1591,6 +1682,7 @@ const WEDDING_CONFIG = {
   isoDateTime: "2026-12-17T18:00:00+05:00",
   coverText: "17 · 12 · 2026",
   heroDateText: "17 DEKABR 2026",
+  weekdayText: "PAYSHANBA",
   heroTimeText: "SOAT 18:00 DA",
   footerText: "ABDURASHID & GULNORA · 17.12.2026",
   icsStart: "20261217T130000Z",
@@ -1602,8 +1694,21 @@ const WEDDING_CONFIG = {
 
 document.getElementById("coverDate").textContent = WEDDING_CONFIG.coverText;
 document.getElementById("heroDate").textContent = WEDDING_CONFIG.heroDateText;
+document.getElementById("heroWeekday").textContent = WEDDING_CONFIG.weekdayText;
 document.getElementById("heroTime").textContent = WEDDING_CONFIG.heroTimeText;
 document.getElementById("footerDate").textContent = WEDDING_CONFIG.footerText;
+
+const toastEl = document.getElementById("toast");
+let toastTimer = null;
+
+function showToast(msg) {
+  toastEl.textContent = msg;
+  toastEl.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
+    toastEl.classList.remove("show");
+  }, 2200);
+}
 
 const cover = document.getElementById("cover");
 const invitation = document.getElementById("invitation");
@@ -1614,11 +1719,30 @@ const musicButton = document.getElementById("musicButton");
 
 let invitationOpened = false;
 let musicAvailable = true;
+let fadeInterval = null;
 
 music.addEventListener("error", () => {
   musicAvailable = false;
   musicButton.classList.remove("active", "playing");
 });
+
+function fadeMusicIn(targetVolume = 0.65) {
+  clearInterval(fadeInterval);
+  music.volume = 0.05;
+  music.play().then(() => {
+    musicButton.classList.add("playing");
+    fadeInterval = setInterval(() => {
+      if (music.volume + 0.06 < targetVolume) {
+        music.volume = Number((music.volume + 0.06).toFixed(2));
+      } else {
+        music.volume = targetVolume;
+        clearInterval(fadeInterval);
+      }
+    }, 120);
+  }).catch(() => {
+    musicButton.classList.remove("playing");
+  });
+}
 
 function openInvitation() {
   if (invitationOpened) return;
@@ -1641,12 +1765,7 @@ function openInvitation() {
     });
 
     if (musicAvailable) {
-      music.volume = 0.65;
-      music.play().then(() => {
-        musicButton.classList.add("playing");
-      }).catch(() => {
-        musicButton.classList.remove("playing");
-      });
+      fadeMusicIn(0.65);
     }
   }, 850);
 }
@@ -1664,14 +1783,13 @@ musicButton.addEventListener("click", () => {
   if (!musicAvailable) return;
 
   if (music.paused) {
-    music.play().then(() => {
-      musicButton.classList.add("playing");
-    }).catch(() => {
-      musicButton.classList.remove("playing");
-    });
+    fadeMusicIn(0.65);
+    showToast("Musiqa yoqildi");
   } else {
+    clearInterval(fadeInterval);
     music.pause();
     musicButton.classList.remove("playing");
+    showToast("Musiqa to'xtatildi");
   }
 });
 
@@ -1729,6 +1847,27 @@ document.getElementById("addCalendarBtn").addEventListener("click", () => {
   a.click();
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
+  showToast("Kalendar fayli yuklandi");
+});
+
+document.getElementById("shareInviteBtn").addEventListener("click", async () => {
+  const shareUrl = window.location.href;
+  const shareText = "Abdurashid va Gulnoraning nikoh to'yiga taklifnoma";
+
+  if (navigator.share) {
+    try {
+      await navigator.share({ title: shareText, text: shareText, url: shareUrl });
+      return;
+    } catch {
+    }
+  }
+
+  try {
+    await navigator.clipboard.writeText(shareUrl);
+    showToast("Taklifnoma havolasi nusxalandi");
+  } catch {
+    showToast(shareUrl);
+  }
 });
 
 document.querySelectorAll(".copy-addr-btn").forEach((btn) => {
@@ -1738,6 +1877,7 @@ document.querySelectorAll(".copy-addr-btn").forEach((btn) => {
       await navigator.clipboard.writeText(text);
       const oldLabel = btn.textContent;
       btn.textContent = "NUSXALANDI ✓";
+      showToast("Manzil nusxalandi");
       setTimeout(() => {
         btn.textContent = oldLabel;
       }, 1800);
@@ -1799,10 +1939,37 @@ copyRsvpBtn.addEventListener("click", async () => {
   try {
     await navigator.clipboard.writeText(msg);
     rsvpStatus.textContent = "Javob matni buferga nusxalandi ✓";
+    showToast("Javob matni nusxalandi");
   } catch {
     rsvpStatus.textContent = msg;
   }
 });
+
+const scrollProgress = document.getElementById("scrollProgress");
+window.addEventListener("scroll", () => {
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+  scrollProgress.style.width = Math.min(100, Math.max(0, pct)) + "%";
+}, { passive: true });
+
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll(".reveal").forEach(section => {
+    observer.observe(section);
+  });
+} else {
+  document.querySelectorAll(".reveal").forEach(section => {
+    section.classList.add("visible");
+  });
+}
 
 const particles = document.getElementById("particles");
 const symbols = ["✧", "·", "❀", "✦", "✿"];
